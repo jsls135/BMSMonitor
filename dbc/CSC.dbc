@@ -1,0 +1,2648 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: CSC07 CSC06 CSC05 CSC04 CSC03 CSC02 CSC01 CSC00 BMU
+VAL_TABLE_ ControlRequests 4 "Command CSC Autonomous" 3 "Command CSC Pause" 2 "Command CSC Run" 0 "Command CSC Init" ;
+VAL_TABLE_ FloorType 1 "Target Floor" 0 "Fault Floor" ;
+VAL_TABLE_ DischargeRequest 1 "Start Discharging" 0 "Stop Discharging" ;
+VAL_TABLE_ CSCIds 31 "All CSCs " 30 "CSC 30" 29 "CSC 29" 28 "CSC 28" 27 "CSC 27" 26 "CSC 26" 25 "CSC 25" 24 "CSC 24" 23 "CSC 23" 22 "CSC 22" 21 "CSC 21" 20 "CSC 20" 19 "CSC 19" 18 "CSC 18" 17 "CSC 17" 16 "CSC 16" 15 "CSC 15" 14 "CSC 14" 13 "CSC 13" 12 "CSC 12" 11 "CSC 11" 10 "CSC 10" 9 "CSC 9" 8 "CSC 8" 7 "CSC 7" 6 "CSC 6" 5 "CSC 5" 4 "CSC 4" 3 "CSC 3" 2 "CSC 2" 1 "CSC 1" 0 "CSC 0" ;
+VAL_TABLE_ CommandRequests 5 "Request Self Test" 4 "Request Version" 3 "Request Faults" 2 "Request Temperature" 1 "Request Voltage" 0 "Request Voltage Sample" ;
+VAL_TABLE_ CSCStates 6 "Sleep" 5 "Diagnostic" 4 "Autonomous" 3 "Pause" 2 "Run" 1 "Uninitialized" 0 "Initialization" ;
+VAL_TABLE_ Populated 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_TABLE_ CellStatus 3 "Discharge Circuit Error" 2 "Voltage Sensor Impedance Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_TABLE_ Status 1 "Fault" 0 "OK" ;
+VAL_TABLE_ DischargeResponse 1 "Discharging" 0 "Not Discharging" ;
+
+
+BO_ 0 New_Message_69: 8 Vector__XXX
+ SG_ New_Signal_820 : 7|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 343 CSC07_ModuleVoltageResponse: 4 CSC07
+ SG_ CSC07_ModuleVoltage2 : 23|16@0+ (0.01,0) [0|90] "Volts"  BMU
+ SG_ CSC07_ModuleVoltage1 : 7|16@0+ (0.01,0) [0|90] "Volts"  BMU
+
+BO_ 342 CSC06_ModuleVoltageResponse: 4 CSC06
+ SG_ CSC06_ModuleVoltage2 : 23|16@0+ (0.01,0) [0|90] "Volts"  BMU
+ SG_ CSC06_ModuleVoltage1 : 7|16@0+ (0.01,0) [0|90] "Volts"  BMU
+
+BO_ 341 CSC05_ModuleVoltageResponse: 4 CSC05
+ SG_ CSC05_ModuleVoltage2 : 23|16@0+ (0.01,0) [0|90] "Volts"  BMU
+ SG_ CSC05_ModuleVoltage1 : 7|16@0+ (0.01,0) [0|90] "Volts"  BMU
+
+BO_ 340 CSC04_ModuleVoltageResponse: 4 CSC04
+ SG_ CSC04_ModuleVoltage2 : 23|16@0+ (0.01,0) [0|90] "Volts"  BMU
+ SG_ CSC04_ModuleVoltage1 : 7|16@0+ (0.01,0) [0|90] "Volts"  BMU
+
+BO_ 339 CSC03_ModuleVoltageResponse: 4 CSC03
+ SG_ CSC03_ModuleVoltage2 : 23|16@0+ (0.01,0) [0|90] "Volts"  BMU
+ SG_ CSC03_ModuleVoltage1 : 7|16@0+ (0.01,0) [0|90] "Volts"  BMU
+
+BO_ 338 CSC02_ModuleVoltageResponse: 4 CSC02
+ SG_ CSC02_ModuleVoltage2 : 23|16@0+ (0.01,0) [0|90] "Volts"  BMU
+ SG_ CSC02_ModuleVoltage1 : 7|16@0+ (0.01,0) [0|90] "Volts"  BMU
+
+BO_ 337 CSC01_ModuleVoltageResponse: 4 CSC01
+ SG_ CSC01_ModuleVoltage2 : 23|16@0+ (0.01,0) [0|90] "Volts"  BMU
+ SG_ CSC01_ModuleVoltage1 : 7|16@0+ (0.01,0) [0|90] "Volts"  BMU
+
+BO_ 336 CSC00_ModuleVoltageResponse: 4 CSC00
+ SG_ CSC00_ModuleVoltage2 : 23|16@0+ (0.01,0) [0|90] "Volts"  BMU
+ SG_ CSC00_ModuleVoltage1 : 7|16@0+ (0.01,0) [0|90] "Volts"  BMU
+
+BO_ 1287 CSC07_VersionResponse: 4 CSC07
+ SG_ CSC07_VersionSoftwareRevision : 31|8@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC07_VersionSoftwareMinor : 23|8@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC07_VersionSoftwareMajor : 15|8@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC07_VersionHardware : 7|8@0+ (1,0) [0|0] ""  BMU
+
+BO_ 1286 CSC06_VersionResponse: 4 CSC06
+ SG_ CSC06_VersionSoftwareRevision : 31|8@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC06_VersionSoftwareMinor : 23|8@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC06_VersionSoftwareMajor : 15|8@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC06_VersionHardware : 7|8@0+ (1,0) [0|0] ""  BMU
+
+BO_ 1285 CSC05_VersionResponse: 4 CSC05
+ SG_ CSC05_VersionSoftwareRevision : 31|8@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC05_VersionSoftwareMinor : 23|8@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC05_VersionSoftwareMajor : 15|8@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC05_VersionHardware : 7|8@0+ (1,0) [0|0] ""  BMU
+
+BO_ 1284 CSC04_VersionResponse: 4 CSC04
+ SG_ CSC04_VersionSoftwareRevision : 31|8@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC04_VersionSoftwareMinor : 23|8@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC04_VersionSoftwareMajor : 15|8@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC04_VersionHardware : 7|8@0+ (1,0) [0|0] ""  BMU
+
+BO_ 1283 CSC03_VersionResponse: 4 CSC03
+ SG_ CSC03_VersionSoftwareRevision : 31|8@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC03_VersionSoftwareMinor : 23|8@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC03_VersionSoftwareMajor : 15|8@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC03_VersionHardware : 7|8@0+ (1,0) [0|0] ""  BMU
+
+BO_ 1282 CSC02_VersionResponse: 4 CSC02
+ SG_ CSC02_VersionSoftwareRevision : 31|8@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC02_VersionSoftwareMinor : 23|8@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC02_VersionSoftwareMajor : 15|8@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC02_VersionHardware : 7|8@0+ (1,0) [0|0] ""  BMU
+
+BO_ 1281 CSC01_VersionResponse: 4 CSC01
+ SG_ CSC01_VersionSoftwareRevision : 31|8@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC01_VersionSoftwareMinor : 23|8@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC01_VersionSoftwareMajor : 15|8@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC01_VersionHardware : 7|8@0+ (1,0) [0|0] ""  BMU
+
+BO_ 519 CSC07_TemperatureResponse: 6 CSC07
+ SG_ CSC07_CellTemperatureSensor2 : 11|12@0+ (0.1,-40) [-40|125] "Celsius"  BMU
+ SG_ CSC07_CellTemperatureSensor1 : 7|12@0+ (0.1,-40) [-40|125] "Celsius"  BMU
+ SG_ CSC07_BoardTemperatureSensor2 : 35|12@0+ (0.1,-40) [-40|125] "Celsius"  BMU
+ SG_ CSC07_BoardTemperatureSensor1 : 31|12@0+ (0.1,-40) [-40|125] "Celsius"  BMU
+
+BO_ 518 CSC06_TemperatureResponse: 6 CSC06
+ SG_ CSC06_CellTemperatureSensor2 : 11|12@0+ (0.1,-40) [-40|125] "Celsius"  BMU
+ SG_ CSC06_CellTemperatureSensor1 : 7|12@0+ (0.1,-40) [-40|125] "Celsius"  BMU
+ SG_ CSC06_BoardTemperatureSensor2 : 35|12@0+ (0.1,-40) [-40|125] "Celsius"  BMU
+ SG_ CSC06_BoardTemperatureSensor1 : 31|12@0+ (0.1,-40) [-40|125] "Celsius"  BMU
+
+BO_ 517 CSC05_TemperatureResponse: 6 CSC05
+ SG_ CSC05_CellTemperatureSensor2 : 11|12@0+ (0.1,-40) [-40|125] "Celsius"  BMU
+ SG_ CSC05_CellTemperatureSensor1 : 7|12@0+ (0.1,-40) [-40|125] "Celsius"  BMU
+ SG_ CSC05_BoardTemperatureSensor2 : 35|12@0+ (0.1,-40) [-40|125] "Celsius"  BMU
+ SG_ CSC05_BoardTemperatureSensor1 : 31|12@0+ (0.1,-40) [-40|125] "Celsius"  BMU
+
+BO_ 516 CSC04_TemperatureResponse: 6 CSC04
+ SG_ CSC04_CellTemperatureSensor2 : 11|12@0+ (0.1,-40) [-40|125] "Celsius"  BMU
+ SG_ CSC04_CellTemperatureSensor1 : 7|12@0+ (0.1,-40) [-40|125] "Celsius"  BMU
+ SG_ CSC04_BoardTemperatureSensor2 : 35|12@0+ (0.1,-40) [-40|125] "Celsius"  BMU
+ SG_ CSC04_BoardTemperatureSensor1 : 31|12@0+ (0.1,-40) [-40|125] "Celsius"  BMU
+
+BO_ 515 CSC03_TemperatureResponse: 6 CSC03
+ SG_ CSC03_CellTemperatureSensor2 : 11|12@0+ (0.1,-40) [-40|125] "Celsius"  BMU
+ SG_ CSC03_CellTemperatureSensor1 : 7|12@0+ (0.1,-40) [-40|125] "Celsius"  BMU
+ SG_ CSC03_BoardTemperatureSensor2 : 35|12@0+ (0.1,-40) [-40|125] "Celsius"  BMU
+ SG_ CSC03_BoardTemperatureSensor1 : 31|12@0+ (0.1,-40) [-40|125] "Celsius"  BMU
+
+BO_ 514 CSC02_TemperatureResponse: 8 CSC02
+ SG_ CSC02_StartTempID : 7|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ CSC02_StartIdPlus3Temp : 53|14@0+ (1,0) [-40|125] "Celsius"  BMU
+ SG_ CSC02_StartIdPlus2Temp : 35|14@0+ (1,0) [-40|125] "Celsius"  BMU
+ SG_ CSC02_StartIdPlus1Temp : 17|14@0+ (1,0) [-40|125] "Celsius"  BMU
+ SG_ CSC02_StartIdPlus0Temp : 15|14@0+ (1,0) [-40|125] "Celsius"  BMU
+
+BO_ 513 CSC01_TemperatureResponse: 8 CSC01
+ SG_ CSC01_StartTempID : 7|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ CSC01_StartIdPlus3Temp : 53|14@0+ (1,0) [0|16383] "Celsius"  BMU
+ SG_ CSC01_StartIdPlus2Temp : 35|14@0+ (1,0) [0|16383] "Celsius"  BMU
+ SG_ CSC01_StartIdPlus1Temp : 17|14@0+ (1,0) [0|16383] "Celsius"  BMU
+ SG_ CSC01_StartIdPlus0Temp : 15|14@0+ (1,0) [0|16383] "Celsius"  BMU
+
+BO_ 1607 CSC07_StateResponse: 1 CSC07
+ SG_ CSC07_State : 7|8@0+ (1,0) [0|0] ""  BMU
+
+BO_ 1606 CSC06_StateResponse: 1 CSC06
+ SG_ CSC06_State : 7|8@0+ (1,0) [0|0] ""  BMU
+
+BO_ 1605 CSC05_StateResponse: 1 CSC05
+ SG_ CSC05_State : 7|8@0+ (1,0) [0|0] ""  BMU
+
+BO_ 1604 CSC04_StateResponse: 1 CSC04
+ SG_ CSC04_State : 7|8@0+ (1,0) [0|0] ""  BMU
+
+BO_ 1603 CSC03_StateResponse: 1 CSC03
+ SG_ CSC03_State : 7|8@0+ (1,0) [0|0] ""  BMU
+
+BO_ 1602 CSC02_StateResponse: 1 CSC02
+ SG_ CSC02_State : 7|8@0+ (1,0) [0|0] ""  BMU
+
+BO_ 1601 CSC01_StateResponse: 1 CSC01
+ SG_ CSC01_State : 7|8@0+ (1,0) [0|0] ""  BMU
+
+BO_ 1543 CSC07_IdentificationResponse: 7 CSC07
+ SG_ CSC07_IdCP17 : 36|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC07_IdCP16 : 35|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC07_IdCP15 : 34|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC07_IdCP14 : 33|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC07_IdCP13 : 32|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC07_IdCP12 : 47|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC07_IdCP11 : 46|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC07_IdCP10 : 45|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC07_IdCP09 : 44|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC07_IdCP08 : 43|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC07_IdCP07 : 42|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC07_IdCP06 : 41|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC07_IdCP05 : 40|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC07_IdCP04 : 55|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC07_IdCP03 : 54|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC07_IdCP02 : 53|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC07_IdCP01 : 52|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC07_IdCP00 : 51|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC07_IdBTSP2 : 50|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC07_IdBTSP1 : 49|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC07_IdCTSP2 : 37|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC07_IdCTSP1 : 38|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC07_IdSerialNumber : 7|32@0+ (1,0) [0|0] ""  BMU
+
+BO_ 1542 CSC06_IdentificationResponse: 7 CSC06
+ SG_ CSC06_IdCP17 : 36|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC06_IdCP16 : 35|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC06_IdCP15 : 34|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC06_IdCP14 : 33|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC06_IdCP13 : 32|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC06_IdCP12 : 47|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC06_IdCP11 : 46|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC06_IdCP10 : 45|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC06_IdCP09 : 44|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC06_IdCP08 : 43|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC06_IdCP07 : 42|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC06_IdCP06 : 41|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC06_IdCP05 : 40|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC06_IdCP04 : 55|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC06_IdCP03 : 54|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC06_IdCP02 : 53|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC06_IdCP01 : 52|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC06_IdCP00 : 51|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC06_IdBTSP2 : 50|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC06_IdBTSP1 : 49|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC06_IdCTSP2 : 37|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC06_IdCTSP1 : 38|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC06_IdSerialNumber : 7|32@0+ (1,0) [0|0] ""  BMU
+
+BO_ 1541 CSC05_IdentificationResponse: 7 CSC05
+ SG_ CSC05_IdCP17 : 36|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC05_IdCP16 : 35|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC05_IdCP15 : 34|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC05_IdCP14 : 33|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC05_IdCP13 : 32|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC05_IdCP12 : 47|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC05_IdCP11 : 46|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC05_IdCP10 : 45|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC05_IdCP09 : 44|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC05_IdCP08 : 43|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC05_IdCP07 : 42|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC05_IdCP06 : 41|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC05_IdCP05 : 40|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC05_IdCP04 : 55|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC05_IdCP03 : 54|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC05_IdCP02 : 53|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC05_IdCP01 : 52|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC05_IdCP00 : 51|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC05_IdBTSP2 : 50|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC05_IdBTSP1 : 49|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC05_IdCTSP2 : 37|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC05_IdCTSP1 : 38|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC05_IdSerialNumber : 7|32@0+ (1,0) [0|0] ""  BMU
+
+BO_ 1540 CSC04_IdentificationResponse: 7 CSC04
+ SG_ CSC04_IdCP17 : 36|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC04_IdCP16 : 35|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC04_IdCP15 : 34|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC04_IdCP14 : 33|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC04_IdCP13 : 32|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC04_IdCP12 : 47|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC04_IdCP11 : 46|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC04_IdCP10 : 45|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC04_IdCP09 : 44|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC04_IdCP08 : 43|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC04_IdCP07 : 42|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC04_IdCP06 : 41|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC04_IdCP05 : 40|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC04_IdCP04 : 55|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC04_IdCP03 : 54|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC04_IdCP02 : 53|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC04_IdCP01 : 52|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC04_IdCP00 : 51|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC04_IdBTSP2 : 50|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC04_IdBTSP1 : 49|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC04_IdCTSP2 : 37|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC04_IdCTSP1 : 38|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC04_IdSerialNumber : 7|32@0+ (1,0) [0|0] ""  BMU
+
+BO_ 1539 CSC03_IdentificationResponse: 7 CSC03
+ SG_ CSC03_IdCP17 : 36|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC03_IdCP16 : 35|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC03_IdCP15 : 34|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC03_IdCP14 : 33|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC03_IdCP13 : 32|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC03_IdCP12 : 47|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC03_IdCP11 : 46|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC03_IdCP10 : 45|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC03_IdCP09 : 44|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC03_IdCP08 : 43|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC03_IdCP07 : 42|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC03_IdCP06 : 41|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC03_IdCP05 : 40|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC03_IdCP04 : 55|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC03_IdCP03 : 54|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC03_IdCP02 : 53|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC03_IdCP01 : 52|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC03_IdCP00 : 51|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC03_IdBTSP2 : 50|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC03_IdBTSP1 : 49|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC03_IdCTSP2 : 37|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC03_IdCTSP1 : 38|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC03_IdSerialNumber : 7|32@0+ (1,0) [0|0] ""  BMU
+
+BO_ 1538 CSC02_IdentificationResponse: 7 CSC02
+ SG_ CSC02_IdCP17 : 36|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC02_IdCP16 : 35|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC02_IdCP15 : 34|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC02_IdCP14 : 33|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC02_IdCP13 : 32|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC02_IdCP12 : 47|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC02_IdCP11 : 46|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC02_IdCP10 : 45|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC02_IdCP09 : 44|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC02_IdCP08 : 43|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC02_IdCP07 : 42|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC02_IdCP06 : 41|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC02_IdCP05 : 40|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC02_IdCP04 : 55|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC02_IdCP03 : 54|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC02_IdCP02 : 53|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC02_IdCP01 : 52|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC02_IdCP00 : 51|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC02_IdBTSP2 : 50|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC02_IdBTSP1 : 49|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC02_IdCTSP2 : 37|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC02_IdCTSP1 : 38|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC02_IdSerialNumber : 7|32@0+ (1,0) [0|0] ""  BMU
+
+BO_ 1537 CSC01_IdentificationResponse: 7 CSC01
+ SG_ CSC01_IdCP17 : 36|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC01_IdCP16 : 35|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC01_IdCP15 : 34|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC01_IdCP14 : 33|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC01_IdCP13 : 32|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC01_IdCP12 : 47|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC01_IdCP11 : 46|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC01_IdCP10 : 45|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC01_IdCP09 : 44|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC01_IdCP08 : 43|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC01_IdCP07 : 42|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC01_IdCP06 : 41|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC01_IdCP05 : 40|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC01_IdCP04 : 55|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC01_IdCP03 : 54|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC01_IdCP02 : 53|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC01_IdCP01 : 52|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC01_IdCP00 : 51|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC01_IdBTSP2 : 50|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC01_IdBTSP1 : 49|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC01_IdCTSP2 : 37|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC01_IdCTSP1 : 38|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC01_IdSerialNumber : 7|32@0+ (1,0) [0|0] ""  BMU
+
+BO_ 1031 CSC07_FaultResponse: 8 CSC07
+ SG_ CSC07_FaultC2TTE : 23|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CSC07_FaultC1TTE : 8|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CSC07_FaultADCOM : 28|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_FaultTSC2E : 13|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_FaultTSC1E : 14|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_FaultTSB2E : 9|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_FaultTSB1E : 10|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_FaultSDS2 : 3|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_FaultSDS1 : 4|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_FaultSDM : 5|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_FaultHVS2 : 1|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_FaultHVS1 : 2|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_FaultDFV : 30|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_FaultDFT : 31|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_FaultCSCI : 7|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_FaultCS17 : 27|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC07_FaultCS16 : 25|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC07_FaultCS15 : 39|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC07_FaultCS14 : 37|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC07_FaultCS13 : 35|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC07_FaultCS12 : 33|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC07_FaultCS11 : 47|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC07_FaultCS10 : 45|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC07_FaultCS09 : 43|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC07_FaultCS08 : 41|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC07_FaultCS07 : 55|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC07_FaultCS06 : 53|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC07_FaultCS05 : 51|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC07_FaultCS04 : 49|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC07_FaultCS03 : 63|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC07_FaultCS02 : 61|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC07_FaultCS01 : 59|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC07_FaultCS00 : 57|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC07_FaultCRC : 6|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_FaultB2TTE : 11|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_FaultB1TTE : 12|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_FaultADRES : 15|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_FaultADCRC : 29|1@0+ (1,0) [0|1] ""  BMU
+
+BO_ 1030 CSC06_FaultResponse: 8 CSC06
+ SG_ CSC06_FaultC2TTE : 23|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CSC06_FaultC1TTE : 8|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CSC06_FaultADCOM : 28|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_FaultTSC2E : 13|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_FaultTSC1E : 14|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_FaultTSB2E : 9|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_FaultTSB1E : 10|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_FaultSDS2 : 3|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_FaultSDS1 : 4|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_FaultSDM : 5|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_FaultHVS2 : 1|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_FaultHVS1 : 2|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_FaultDFV : 30|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_FaultDFT : 31|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_FaultCSCI : 7|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_FaultCS17 : 27|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC06_FaultCS16 : 25|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC06_FaultCS15 : 39|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC06_FaultCS14 : 37|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC06_FaultCS13 : 35|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC06_FaultCS12 : 33|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC06_FaultCS11 : 47|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC06_FaultCS10 : 45|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC06_FaultCS09 : 43|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC06_FaultCS08 : 41|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC06_FaultCS07 : 55|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC06_FaultCS06 : 53|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC06_FaultCS05 : 51|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC06_FaultCS04 : 49|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC06_FaultCS03 : 63|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC06_FaultCS02 : 61|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC06_FaultCS01 : 59|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC06_FaultCS00 : 57|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC06_FaultCRC : 6|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_FaultB2TTE : 11|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_FaultB1TTE : 12|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_FaultADRES : 15|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_FaultADCRC : 29|1@0+ (1,0) [0|1] ""  BMU
+
+BO_ 1029 CSC05_FaultResponse: 8 CSC05
+ SG_ CSC05_FaultC2TTE : 23|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CSC05_FaultC1TTE : 8|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CSC05_FaultADCOM : 28|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_FaultTSC2E : 13|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_FaultTSC1E : 14|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_FaultTSB2E : 9|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_FaultTSB1E : 10|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_FaultSDS2 : 3|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_FaultSDS1 : 4|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_FaultSDM : 5|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_FaultHVS2 : 1|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_FaultHVS1 : 2|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_FaultDFV : 30|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_FaultDFT : 31|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_FaultCSCI : 7|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_FaultCS17 : 27|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC05_FaultCS16 : 25|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC05_FaultCS15 : 39|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC05_FaultCS14 : 37|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC05_FaultCS13 : 35|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC05_FaultCS12 : 33|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC05_FaultCS11 : 47|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC05_FaultCS10 : 45|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC05_FaultCS09 : 43|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC05_FaultCS08 : 41|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC05_FaultCS07 : 55|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC05_FaultCS06 : 53|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC05_FaultCS05 : 51|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC05_FaultCS04 : 49|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC05_FaultCS03 : 63|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC05_FaultCS02 : 61|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC05_FaultCS01 : 59|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC05_FaultCS00 : 57|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC05_FaultCRC : 6|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_FaultB2TTE : 11|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_FaultB1TTE : 12|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_FaultADRES : 15|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_FaultADCRC : 29|1@0+ (1,0) [0|1] ""  BMU
+
+BO_ 1028 CSC04_FaultResponse: 8 CSC04
+ SG_ CSC04_FaultC2TTE : 23|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CSC04_FaultC1TTE : 8|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CSC04_FaultADCOM : 28|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_FaultTSC2E : 13|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_FaultTSC1E : 14|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_FaultTSB2E : 9|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_FaultTSB1E : 10|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_FaultSDS2 : 3|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_FaultSDS1 : 4|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_FaultSDM : 5|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_FaultHVS2 : 1|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_FaultHVS1 : 2|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_FaultDFV : 30|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_FaultDFT : 31|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_FaultCSCI : 7|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_FaultCS17 : 27|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC04_FaultCS16 : 25|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC04_FaultCS15 : 39|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC04_FaultCS14 : 37|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC04_FaultCS13 : 35|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC04_FaultCS12 : 33|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC04_FaultCS11 : 47|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC04_FaultCS10 : 45|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC04_FaultCS09 : 43|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC04_FaultCS08 : 41|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC04_FaultCS07 : 55|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC04_FaultCS06 : 53|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC04_FaultCS05 : 51|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC04_FaultCS04 : 49|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC04_FaultCS03 : 63|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC04_FaultCS02 : 61|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC04_FaultCS01 : 59|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC04_FaultCS00 : 57|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC04_FaultCRC : 6|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_FaultB2TTE : 11|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_FaultB1TTE : 12|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_FaultADRES : 15|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_FaultADCRC : 29|1@0+ (1,0) [0|1] ""  BMU
+
+BO_ 1027 CSC03_FaultResponse: 8 CSC03
+ SG_ CSC03_FaultC2TTE : 23|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CSC03_FaultC1TTE : 8|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CSC03_FaultADCOM : 28|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_FaultTSC2E : 13|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_FaultTSC1E : 14|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_FaultTSB2E : 9|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_FaultTSB1E : 10|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_FaultSDS2 : 3|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_FaultSDS1 : 4|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_FaultSDM : 5|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_FaultHVS2 : 1|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_FaultHVS1 : 2|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_FaultDFV : 30|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_FaultDFT : 31|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_FaultCSCI : 7|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_FaultCS17 : 27|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC03_FaultCS16 : 25|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC03_FaultCS15 : 39|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC03_FaultCS14 : 37|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC03_FaultCS13 : 35|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC03_FaultCS12 : 33|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC03_FaultCS11 : 47|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC03_FaultCS10 : 45|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC03_FaultCS09 : 43|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC03_FaultCS08 : 41|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC03_FaultCS07 : 55|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC03_FaultCS06 : 53|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC03_FaultCS05 : 51|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC03_FaultCS04 : 49|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC03_FaultCS03 : 63|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC03_FaultCS02 : 61|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC03_FaultCS01 : 59|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC03_FaultCS00 : 57|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC03_FaultCRC : 6|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_FaultB2TTE : 11|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_FaultB1TTE : 12|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_FaultADRES : 15|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_FaultADCRC : 29|1@0+ (1,0) [0|1] ""  BMU
+
+BO_ 1026 CSC02_FaultResponse: 8 CSC02
+ SG_ CSC02_FaultC2TTE : 23|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CSC02_FaultC1TTE : 8|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CSC02_FaultADCOM : 28|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_FaultTSC2E : 13|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_FaultTSC1E : 14|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_FaultTSB2E : 9|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_FaultTSB1E : 10|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_FaultSDS2 : 3|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_FaultSDS1 : 4|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_FaultSDM : 5|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_FaultHVS2 : 1|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_FaultHVS1 : 2|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_FaultDFV : 30|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_FaultDFT : 31|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_FaultCSCI : 7|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_FaultCS17 : 27|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC02_FaultCS16 : 25|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC02_FaultCS15 : 39|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC02_FaultCS14 : 37|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC02_FaultCS13 : 35|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC02_FaultCS12 : 33|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC02_FaultCS11 : 47|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC02_FaultCS10 : 45|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC02_FaultCS09 : 43|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC02_FaultCS08 : 41|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC02_FaultCS07 : 55|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC02_FaultCS06 : 53|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC02_FaultCS05 : 51|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC02_FaultCS04 : 49|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC02_FaultCS03 : 63|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC02_FaultCS02 : 61|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC02_FaultCS01 : 59|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC02_FaultCS00 : 57|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC02_FaultCRC : 6|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_FaultB2TTE : 11|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_FaultB1TTE : 12|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_FaultADRES : 15|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_FaultADCRC : 29|1@0+ (1,0) [0|1] ""  BMU
+
+BO_ 1025 CSC01_FaultResponse: 8 CSC01
+ SG_ CSC01_FaultC2TTE : 23|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CSC01_FaultC1TTE : 8|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CSC01_FaultADCOM : 28|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_FaultTSC2E : 13|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_FaultTSC1E : 14|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_FaultTSB2E : 9|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_FaultTSB1E : 10|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_FaultSDS2 : 3|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_FaultSDS1 : 4|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_FaultSDM : 5|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_FaultHVS2 : 1|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_FaultHVS1 : 2|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_FaultDFV : 30|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_FaultDFT : 31|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_FaultCSCI : 7|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_FaultCS17 : 27|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC01_FaultCS16 : 25|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC01_FaultCS15 : 39|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC01_FaultCS14 : 37|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC01_FaultCS13 : 35|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC01_FaultCS12 : 33|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC01_FaultCS11 : 47|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC01_FaultCS10 : 45|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC01_FaultCS09 : 43|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC01_FaultCS08 : 41|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC01_FaultCS07 : 55|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC01_FaultCS06 : 53|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC01_FaultCS05 : 51|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC01_FaultCS04 : 49|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC01_FaultCS03 : 63|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC01_FaultCS02 : 61|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC01_FaultCS01 : 59|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC01_FaultCS00 : 57|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC01_FaultCRC : 6|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_FaultB2TTE : 11|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_FaultB1TTE : 12|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_FaultADRES : 15|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_FaultADCRC : 29|1@0+ (1,0) [0|1] ""  BMU
+
+BO_ 775 CSC07_DischargeResponse: 3 CSC07
+ SG_ CSC07_DIP17 : 7|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_DIP16 : 6|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_DIP15 : 5|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_DIP14 : 4|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_DIP13 : 3|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_DIP12 : 2|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_DIP11 : 1|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_DIP10 : 0|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_DIP09 : 15|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_DIP08 : 14|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_DIP07 : 13|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_DIP06 : 12|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_DIP05 : 11|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_DIP04 : 10|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_DIP03 : 9|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_DIP02 : 8|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_DIP01 : 23|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC07_DIP00 : 22|1@0+ (1,0) [0|1] ""  BMU
+
+BO_ 774 CSC06_DischargeResponse: 3 CSC06
+ SG_ CSC06_DIP17 : 7|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_DIP16 : 6|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_DIP15 : 5|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_DIP14 : 4|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_DIP13 : 3|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_DIP12 : 2|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_DIP11 : 1|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_DIP10 : 0|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_DIP09 : 15|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_DIP08 : 14|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_DIP07 : 13|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_DIP06 : 12|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_DIP05 : 11|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_DIP04 : 10|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_DIP03 : 9|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_DIP02 : 8|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_DIP01 : 23|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC06_DIP00 : 22|1@0+ (1,0) [0|1] ""  BMU
+
+BO_ 773 CSC05_DischargeResponse: 3 CSC05
+ SG_ CSC05_DIP17 : 7|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_DIP16 : 6|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_DIP15 : 5|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_DIP14 : 4|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_DIP13 : 3|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_DIP12 : 2|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_DIP11 : 1|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_DIP10 : 0|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_DIP09 : 15|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_DIP08 : 14|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_DIP07 : 13|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_DIP06 : 12|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_DIP05 : 11|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_DIP04 : 10|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_DIP03 : 9|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_DIP02 : 8|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_DIP01 : 23|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC05_DIP00 : 22|1@0+ (1,0) [0|1] ""  BMU
+
+BO_ 772 CSC04_DischargeResponse: 3 CSC04
+ SG_ CSC04_DIP17 : 7|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_DIP16 : 6|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_DIP15 : 5|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_DIP14 : 4|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_DIP13 : 3|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_DIP12 : 2|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_DIP11 : 1|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_DIP10 : 0|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_DIP09 : 15|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_DIP08 : 14|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_DIP07 : 13|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_DIP06 : 12|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_DIP05 : 11|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_DIP04 : 10|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_DIP03 : 9|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_DIP02 : 8|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_DIP01 : 23|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC04_DIP00 : 22|1@0+ (1,0) [0|1] ""  BMU
+
+BO_ 771 CSC03_DischargeResponse: 3 CSC03
+ SG_ CSC03_DIP17 : 7|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_DIP16 : 6|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_DIP15 : 5|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_DIP14 : 4|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_DIP13 : 3|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_DIP12 : 2|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_DIP11 : 1|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_DIP10 : 0|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_DIP09 : 15|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_DIP08 : 14|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_DIP07 : 13|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_DIP06 : 12|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_DIP05 : 11|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_DIP04 : 10|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_DIP03 : 9|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_DIP02 : 8|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_DIP01 : 23|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC03_DIP00 : 22|1@0+ (1,0) [0|1] ""  BMU
+
+BO_ 770 CSC02_DischargeResponse: 3 CSC02
+ SG_ CSC02_DIP17 : 7|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_DIP16 : 6|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_DIP15 : 5|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_DIP14 : 4|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_DIP13 : 3|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_DIP12 : 2|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_DIP11 : 1|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_DIP10 : 0|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_DIP09 : 15|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_DIP08 : 14|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_DIP07 : 13|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_DIP06 : 12|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_DIP05 : 11|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_DIP04 : 10|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_DIP03 : 9|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_DIP02 : 8|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_DIP01 : 23|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC02_DIP00 : 22|1@0+ (1,0) [0|1] ""  BMU
+
+BO_ 769 CSC01_DischargeResponse: 3 CSC01
+ SG_ CSC01_DIP17 : 7|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_DIP16 : 6|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_DIP15 : 5|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_DIP14 : 4|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_DIP13 : 3|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_DIP12 : 2|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_DIP11 : 1|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_DIP10 : 0|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_DIP09 : 15|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_DIP08 : 14|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_DIP07 : 13|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_DIP06 : 12|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_DIP05 : 11|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_DIP04 : 10|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_DIP03 : 9|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_DIP02 : 8|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_DIP01 : 23|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC01_DIP00 : 22|1@0+ (1,0) [0|1] ""  BMU
+
+BO_ 263 CSC07_CellVoltageResponse: 8 CSC07
+ SG_ CSC07_StartCellIdPlus3Voltage : 53|14@0+ (0.305,0) [0|4996.815] ""  BMU
+ SG_ CSC07_StartCellIdPlus2Voltage : 35|14@0+ (0.305,0) [0|4996.815] ""  BMU
+ SG_ CSC07_StartCellIdPlus1Voltage : 17|14@0+ (0.305,0) [0|4996.815] ""  BMU
+ SG_ CSC07_StartCellIdPlus0Voltage : 15|14@0+ (0.305,0) [0|4996.815] ""  BMU
+ SG_ CSC07_StartCellID : 7|8@0+ (1,0) [0|255] ""  BMU
+
+BO_ 262 CSC06_CellVoltageResponse: 8 CSC06
+ SG_ CSC06_StartCellIdPlus3Voltage : 53|14@0+ (0.305,0) [0|4996.815] ""  BMU
+ SG_ CSC06_StartCellIdPlus2Voltage : 35|14@0+ (0.305,0) [0|4996.815] ""  BMU
+ SG_ CSC06_StartCellIdPlus1Voltage : 17|14@0+ (0.305,0) [0|4996.815] ""  BMU
+ SG_ CSC06_StartCellIdPlus0Voltage : 15|14@0+ (0.305,0) [0|4996.815] ""  BMU
+ SG_ CSC06_StartCellID : 7|8@0+ (1,0) [0|255] ""  BMU
+
+BO_ 261 CSC05_CellVoltageResponse: 8 CSC05
+ SG_ CSC05_StartCellIdPlus3Voltage : 53|14@0+ (0.305,0) [0|4996.815] ""  BMU
+ SG_ CSC05_StartCellIdPlus2Voltage : 35|14@0+ (0.305,0) [0|4996.815] ""  BMU
+ SG_ CSC05_StartCellIdPlus1Voltage : 17|14@0+ (0.305,0) [0|4996.815] ""  BMU
+ SG_ CSC05_StartCellIdPlus0Voltage : 15|14@0+ (0.305,0) [0|4996.815] ""  BMU
+ SG_ CSC05_StartCellID : 7|8@0+ (1,0) [0|255] ""  BMU
+
+BO_ 260 CSC04_CellVoltageResponse: 8 CSC04
+ SG_ CSC04_StartCellIdPlus3Voltage : 53|14@0+ (0.305,0) [0|4996.815] ""  BMU
+ SG_ CSC04_StartCellIdPlus2Voltage : 35|14@0+ (0.305,0) [0|4996.815] ""  BMU
+ SG_ CSC04_StartCellIdPlus1Voltage : 17|14@0+ (0.305,0) [0|4996.815] ""  BMU
+ SG_ CSC04_StartCellIdPlus0Voltage : 15|14@0+ (0.305,0) [0|4996.815] ""  BMU
+ SG_ CSC04_StartCellID : 7|8@0+ (1,0) [0|255] ""  BMU
+
+BO_ 259 CSC03_CellVoltageResponse: 8 CSC03
+ SG_ CSC03_StartCellIdPlus3Voltage : 53|14@0+ (0.305,0) [0|4996.815] ""  BMU
+ SG_ CSC03_StartCellIdPlus2Voltage : 35|14@0+ (0.305,0) [0|4996.815] ""  BMU
+ SG_ CSC03_StartCellIdPlus1Voltage : 17|14@0+ (0.305,0) [0|4996.815] ""  BMU
+ SG_ CSC03_StartCellIdPlus0Voltage : 15|14@0+ (0.305,0) [0|4996.815] ""  BMU
+ SG_ CSC03_StartCellID : 7|8@0+ (1,0) [0|255] ""  BMU
+
+BO_ 258 CSC02_CellVoltageResponse: 8 CSC02
+ SG_ CSC02_StartCellIdPlus3Voltage : 53|14@0+ (0.305,0) [0|4996.815] "mV"  BMU
+ SG_ CSC02_StartCellIdPlus2Voltage : 35|14@0+ (0.305,0) [0|4996.815] "mV"  BMU
+ SG_ CSC02_StartCellIdPlus1Voltage : 17|14@0+ (0.305,0) [0|4996.815] "mV"  BMU
+ SG_ CSC02_StartCellIdPlus0Voltage : 15|14@0+ (0.305,0) [0|4996.815] "mV"  BMU
+ SG_ CSC02_StartCellID : 7|8@0+ (1,0) [0|255] ""  BMU
+
+BO_ 257 CSC01_CellVoltageResponse: 8 CSC01
+ SG_ CSC01_StartCellIdPlus3Voltage : 53|14@0+ (0.305,0) [0|4996.815] "mV"  BMU
+ SG_ CSC01_StartCellIdPlus2Voltage : 35|14@0+ (0.305,0) [0|4996.815] "mV"  BMU
+ SG_ CSC01_StartCellIdPlus1Voltage : 17|14@0+ (0.305,0) [0|4996.815] "mV"  BMU
+ SG_ CSC01_StartCellIdPlus0Voltage : 15|14@0+ (0.305,0) [0|4996.815] "mV"  BMU
+ SG_ CSC01_StartCellID : 7|8@0+ (1,0) [0|255] ""  BMU
+
+BO_ 128 BMURequestCSCIdentification: 8 BMU
+ SG_ BMU_IdBTSP2 : 57|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_IdBTSP1 : 58|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_IdCP00 : 59|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_IdCP01 : 60|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_IdCP02 : 61|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_IdCP03 : 62|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_IdCP04 : 63|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_IdCP05 : 48|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_IdCP06 : 49|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_IdCP07 : 50|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_IdCP08 : 51|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_IdCP09 : 52|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_IdCP10 : 53|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_IdCP11 : 54|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_IdCP12 : 55|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_IdCP13 : 40|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_IdCP14 : 41|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_IdCP15 : 42|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_IdCP16 : 43|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_IdCP17 : 44|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_IdCTSP2 : 33|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_IdCTSP1 : 34|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_Identification_CSCId : 39|5@0+ (1,0) [0|31] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_IdSerialNumber : 7|32@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+
+BO_ 64 BMURequestCSCDischarge: 8 BMU
+ SG_ BMU_DischargeFloorType : 35|1@0+ (1,0) [0|1] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_DischargeBoardTempCeiling : 51|12@0+ (0.1,-40) [-40|125] "Celsius"  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_DischargeCellTempCeiling : 47|12@0+ (0.1,-40) [-40|125] "Celsius"  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_DischargeVoltageFloor : 31|12@0+ (0.976,1000) [1000|4996.72] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_DC17 : 1|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_DC16 : 0|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_DC15 : 15|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_DC14 : 14|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_DC13 : 13|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_DC12 : 12|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_DC11 : 11|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_DC10 : 10|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_DC09 : 9|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_DC08 : 8|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_DC07 : 23|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_DC06 : 22|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_DC05 : 21|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_DC04 : 20|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_DC03 : 19|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_DC02 : 18|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_DC01 : 17|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_DC00 : 16|1@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_Discharge_CSCId : 7|5@0+ (1,0) [0|31] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+
+BO_ 96 BMURequestCSCControl: 1 BMU
+ SG_ BMU_ControlCommandId : 2|3@0+ (1,0) [0|0] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_Control_CSCId : 7|5@0+ (1,0) [0|31] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+
+BO_ 32 BMURequestCSCData: 1 BMU
+ SG_ BMU_DataRequestId : 2|3@0+ (1,0) [0|7] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+ SG_ BMU_Data_CSCId : 7|5@0+ (1,0) [0|31] ""  CSC07,CSC06,CSC05,CSC04,CSC03,CSC02,CSC01,CSC00
+
+BO_ 1600 CSC00_StateResponse: 1 CSC00
+ SG_ CSC00_State : 7|8@0+ (1,0) [0|0] ""  BMU
+
+BO_ 1536 CSC00_IdentificationResponse: 7 CSC00
+ SG_ CSC00_IdCP17 : 36|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC00_IdCP16 : 35|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC00_IdCP15 : 34|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC00_IdCP14 : 33|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC00_IdCP13 : 32|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC00_IdCP12 : 47|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC00_IdCP11 : 46|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC00_IdCP10 : 45|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC00_IdCP09 : 44|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC00_IdCP08 : 43|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC00_IdCP07 : 42|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC00_IdCP06 : 41|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC00_IdCP05 : 40|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC00_IdCP04 : 55|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC00_IdCP03 : 54|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC00_IdCP02 : 53|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC00_IdCP01 : 52|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC00_IdCP00 : 51|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC00_IdBTSP2 : 50|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC00_IdBTSP1 : 49|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC00_IdCTSP2 : 37|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC00_IdCTSP1 : 38|1@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC00_IdSerialNumber : 7|32@0+ (1,0) [0|0] ""  BMU
+
+BO_ 1280 CSC00_VersionResponse: 4 CSC00
+ SG_ CSC00_VersionSoftwareRevision : 31|8@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC00_VersionSoftwareMinor : 23|8@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC00_VersionSoftwareMajor : 15|8@0+ (1,0) [0|0] ""  BMU
+ SG_ CSC00_VersionHardware : 7|8@0+ (1,0) [0|0] ""  BMU
+
+BO_ 1024 CSC00_FaultResponse: 8 CSC00
+ SG_ CSC00_FaultC2TTE : 23|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CSC00_FaultC1TTE : 8|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CSC00_FaultADCOM : 28|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_FaultTSC2E : 13|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_FaultTSC1E : 14|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_FaultTSB2E : 9|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_FaultTSB1E : 10|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_FaultSDS2 : 3|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_FaultSDS1 : 4|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_FaultSDM : 5|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_FaultHVS2 : 1|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_FaultHVS1 : 2|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_FaultDFV : 30|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_FaultDFT : 31|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_FaultCSCI : 7|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_FaultCS17 : 27|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC00_FaultCS16 : 25|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC00_FaultCS15 : 39|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC00_FaultCS14 : 37|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC00_FaultCS13 : 35|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC00_FaultCS12 : 33|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC00_FaultCS11 : 47|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC00_FaultCS10 : 45|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC00_FaultCS09 : 43|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC00_FaultCS08 : 41|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC00_FaultCS07 : 55|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC00_FaultCS06 : 53|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC00_FaultCS05 : 51|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC00_FaultCS04 : 49|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC00_FaultCS03 : 63|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC00_FaultCS02 : 61|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC00_FaultCS01 : 59|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC00_FaultCS00 : 57|2@0+ (1,0) [0|3] ""  BMU
+ SG_ CSC00_FaultCRC : 6|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_FaultB2TTE : 11|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_FaultB1TTE : 12|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_FaultADRES : 15|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_FaultADCRC : 29|1@0+ (1,0) [0|1] ""  BMU
+
+BO_ 768 CSC00_DischargeResponse: 3 CSC00
+ SG_ CSC00_DIP17 : 7|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_DIP16 : 6|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_DIP15 : 5|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_DIP14 : 4|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_DIP13 : 3|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_DIP12 : 2|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_DIP11 : 1|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_DIP10 : 0|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_DIP09 : 15|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_DIP08 : 14|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_DIP07 : 13|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_DIP06 : 12|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_DIP05 : 11|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_DIP04 : 10|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_DIP03 : 9|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_DIP02 : 8|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_DIP01 : 23|1@0+ (1,0) [0|1] ""  BMU
+ SG_ CSC00_DIP00 : 22|1@0+ (1,0) [0|1] ""  BMU
+
+BO_ 512 CSC00_TemperatureResponse: 8 CSC00
+ SG_ CSC00_StartTempID : 7|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ CSC00_StartIdPlus3Temp : 53|14@0+ (1,0) [0|16383] "Celsius"  BMU
+ SG_ CSC00_StartIdPlus2Temp : 35|14@0+ (1,0) [0|16383] "Celsius"  BMU
+ SG_ CSC00_StartIdPlus1Temp : 17|14@0+ (1,0) [0|16383] "Celsius"  BMU
+ SG_ CSC00_StartIdPlus0Temp : 15|14@0+ (1,0) [0|16383] "Celsius"  BMU
+
+BO_ 256 CSC00_CellVoltageResponse: 8 CSC00
+ SG_ CSC00_StartCellIdPlus3Voltage : 53|14@0+ (0.305,0) [0|4996.815] "mV"  BMU
+ SG_ CSC00_StartCellIdPlus2Voltage : 35|14@0+ (0.305,0) [0|4996.815] "mV"  BMU
+ SG_ CSC00_StartCellIdPlus1Voltage : 17|14@0+ (0.305,0) [0|4996.815] "mV"  BMU
+ SG_ CSC00_StartCellIdPlus0Voltage : 15|14@0+ (0.305,0) [0|4996.815] "mV"  BMU
+ SG_ CSC00_StartCellID : 7|8@0+ (1,0) [0|255] ""  BMU
+
+
+
+CM_ SG_ 343 CSC07_ModuleVoltage2 "Module Voltage as measured by micro.  ";
+CM_ SG_ 343 CSC07_ModuleVoltage1 "Module Voltage as measured by an AD7280.  ";
+CM_ SG_ 342 CSC06_ModuleVoltage2 "Module Voltage as measured by micro.";
+CM_ SG_ 342 CSC06_ModuleVoltage1 "Module Voltage as measured by an AD7280.  ";
+CM_ SG_ 341 CSC05_ModuleVoltage2 "Module Voltage as measured by micro.";
+CM_ SG_ 341 CSC05_ModuleVoltage1 "Module Voltage as measured by an AD7280.  ";
+CM_ SG_ 340 CSC04_ModuleVoltage2 "Module Voltage as measured by micro.";
+CM_ SG_ 340 CSC04_ModuleVoltage1 "Module Voltage as measured by an AD7280.  ";
+CM_ SG_ 339 CSC03_ModuleVoltage2 "Module Voltage as measured by micro.";
+CM_ SG_ 339 CSC03_ModuleVoltage1 "Module Voltage as measured by an AD7280.  ";
+CM_ SG_ 338 CSC02_ModuleVoltage2 "Module Voltage as measured by micro.";
+CM_ SG_ 338 CSC02_ModuleVoltage1 "Module Voltage as measured by an AD7280.  ";
+CM_ SG_ 337 CSC01_ModuleVoltage2 "Module Voltage as measured by micro.";
+CM_ SG_ 337 CSC01_ModuleVoltage1 "Module Voltage as measured by an AD7280.  ";
+CM_ SG_ 336 CSC00_ModuleVoltage2 "Module Voltage as measured by micro.";
+CM_ SG_ 336 CSC00_ModuleVoltage1 "Module Voltage as measured by an AD7280.  ";
+CM_ BO_ 1287 "The Version Response provides the BMU the version information of the CSC.";
+CM_ BO_ 1286 "The Version Response provides the BMU the version information of the CSC.";
+CM_ BO_ 1285 "The Version Response provides the BMU the version information of the CSC.";
+CM_ BO_ 1284 "The Version Response provides the BMU the version information of the CSC.";
+CM_ BO_ 1283 "The Version Response provides the BMU the version information of the CSC.";
+CM_ BO_ 1282 "The Version Response provides the BMU the version information of the CSC.";
+CM_ BO_ 1281 "The Version Response provides the BMU the version information of the CSC.";
+CM_ BO_ 519 "The Temperature Response message shall be sent by the CSC when a Data Request - Temperature message is received from the BMU. ";
+CM_ SG_ 519 CSC07_CellTemperatureSensor2 "Reported CSC cell temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ SG_ 519 CSC07_CellTemperatureSensor1 "Reported CSC cell temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ SG_ 519 CSC07_BoardTemperatureSensor2 "Reported CSC board temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ SG_ 519 CSC07_BoardTemperatureSensor1 "Reported CSC board temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ BO_ 518 "The Temperature Response message shall be sent by the CSC when a Data Request - Temperature message is received from the BMU. ";
+CM_ SG_ 518 CSC06_CellTemperatureSensor2 "Reported CSC cell temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ SG_ 518 CSC06_CellTemperatureSensor1 "Reported CSC cell temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ SG_ 518 CSC06_BoardTemperatureSensor2 "Reported CSC board temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ SG_ 518 CSC06_BoardTemperatureSensor1 "Reported CSC board temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ BO_ 517 "The Temperature Response message shall be sent by the CSC when a Data Request - Temperature message is received from the BMU. ";
+CM_ SG_ 517 CSC05_CellTemperatureSensor2 "Reported CSC cell temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ SG_ 517 CSC05_CellTemperatureSensor1 "Reported CSC cell temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ SG_ 517 CSC05_BoardTemperatureSensor2 "Reported CSC board temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ SG_ 517 CSC05_BoardTemperatureSensor1 "Reported CSC board temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ BO_ 516 "The Temperature Response message shall be sent by the CSC when a Data Request - Temperature message is received from the BMU. ";
+CM_ SG_ 516 CSC04_CellTemperatureSensor2 "Reported CSC cell temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ SG_ 516 CSC04_CellTemperatureSensor1 "Reported CSC cell temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ SG_ 516 CSC04_BoardTemperatureSensor2 "Reported CSC board temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ SG_ 516 CSC04_BoardTemperatureSensor1 "Reported CSC board temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ BO_ 515 "The Temperature Response message shall be sent by the CSC when a Data Request - Temperature message is received from the BMU. ";
+CM_ SG_ 515 CSC03_CellTemperatureSensor2 "Reported CSC cell temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ SG_ 515 CSC03_CellTemperatureSensor1 "Reported CSC board temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ SG_ 515 CSC03_BoardTemperatureSensor2 "Reported CSC board temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ SG_ 515 CSC03_BoardTemperatureSensor1 "Reported CSC board temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ BO_ 514 "The Temperature Response message shall be sent by the CSC when a Data Request - Temperature message is received from the BMU. ";
+CM_ SG_ 514 CSC02_StartTempID "Start Cell ID: The 4-bit cell number of the first cell voltage reported.   Expected values based up to 18 cells per CSC are: 0, 4, 8, 12 to report all cells. ";
+CM_ SG_ 514 CSC02_StartIdPlus3Temp "Reported CSC cell temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ SG_ 514 CSC02_StartIdPlus2Temp "Reported CSC cell temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ SG_ 514 CSC02_StartIdPlus1Temp "Reported CSC board temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ SG_ 514 CSC02_StartIdPlus0Temp "Reported CSC board temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ BO_ 513 "The Temperature Response message shall be sent by the CSC when a Data Request - Temperature message is received from the BMU. ";
+CM_ SG_ 513 CSC01_StartTempID "Start Cell ID: The 4-bit cell number of the first cell voltage reported.   Expected values based up to 18 cells per CSC are: 0, 4, 8, 12 to report all cells. ";
+CM_ SG_ 513 CSC01_StartIdPlus3Temp "Reported CSC cell temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ SG_ 513 CSC01_StartIdPlus2Temp "Reported CSC cell temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ SG_ 513 CSC01_StartIdPlus1Temp "Reported CSC board temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ SG_ 513 CSC01_StartIdPlus0Temp "Reported CSC board temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ BO_ 1607 "The State Response message returns the current state of operation of the CSC, Running, Paused, etc.  ";
+CM_ BO_ 1606 "The State Response message returns the current state of operation of the CSC, Running, Paused, etc.  ";
+CM_ BO_ 1605 "The State Response message returns the current state of operation of the CSC, Running, Paused, etc.  ";
+CM_ BO_ 1604 "The State Response message returns the current state of operation of the CSC, Running, Paused, etc.  ";
+CM_ BO_ 1603 "The State Response message returns the current state of operation of the CSC, Running, Paused, etc.  ";
+CM_ BO_ 1602 "The State Response message returns the current state of operation of the CSC, Running, Paused, etc.  ";
+CM_ BO_ 1601 "The State Response message returns the current state of operation of the CSC, Running, Paused, etc.  ";
+CM_ BO_ 1543 "The Identification Response message confirms to the BMU that the CSC identification completed successfully and the cells connected to a CSC was correctly configured.";
+CM_ SG_ 1543 CSC07_IdCP17 "Cell #n Populated";
+CM_ SG_ 1543 CSC07_IdCP16 "Cell #n Populated";
+CM_ SG_ 1543 CSC07_IdCP15 "Cell #n Populated";
+CM_ SG_ 1543 CSC07_IdCP14 "Cell #n Populated";
+CM_ SG_ 1543 CSC07_IdCP13 "Cell #n Populated";
+CM_ SG_ 1543 CSC07_IdCP12 "Cell #n Populated";
+CM_ SG_ 1543 CSC07_IdCP11 "Cell #n Populated";
+CM_ SG_ 1543 CSC07_IdCP10 "Cell #n Populated";
+CM_ SG_ 1543 CSC07_IdCP09 "Cell #n Populated";
+CM_ SG_ 1543 CSC07_IdCP08 "Cell #n Populated";
+CM_ SG_ 1543 CSC07_IdCP07 "Cell #n Populated";
+CM_ SG_ 1543 CSC07_IdCP06 "Cell #n Populated";
+CM_ SG_ 1543 CSC07_IdCP05 "Cell #n Populated";
+CM_ SG_ 1543 CSC07_IdCP04 "Cell #n Populated";
+CM_ SG_ 1543 CSC07_IdCP03 "Cell #n Populated";
+CM_ SG_ 1543 CSC07_IdCP02 "Cell #n Populated";
+CM_ SG_ 1543 CSC07_IdCP01 "Cell #n Populated";
+CM_ SG_ 1543 CSC07_IdCP00 "Cell x populated";
+CM_ SG_ 1543 CSC07_IdBTSP2 "Board Temperature Sensor #2 Present";
+CM_ SG_ 1543 CSC07_IdBTSP1 "Board Temperature Sensor #1 Present";
+CM_ SG_ 1543 CSC07_IdCTSP2 "Cell Temperature Sensor #2 Present";
+CM_ SG_ 1543 CSC07_IdCTSP1 "Cell Temperature Sensor #1 Present";
+CM_ SG_ 1543 CSC07_IdSerialNumber "The 32-bit identifier that uniquely identifies a particular CSC. ";
+CM_ BO_ 1542 "The Identification Response message confirms to the BMU that the CSC identification completed successfully and the cells connected to a CSC was correctly configured.";
+CM_ SG_ 1542 CSC06_IdCP17 "Cell #n Populated";
+CM_ SG_ 1542 CSC06_IdCP16 "Cell #n Populated";
+CM_ SG_ 1542 CSC06_IdCP15 "Cell #n Populated";
+CM_ SG_ 1542 CSC06_IdCP14 "Cell #n Populated";
+CM_ SG_ 1542 CSC06_IdCP13 "Cell #n Populated";
+CM_ SG_ 1542 CSC06_IdCP12 "Cell #n Populated";
+CM_ SG_ 1542 CSC06_IdCP11 "Cell #n Populated";
+CM_ SG_ 1542 CSC06_IdCP10 "Cell #n Populated";
+CM_ SG_ 1542 CSC06_IdCP09 "Cell #n Populated";
+CM_ SG_ 1542 CSC06_IdCP08 "Cell #n Populated";
+CM_ SG_ 1542 CSC06_IdCP07 "Cell #n Populated";
+CM_ SG_ 1542 CSC06_IdCP06 "Cell #n Populated";
+CM_ SG_ 1542 CSC06_IdCP05 "Cell #n Populated";
+CM_ SG_ 1542 CSC06_IdCP04 "Cell #n Populated";
+CM_ SG_ 1542 CSC06_IdCP03 "Cell #n Populated";
+CM_ SG_ 1542 CSC06_IdCP02 "Cell #n Populated";
+CM_ SG_ 1542 CSC06_IdCP01 "Cell #n Populated";
+CM_ SG_ 1542 CSC06_IdCP00 "Cell x populated";
+CM_ SG_ 1542 CSC06_IdBTSP2 "Board Temperature Sensor #2 Present";
+CM_ SG_ 1542 CSC06_IdBTSP1 "Board Temperature Sensor #1 Present";
+CM_ SG_ 1542 CSC06_IdCTSP2 "Cell Temperature Sensor #2 Present";
+CM_ SG_ 1542 CSC06_IdCTSP1 "Cell Temperature Sensor #1 Present";
+CM_ SG_ 1542 CSC06_IdSerialNumber "The 32-bit identifier that uniquely identifies a particular CSC. ";
+CM_ BO_ 1541 "The Identification Response message confirms to the BMU that the CSC identification completed successfully and the cells connected to a CSC was correctly configured.";
+CM_ SG_ 1541 CSC05_IdCP17 "Cell #n Populated";
+CM_ SG_ 1541 CSC05_IdCP16 "Cell #n Populated";
+CM_ SG_ 1541 CSC05_IdCP15 "Cell #n Populated";
+CM_ SG_ 1541 CSC05_IdCP14 "Cell #n Populated";
+CM_ SG_ 1541 CSC05_IdCP13 "Cell #n Populated";
+CM_ SG_ 1541 CSC05_IdCP12 "Cell #n Populated";
+CM_ SG_ 1541 CSC05_IdCP11 "Cell #n Populated";
+CM_ SG_ 1541 CSC05_IdCP10 "Cell #n Populated";
+CM_ SG_ 1541 CSC05_IdCP09 "Cell #n Populated";
+CM_ SG_ 1541 CSC05_IdCP08 "Cell #n Populated";
+CM_ SG_ 1541 CSC05_IdCP07 "Cell #n Populated";
+CM_ SG_ 1541 CSC05_IdCP06 "Cell #n Populated";
+CM_ SG_ 1541 CSC05_IdCP05 "Cell #n Populated";
+CM_ SG_ 1541 CSC05_IdCP04 "Cell #n Populated";
+CM_ SG_ 1541 CSC05_IdCP03 "Cell #n Populated";
+CM_ SG_ 1541 CSC05_IdCP02 "Cell #n Populated";
+CM_ SG_ 1541 CSC05_IdCP01 "Cell #n Populated";
+CM_ SG_ 1541 CSC05_IdCP00 "Cell x populated";
+CM_ SG_ 1541 CSC05_IdBTSP2 "Board Temperature Sensor #2 Present";
+CM_ SG_ 1541 CSC05_IdBTSP1 "Board Temperature Sensor #1 Present";
+CM_ SG_ 1541 CSC05_IdCTSP2 "Cell Temperature Sensor #2 Present";
+CM_ SG_ 1541 CSC05_IdCTSP1 "Cell Temperature Sensor #1 Present";
+CM_ SG_ 1541 CSC05_IdSerialNumber "The 32-bit identifier that uniquely identifies a particular CSC. ";
+CM_ BO_ 1540 "The Identification Response message confirms to the BMU that the CSC identification completed successfully and the cells connected to a CSC was correctly configured.";
+CM_ SG_ 1540 CSC04_IdCP17 "Cell #n Populated";
+CM_ SG_ 1540 CSC04_IdCP16 "Cell #n Populated";
+CM_ SG_ 1540 CSC04_IdCP15 "Cell #n Populated";
+CM_ SG_ 1540 CSC04_IdCP14 "Cell #n Populated";
+CM_ SG_ 1540 CSC04_IdCP13 "Cell #n Populated";
+CM_ SG_ 1540 CSC04_IdCP12 "Cell #n Populated";
+CM_ SG_ 1540 CSC04_IdCP11 "Cell #n Populated";
+CM_ SG_ 1540 CSC04_IdCP10 "Cell #n Populated";
+CM_ SG_ 1540 CSC04_IdCP09 "Cell #n Populated";
+CM_ SG_ 1540 CSC04_IdCP08 "Cell #n Populated";
+CM_ SG_ 1540 CSC04_IdCP07 "Cell #n Populated";
+CM_ SG_ 1540 CSC04_IdCP06 "Cell #n Populated";
+CM_ SG_ 1540 CSC04_IdCP05 "Cell #n Populated";
+CM_ SG_ 1540 CSC04_IdCP04 "Cell #n Populated";
+CM_ SG_ 1540 CSC04_IdCP03 "Cell #n Populated";
+CM_ SG_ 1540 CSC04_IdCP02 "Cell #n Populated";
+CM_ SG_ 1540 CSC04_IdCP01 "Cell #n Populated";
+CM_ SG_ 1540 CSC04_IdCP00 "Cell x populated";
+CM_ SG_ 1540 CSC04_IdBTSP2 "Board Temperature Sensor #2 Present";
+CM_ SG_ 1540 CSC04_IdBTSP1 "Board Temperature Sensor #1 Present";
+CM_ SG_ 1540 CSC04_IdCTSP2 "Cell Temperature Sensor #2 Present";
+CM_ SG_ 1540 CSC04_IdCTSP1 "Cell Temperature Sensor #1 Present";
+CM_ SG_ 1540 CSC04_IdSerialNumber "The 32-bit identifier that uniquely identifies a particular CSC. ";
+CM_ BO_ 1539 "The Identification Response message confirms to the BMU that the CSC identification completed successfully and the cells connected to a CSC was correctly configured.";
+CM_ SG_ 1539 CSC03_IdCP17 "Cell #n Populated";
+CM_ SG_ 1539 CSC03_IdCP16 "Cell #n Populated";
+CM_ SG_ 1539 CSC03_IdCP15 "Cell #n Populated";
+CM_ SG_ 1539 CSC03_IdCP14 "Cell #n Populated";
+CM_ SG_ 1539 CSC03_IdCP13 "Cell #n Populated";
+CM_ SG_ 1539 CSC03_IdCP12 "Cell #n Populated";
+CM_ SG_ 1539 CSC03_IdCP11 "Cell #n Populated";
+CM_ SG_ 1539 CSC03_IdCP10 "Cell #n Populated";
+CM_ SG_ 1539 CSC03_IdCP09 "Cell #n Populated";
+CM_ SG_ 1539 CSC03_IdCP08 "Cell #n Populated";
+CM_ SG_ 1539 CSC03_IdCP07 "Cell #n Populated";
+CM_ SG_ 1539 CSC03_IdCP06 "Cell #n Populated";
+CM_ SG_ 1539 CSC03_IdCP05 "Cell #n Populated";
+CM_ SG_ 1539 CSC03_IdCP04 "Cell #n Populated";
+CM_ SG_ 1539 CSC03_IdCP03 "Cell #n Populated";
+CM_ SG_ 1539 CSC03_IdCP02 "Cell #n Populated";
+CM_ SG_ 1539 CSC03_IdCP01 "Cell #n Populated";
+CM_ SG_ 1539 CSC03_IdCP00 "Cell x populated";
+CM_ SG_ 1539 CSC03_IdBTSP2 "Board Temperature Sensor #2 Present";
+CM_ SG_ 1539 CSC03_IdBTSP1 "Board Temperature Sensor #1 Present";
+CM_ SG_ 1539 CSC03_IdCTSP2 "Cell Temperature Sensor #2 Present";
+CM_ SG_ 1539 CSC03_IdCTSP1 "Cell Temperature Sensor #1 Present";
+CM_ SG_ 1539 CSC03_IdSerialNumber "The 32-bit identifier that uniquely identifies a particular CSC. ";
+CM_ BO_ 1538 "The Identification Response message confirms to the BMU that the CSC identification completed successfully and the cells connected to a CSC was correctly configured.";
+CM_ SG_ 1538 CSC02_IdCP17 "Cell #n Populated";
+CM_ SG_ 1538 CSC02_IdCP16 "Cell #n Populated";
+CM_ SG_ 1538 CSC02_IdCP15 "Cell #n Populated";
+CM_ SG_ 1538 CSC02_IdCP14 "Cell #n Populated";
+CM_ SG_ 1538 CSC02_IdCP13 "Cell #n Populated";
+CM_ SG_ 1538 CSC02_IdCP12 "Cell #n Populated";
+CM_ SG_ 1538 CSC02_IdCP11 "Cell #n Populated";
+CM_ SG_ 1538 CSC02_IdCP10 "Cell #n Populated";
+CM_ SG_ 1538 CSC02_IdCP09 "Cell #n Populated";
+CM_ SG_ 1538 CSC02_IdCP08 "Cell #n Populated";
+CM_ SG_ 1538 CSC02_IdCP07 "Cell #n Populated";
+CM_ SG_ 1538 CSC02_IdCP06 "Cell #n Populated";
+CM_ SG_ 1538 CSC02_IdCP05 "Cell #n Populated";
+CM_ SG_ 1538 CSC02_IdCP04 "Cell #n Populated";
+CM_ SG_ 1538 CSC02_IdCP03 "Cell #n Populated";
+CM_ SG_ 1538 CSC02_IdCP02 "Cell #n Populated";
+CM_ SG_ 1538 CSC02_IdCP01 "Cell #n Populated";
+CM_ SG_ 1538 CSC02_IdCP00 "Cell x populated";
+CM_ SG_ 1538 CSC02_IdBTSP2 "Board Temperature Sensor #2 Present";
+CM_ SG_ 1538 CSC02_IdBTSP1 "Board Temperature Sensor #1 Present";
+CM_ SG_ 1538 CSC02_IdCTSP2 "Cell Temperature Sensor #2 Present";
+CM_ SG_ 1538 CSC02_IdCTSP1 "Cell Temperature Sensor #1 Present";
+CM_ SG_ 1538 CSC02_IdSerialNumber "The 32-bit identifier that uniquely identifies a particular CSC. ";
+CM_ BO_ 1537 "The Identification Response message confirms to the BMU that the CSC identification completed successfully and the cells connected to a CSC was correctly configured.";
+CM_ SG_ 1537 CSC01_IdCP17 "Cell #n Populated";
+CM_ SG_ 1537 CSC01_IdCP16 "Cell #n Populated";
+CM_ SG_ 1537 CSC01_IdCP15 "Cell #n Populated";
+CM_ SG_ 1537 CSC01_IdCP14 "Cell #n Populated";
+CM_ SG_ 1537 CSC01_IdCP13 "Cell #n Populated";
+CM_ SG_ 1537 CSC01_IdCP12 "Cell #n Populated";
+CM_ SG_ 1537 CSC01_IdCP11 "Cell #n Populated";
+CM_ SG_ 1537 CSC01_IdCP10 "Cell #n Populated";
+CM_ SG_ 1537 CSC01_IdCP09 "Cell #n Populated";
+CM_ SG_ 1537 CSC01_IdCP08 "Cell #n Populated";
+CM_ SG_ 1537 CSC01_IdCP07 "Cell #n Populated";
+CM_ SG_ 1537 CSC01_IdCP06 "Cell #n Populated";
+CM_ SG_ 1537 CSC01_IdCP05 "Cell #n Populated";
+CM_ SG_ 1537 CSC01_IdCP04 "Cell #n Populated";
+CM_ SG_ 1537 CSC01_IdCP03 "Cell #n Populated";
+CM_ SG_ 1537 CSC01_IdCP02 "Cell #n Populated";
+CM_ SG_ 1537 CSC01_IdCP01 "Cell #n Populated";
+CM_ SG_ 1537 CSC01_IdCP00 "Cell x populated";
+CM_ SG_ 1537 CSC01_IdBTSP2 "Board Temperature Sensor #2 Present";
+CM_ SG_ 1537 CSC01_IdBTSP1 "Board Temperature Sensor #1 Present";
+CM_ SG_ 1537 CSC01_IdCTSP2 "Cell Temperature Sensor #2 Present";
+CM_ SG_ 1537 CSC01_IdCTSP1 "Cell Temperature Sensor #1 Present";
+CM_ SG_ 1537 CSC01_IdSerialNumber "The 32-bit identifier that uniquely identifies a particular CSC. ";
+CM_ BO_ 1031 "The Fault response is the primary way that the CSC communicates fault / error conditions detected to the BMU. It is sent on request of when fault is detected while processing another BMU request.";
+CM_ SG_ 1031 CSC07_FaultC2TTE "Cell Temperature 2 Table Error";
+CM_ SG_ 1031 CSC07_FaultC1TTE "Cell Temperature 1 Table Error";
+CM_ SG_ 1031 CSC07_FaultADCOM "Error communicating to AD7280 (i.e. SPI error)";
+CM_ SG_ 1031 CSC07_FaultTSC2E "Cell Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1031 CSC07_FaultTSC1E "Cell Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1031 CSC07_FaultTSB2E "Board Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1031 CSC07_FaultTSB1E "Board Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1031 CSC07_FaultSDS2 "AD7280 Self Diagnostic Slave #2 (self test voltage of AD7280 out of range)";
+CM_ SG_ 1031 CSC07_FaultSDS1 "AD7280 Self Diagnostic Slave #1 (self test voltage of AD7280 out of range)";
+CM_ SG_ 1031 CSC07_FaultSDM "AD7280 Self Diagnostic Master (self test voltage of AD7280 out of range), ";
+CM_ SG_ 1031 CSC07_FaultHVS2 "CSC High Voltage Side Power Supply Stage One (post 5V regulator) out of range";
+CM_ SG_ 1031 CSC07_FaultHVS1 "CSC High Voltage Side Power Supply Stage One (pre 5V regulator) out of range";
+CM_ SG_ 1031 CSC07_FaultDFV "Discharge Fault Temperature Ceiling violated in Autonomous Mode";
+CM_ SG_ 1031 CSC07_FaultDFT "Discharge Fault Voltage Floor violated in Autonomous Mode";
+CM_ SG_ 1031 CSC07_FaultCSCI "CSC Initialization Failure Detected.  This includes verification of PLL of clock and watchdog operation verification.";
+CM_ SG_ 1031 CSC07_FaultCS17 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1031 CSC07_FaultCS16 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1031 CSC07_FaultCS15 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1031 CSC07_FaultCS14 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1031 CSC07_FaultCS13 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1031 CSC07_FaultCS12 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1031 CSC07_FaultCS11 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1031 CSC07_FaultCS10 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1031 CSC07_FaultCS09 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1031 CSC07_FaultCS08 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1031 CSC07_FaultCS07 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1031 CSC07_FaultCS06 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1031 CSC07_FaultCS05 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1031 CSC07_FaultCS04 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1031 CSC07_FaultCS03 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1031 CSC07_FaultCS02 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1031 CSC07_FaultCS01 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1031 CSC07_FaultCS00 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1031 CSC07_FaultCRC "CSC Flash CRC is invalid";
+CM_ SG_ 1031 CSC07_FaultB2TTE "Board Temperature 2 Table Error: A/D count reported has no valid matching temperature in CSC lookup table.";
+CM_ SG_ 1031 CSC07_FaultB1TTE "Board Temperature 1 Table Error: A/D count reported has no valid matching temperature in CSC lookup table.";
+CM_ SG_ 1031 CSC07_FaultADRES "Error AD7280 (Master or Slaves) in reset or has reset";
+CM_ SG_ 1031 CSC07_FaultADCRC "Error detected in CRC received from AD7280";
+CM_ BO_ 1030 "The Fault response is the primary way that the CSC communicates fault / error conditions detected to the BMU. It is sent on request of when fault is detected while processing another BMU request.";
+CM_ SG_ 1030 CSC06_FaultC2TTE "Cell Temperature 2 Table Error";
+CM_ SG_ 1030 CSC06_FaultC1TTE "Cell Temperature 1 Table Error";
+CM_ SG_ 1030 CSC06_FaultADCOM "Error communicating to AD7280 (i.e. SPI error)";
+CM_ SG_ 1030 CSC06_FaultTSC2E "Cell Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1030 CSC06_FaultTSC1E "Cell Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1030 CSC06_FaultTSB2E "Board Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1030 CSC06_FaultTSB1E "Board Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1030 CSC06_FaultSDS2 "AD7280 Self Diagnostic Slave #2 (self test voltage of AD7280 out of range)";
+CM_ SG_ 1030 CSC06_FaultSDS1 "AD7280 Self Diagnostic Slave #1 (self test voltage of AD7280 out of range)";
+CM_ SG_ 1030 CSC06_FaultSDM "AD7280 Self Diagnostic Master (self test voltage of AD7280 out of range), ";
+CM_ SG_ 1030 CSC06_FaultHVS2 "CSC High Voltage Side Power Supply Stage One (post 5V regulator) out of range";
+CM_ SG_ 1030 CSC06_FaultHVS1 "CSC High Voltage Side Power Supply Stage One (pre 5V regulator) out of range";
+CM_ SG_ 1030 CSC06_FaultDFV "Discharge Fault Temperature Ceiling violated in Autonomous Mode";
+CM_ SG_ 1030 CSC06_FaultDFT "Discharge Fault Voltage Floor violated in Autonomous Mode";
+CM_ SG_ 1030 CSC06_FaultCSCI "CSC Initialization Failure Detected.  This includes verification of PLL of clock and watchdog operation verification.";
+CM_ SG_ 1030 CSC06_FaultCS17 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1030 CSC06_FaultCS16 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1030 CSC06_FaultCS15 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1030 CSC06_FaultCS14 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1030 CSC06_FaultCS13 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1030 CSC06_FaultCS12 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1030 CSC06_FaultCS11 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1030 CSC06_FaultCS10 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1030 CSC06_FaultCS09 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1030 CSC06_FaultCS08 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1030 CSC06_FaultCS07 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1030 CSC06_FaultCS06 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1030 CSC06_FaultCS05 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1030 CSC06_FaultCS04 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1030 CSC06_FaultCS03 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1030 CSC06_FaultCS02 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1030 CSC06_FaultCS01 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1030 CSC06_FaultCS00 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1030 CSC06_FaultCRC "CSC Flash CRC is invalid";
+CM_ SG_ 1030 CSC06_FaultB2TTE "Board Temperature 2 Table Error: A/D count reported has no valid matching temperature in CSC lookup table.";
+CM_ SG_ 1030 CSC06_FaultB1TTE "Board Temperature 1 Table Error: A/D count reported has no valid matching temperature in CSC lookup table.";
+CM_ SG_ 1030 CSC06_FaultADRES "Error AD7280 (Master or Slaves) in reset or has reset";
+CM_ SG_ 1030 CSC06_FaultADCRC "Error detected in CRC received from AD7280";
+CM_ BO_ 1029 "The Fault response is the primary way that the CSC communicates fault / error conditions detected to the BMU. It is sent on request of when fault is detected while processing another BMU request.";
+CM_ SG_ 1029 CSC05_FaultC1TTE "Cell Temperature 1 Table Error";
+CM_ SG_ 1029 CSC05_FaultADCOM "Error communicating to AD7280 (i.e. SPI error)";
+CM_ SG_ 1029 CSC05_FaultTSC2E "Cell Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1029 CSC05_FaultTSC1E "Cell Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1029 CSC05_FaultTSB2E "Board Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1029 CSC05_FaultTSB1E "Board Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1029 CSC05_FaultSDS2 "AD7280 Self Diagnostic Slave #2 (self test voltage of AD7280 out of range)";
+CM_ SG_ 1029 CSC05_FaultSDS1 "AD7280 Self Diagnostic Slave #1 (self test voltage of AD7280 out of range)";
+CM_ SG_ 1029 CSC05_FaultSDM "AD7280 Self Diagnostic Master (self test voltage of AD7280 out of range), ";
+CM_ SG_ 1029 CSC05_FaultHVS2 "CSC High Voltage Side Power Supply Stage One (post 5V regulator) out of range";
+CM_ SG_ 1029 CSC05_FaultHVS1 "CSC High Voltage Side Power Supply Stage One (pre 5V regulator) out of range";
+CM_ SG_ 1029 CSC05_FaultDFV "Discharge Fault Temperature Ceiling violated in Autonomous Mode";
+CM_ SG_ 1029 CSC05_FaultDFT "Discharge Fault Voltage Floor violated in Autonomous Mode";
+CM_ SG_ 1029 CSC05_FaultCSCI "CSC Initialization Failure Detected.  This includes verification of PLL of clock and watchdog operation verification.";
+CM_ SG_ 1029 CSC05_FaultCS17 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1029 CSC05_FaultCS16 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1029 CSC05_FaultCS15 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1029 CSC05_FaultCS14 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1029 CSC05_FaultCS13 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1029 CSC05_FaultCS12 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1029 CSC05_FaultCS11 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1029 CSC05_FaultCS10 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1029 CSC05_FaultCS09 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1029 CSC05_FaultCS08 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1029 CSC05_FaultCS07 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1029 CSC05_FaultCS06 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1029 CSC05_FaultCS05 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1029 CSC05_FaultCS04 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1029 CSC05_FaultCS03 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1029 CSC05_FaultCS02 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1029 CSC05_FaultCS01 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1029 CSC05_FaultCS00 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1029 CSC05_FaultCRC "CSC Flash CRC is invalid";
+CM_ SG_ 1029 CSC05_FaultB2TTE "Board Temperature 2 Table Error: A/D count reported has no valid matching temperature in CSC lookup table.";
+CM_ SG_ 1029 CSC05_FaultB1TTE "Board Temperature 1 Table Error: A/D count reported has no valid matching temperature in CSC lookup table.";
+CM_ SG_ 1029 CSC05_FaultADRES "Error AD7280 (Master or Slaves) in reset or has reset";
+CM_ SG_ 1029 CSC05_FaultADCRC "Error detected in CRC received from AD7280";
+CM_ BO_ 1028 "The Fault response is the primary way that the CSC communicates fault / error conditions detected to the BMU. It is sent on request of when fault is detected while processing another BMU request.";
+CM_ SG_ 1028 CSC04_FaultC2TTE "Cell Temperature 2 Table Error";
+CM_ SG_ 1028 CSC04_FaultC1TTE "Cell Temperature 1 Table Error";
+CM_ SG_ 1028 CSC04_FaultADCOM "Error communicating to AD7280 (i.e. SPI error)";
+CM_ SG_ 1028 CSC04_FaultTSC2E "Cell Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1028 CSC04_FaultTSC1E "Cell Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1028 CSC04_FaultTSB2E "Board Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1028 CSC04_FaultTSB1E "Board Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1028 CSC04_FaultSDS2 "AD7280 Self Diagnostic Slave #2 (self test voltage of AD7280 out of range)";
+CM_ SG_ 1028 CSC04_FaultSDS1 "AD7280 Self Diagnostic Slave #1 (self test voltage of AD7280 out of range)";
+CM_ SG_ 1028 CSC04_FaultSDM "AD7280 Self Diagnostic Master (self test voltage of AD7280 out of range), ";
+CM_ SG_ 1028 CSC04_FaultHVS2 "CSC High Voltage Side Power Supply Stage One (post 5V regulator) out of range";
+CM_ SG_ 1028 CSC04_FaultHVS1 "CSC High Voltage Side Power Supply Stage One (pre 5V regulator) out of range";
+CM_ SG_ 1028 CSC04_FaultDFV "Discharge Fault Temperature Ceiling violated in Autonomous Mode";
+CM_ SG_ 1028 CSC04_FaultDFT "Discharge Fault Voltage Floor violated in Autonomous Mode";
+CM_ SG_ 1028 CSC04_FaultCSCI "CSC Initialization Failure Detected.  This includes verification of PLL of clock and watchdog operation verification.";
+CM_ SG_ 1028 CSC04_FaultCS17 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1028 CSC04_FaultCS16 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1028 CSC04_FaultCS15 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1028 CSC04_FaultCS14 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1028 CSC04_FaultCS13 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1028 CSC04_FaultCS12 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1028 CSC04_FaultCS11 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1028 CSC04_FaultCS10 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1028 CSC04_FaultCS09 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1028 CSC04_FaultCS08 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1028 CSC04_FaultCS07 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1028 CSC04_FaultCS06 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1028 CSC04_FaultCS05 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1028 CSC04_FaultCS04 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1028 CSC04_FaultCS03 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1028 CSC04_FaultCS02 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1028 CSC04_FaultCS01 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1028 CSC04_FaultCS00 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1028 CSC04_FaultCRC "CSC Flash CRC is invalid";
+CM_ SG_ 1028 CSC04_FaultB2TTE "Board Temperature 2 Table Error: A/D count reported has no valid matching temperature in CSC lookup table.";
+CM_ SG_ 1028 CSC04_FaultB1TTE "Board Temperature 1 Table Error: A/D count reported has no valid matching temperature in CSC lookup table.";
+CM_ SG_ 1028 CSC04_FaultADRES "Error AD7280 (Master or Slaves) in reset or has reset";
+CM_ SG_ 1028 CSC04_FaultADCRC "Error detected in CRC received from AD7280";
+CM_ BO_ 1027 "The Fault response is the primary way that the CSC communicates fault / error conditions detected to the BMU. It is sent on request of when fault is detected while processing another BMU request.";
+CM_ SG_ 1027 CSC03_FaultC2TTE "Cell Temperature 2 Table Error";
+CM_ SG_ 1027 CSC03_FaultC1TTE "Cell Temperature 1 Table Error";
+CM_ SG_ 1027 CSC03_FaultADCOM "Error communicating to AD7280 (i.e. SPI error)";
+CM_ SG_ 1027 CSC03_FaultTSC2E "Cell Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1027 CSC03_FaultTSC1E "Cell Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1027 CSC03_FaultTSB2E "Board Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1027 CSC03_FaultTSB1E "Board Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1027 CSC03_FaultSDS2 "AD7280 Self Diagnostic Slave #2 (self test voltage of AD7280 out of range)";
+CM_ SG_ 1027 CSC03_FaultSDS1 "AD7280 Self Diagnostic Slave #1 (self test voltage of AD7280 out of range)";
+CM_ SG_ 1027 CSC03_FaultSDM "AD7280 Self Diagnostic Master (self test voltage of AD7280 out of range), ";
+CM_ SG_ 1027 CSC03_FaultHVS2 "CSC High Voltage Side Power Supply Stage One (post 5V regulator) out of range";
+CM_ SG_ 1027 CSC03_FaultHVS1 "CSC High Voltage Side Power Supply Stage One (pre 5V regulator) out of range";
+CM_ SG_ 1027 CSC03_FaultDFV "Discharge Fault Temperature Ceiling violated in Autonomous Mode";
+CM_ SG_ 1027 CSC03_FaultDFT "Discharge Fault Voltage Floor violated in Autonomous Mode";
+CM_ SG_ 1027 CSC03_FaultCSCI "CSC Initialization Failure Detected.  This includes verification of PLL of clock and watchdog operation verification.";
+CM_ SG_ 1027 CSC03_FaultCS17 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1027 CSC03_FaultCS16 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1027 CSC03_FaultCS15 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1027 CSC03_FaultCS14 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1027 CSC03_FaultCS13 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1027 CSC03_FaultCS12 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1027 CSC03_FaultCS11 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1027 CSC03_FaultCS10 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1027 CSC03_FaultCS09 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1027 CSC03_FaultCS08 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1027 CSC03_FaultCS07 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1027 CSC03_FaultCS06 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1027 CSC03_FaultCS05 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1027 CSC03_FaultCS04 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1027 CSC03_FaultCS03 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1027 CSC03_FaultCS02 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1027 CSC03_FaultCS01 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1027 CSC03_FaultCS00 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1027 CSC03_FaultCRC "CSC Flash CRC is invalid";
+CM_ SG_ 1027 CSC03_FaultB2TTE "Board Temperature 2 Table Error: A/D count reported has no valid matching temperature in CSC lookup table.";
+CM_ SG_ 1027 CSC03_FaultB1TTE "Board Temperature 1 Table Error: A/D count reported has no valid matching temperature in CSC lookup table.";
+CM_ SG_ 1027 CSC03_FaultADRES "Error AD7280 (Master or Slaves) in reset or has reset";
+CM_ SG_ 1027 CSC03_FaultADCRC "Error detected in CRC received from AD7280";
+CM_ BO_ 1026 "The Fault response is the primary way that the CSC communicates fault / error conditions detected to the BMU. It is sent on request of when fault is detected while processing another BMU request.";
+CM_ SG_ 1026 CSC02_FaultC2TTE "Cell Temperature 2 Table Error";
+CM_ SG_ 1026 CSC02_FaultC1TTE "Cell Temperature 1 Table Error";
+CM_ SG_ 1026 CSC02_FaultADCOM "Error communicating to AD7280 (i.e. SPI error)";
+CM_ SG_ 1026 CSC02_FaultTSC2E "Cell Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1026 CSC02_FaultTSC1E "Cell Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1026 CSC02_FaultTSB2E "Board Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1026 CSC02_FaultTSB1E "Board Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1026 CSC02_FaultSDS2 "AD7280 Self Diagnostic Slave #2 (self test voltage of AD7280 out of range)";
+CM_ SG_ 1026 CSC02_FaultSDS1 "AD7280 Self Diagnostic Slave #1 (self test voltage of AD7280 out of range)";
+CM_ SG_ 1026 CSC02_FaultSDM "AD7280 Self Diagnostic Master (self test voltage of AD7280 out of range), ";
+CM_ SG_ 1026 CSC02_FaultHVS2 "CSC High Voltage Side Power Supply Stage One (post 5V regulator) out of range";
+CM_ SG_ 1026 CSC02_FaultHVS1 "CSC High Voltage Side Power Supply Stage One (pre 5V regulator) out of range";
+CM_ SG_ 1026 CSC02_FaultDFV "Discharge Fault Temperature Ceiling violated in Autonomous Mode";
+CM_ SG_ 1026 CSC02_FaultDFT "Discharge Fault Voltage Floor violated in Autonomous Mode";
+CM_ SG_ 1026 CSC02_FaultCSCI "CSC Initialization Failure Detected.  This includes verification of PLL of clock and watchdog operation verification.";
+CM_ SG_ 1026 CSC02_FaultCS17 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1026 CSC02_FaultCS16 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1026 CSC02_FaultCS15 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1026 CSC02_FaultCS14 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1026 CSC02_FaultCS13 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1026 CSC02_FaultCS12 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1026 CSC02_FaultCS11 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1026 CSC02_FaultCS10 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1026 CSC02_FaultCS09 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1026 CSC02_FaultCS08 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1026 CSC02_FaultCS07 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1026 CSC02_FaultCS06 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1026 CSC02_FaultCS05 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1026 CSC02_FaultCS04 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1026 CSC02_FaultCS03 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1026 CSC02_FaultCS02 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1026 CSC02_FaultCS01 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1026 CSC02_FaultCS00 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1026 CSC02_FaultCRC "CSC Flash CRC is invalid";
+CM_ SG_ 1026 CSC02_FaultB2TTE "Board Temperature 2 Table Error: A/D count reported has no valid matching temperature in CSC lookup table.";
+CM_ SG_ 1026 CSC02_FaultB1TTE "Board Temperature 1 Table Error: A/D count reported has no valid matching temperature in CSC lookup table.";
+CM_ SG_ 1026 CSC02_FaultADRES "Error AD7280 (Master or Slaves) in reset or has reset";
+CM_ SG_ 1026 CSC02_FaultADCRC "Error detected in CRC received from AD7280";
+CM_ BO_ 1025 "The Fault response is the primary way that the CSC communicates fault / error conditions detected to the BMU. It is sent on request of when fault is detected while processing another BMU request.";
+CM_ SG_ 1025 CSC01_FaultC2TTE "Cell Temperature 2 Table Error";
+CM_ SG_ 1025 CSC01_FaultC1TTE "Cell Temperature 1 Table Error";
+CM_ SG_ 1025 CSC01_FaultADCOM "Error communicating to AD7280 (i.e. SPI error)";
+CM_ SG_ 1025 CSC01_FaultTSC2E "Cell Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1025 CSC01_FaultTSC1E "Cell Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1025 CSC01_FaultTSB2E "Board Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1025 CSC01_FaultTSB1E "Board Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1025 CSC01_FaultSDS2 "AD7280 Self Diagnostic Slave #2 (self test voltage of AD7280 out of range)";
+CM_ SG_ 1025 CSC01_FaultSDS1 "AD7280 Self Diagnostic Slave #1 (self test voltage of AD7280 out of range)";
+CM_ SG_ 1025 CSC01_FaultSDM "AD7280 Self Diagnostic Master (self test voltage of AD7280 out of range), ";
+CM_ SG_ 1025 CSC01_FaultHVS2 "CSC High Voltage Side Power Supply Stage One (post 5V regulator) out of range";
+CM_ SG_ 1025 CSC01_FaultHVS1 "CSC High Voltage Side Power Supply Stage One (pre 5V regulator) out of range";
+CM_ SG_ 1025 CSC01_FaultDFV "Discharge Fault Temperature Ceiling violated in Autonomous Mode";
+CM_ SG_ 1025 CSC01_FaultDFT "Discharge Fault Voltage Floor violated in Autonomous Mode";
+CM_ SG_ 1025 CSC01_FaultCSCI "CSC Initialization Failure Detected.  This includes verification of PLL of clock and watchdog operation verification.";
+CM_ SG_ 1025 CSC01_FaultCS17 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1025 CSC01_FaultCS16 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1025 CSC01_FaultCS15 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1025 CSC01_FaultCS14 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1025 CSC01_FaultCS13 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1025 CSC01_FaultCS12 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1025 CSC01_FaultCS11 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1025 CSC01_FaultCS10 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1025 CSC01_FaultCS09 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1025 CSC01_FaultCS08 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1025 CSC01_FaultCS07 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1025 CSC01_FaultCS06 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1025 CSC01_FaultCS05 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1025 CSC01_FaultCS04 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1025 CSC01_FaultCS03 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1025 CSC01_FaultCS02 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1025 CSC01_FaultCS01 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1025 CSC01_FaultCS00 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1025 CSC01_FaultCRC "CSC Flash CRC is invalid";
+CM_ SG_ 1025 CSC01_FaultB2TTE "Board Temperature 2 Table Error: A/D count reported has no valid matching temperature in CSC lookup table.";
+CM_ SG_ 1025 CSC01_FaultB1TTE "Board Temperature 1 Table Error: A/D count reported has no valid matching temperature in CSC lookup table.";
+CM_ SG_ 1025 CSC01_FaultADRES "Error AD7280 (Master or Slaves) in reset or has reset";
+CM_ SG_ 1025 CSC01_FaultADCRC "Error detected in CRC received from AD7280";
+CM_ BO_ 775 "The Discharge Response messages shall be sent by the CSC when a Discharge Request message is received from the BMU.  ";
+CM_ SG_ 775 CSC07_DIP17 "Discharge in Progress for cell x ";
+CM_ SG_ 775 CSC07_DIP16 "Discharge in Progress for cell x ";
+CM_ SG_ 775 CSC07_DIP15 "Discharge in Progress for cell x ";
+CM_ SG_ 775 CSC07_DIP14 "Discharge in Progress for cell x ";
+CM_ SG_ 775 CSC07_DIP13 "Discharge in Progress for cell x ";
+CM_ SG_ 775 CSC07_DIP12 "Discharge in Progress for cell x ";
+CM_ SG_ 775 CSC07_DIP11 "Discharge in Progress for cell x ";
+CM_ SG_ 775 CSC07_DIP10 "Discharge in Progress for cell x ";
+CM_ SG_ 775 CSC07_DIP09 "Discharge in Progress for cell x ";
+CM_ SG_ 775 CSC07_DIP08 "Discharge in Progress for cell x ";
+CM_ SG_ 775 CSC07_DIP07 "Discharge in Progress for cell x ";
+CM_ SG_ 775 CSC07_DIP06 "Discharge in Progress for cell x ";
+CM_ SG_ 775 CSC07_DIP05 "Discharge in Progress for cell x ";
+CM_ SG_ 775 CSC07_DIP04 "Discharge in Progress for cell x ";
+CM_ SG_ 775 CSC07_DIP03 "Discharge in Progress for cell x ";
+CM_ SG_ 775 CSC07_DIP02 "Discharge in Progress for cell x ";
+CM_ SG_ 775 CSC07_DIP01 "Discharge in Progress for cell x ";
+CM_ SG_ 775 CSC07_DIP00 "Discharge in Progress for cell x ";
+CM_ BO_ 774 "The Discharge Response messages shall be sent by the CSC when a Discharge Request message is received from the BMU.  ";
+CM_ SG_ 774 CSC06_DIP17 "Discharge in Progress for cell x ";
+CM_ SG_ 774 CSC06_DIP16 "Discharge in Progress for cell x ";
+CM_ SG_ 774 CSC06_DIP15 "Discharge in Progress for cell x ";
+CM_ SG_ 774 CSC06_DIP14 "Discharge in Progress for cell x ";
+CM_ SG_ 774 CSC06_DIP13 "Discharge in Progress for cell x ";
+CM_ SG_ 774 CSC06_DIP12 "Discharge in Progress for cell x ";
+CM_ SG_ 774 CSC06_DIP11 "Discharge in Progress for cell x ";
+CM_ SG_ 774 CSC06_DIP10 "Discharge in Progress for cell x ";
+CM_ SG_ 774 CSC06_DIP09 "Discharge in Progress for cell x ";
+CM_ SG_ 774 CSC06_DIP08 "Discharge in Progress for cell x ";
+CM_ SG_ 774 CSC06_DIP07 "Discharge in Progress for cell x ";
+CM_ SG_ 774 CSC06_DIP06 "Discharge in Progress for cell x ";
+CM_ SG_ 774 CSC06_DIP05 "Discharge in Progress for cell x ";
+CM_ SG_ 774 CSC06_DIP04 "Discharge in Progress for cell x ";
+CM_ SG_ 774 CSC06_DIP03 "Discharge in Progress for cell x ";
+CM_ SG_ 774 CSC06_DIP02 "Discharge in Progress for cell x ";
+CM_ SG_ 774 CSC06_DIP01 "Discharge in Progress for cell x ";
+CM_ SG_ 774 CSC06_DIP00 "Discharge in Progress for cell x ";
+CM_ BO_ 773 "The Discharge Response messages shall be sent by the CSC when a Discharge Request message is received from the BMU.  ";
+CM_ SG_ 773 CSC05_DIP17 "Discharge in Progress for cell x ";
+CM_ SG_ 773 CSC05_DIP16 "Discharge in Progress for cell x ";
+CM_ SG_ 773 CSC05_DIP15 "Discharge in Progress for cell x ";
+CM_ SG_ 773 CSC05_DIP14 "Discharge in Progress for cell x ";
+CM_ SG_ 773 CSC05_DIP13 "Discharge in Progress for cell x ";
+CM_ SG_ 773 CSC05_DIP12 "Discharge in Progress for cell x ";
+CM_ SG_ 773 CSC05_DIP11 "Discharge in Progress for cell x ";
+CM_ SG_ 773 CSC05_DIP10 "Discharge in Progress for cell x ";
+CM_ SG_ 773 CSC05_DIP09 "Discharge in Progress for cell x ";
+CM_ SG_ 773 CSC05_DIP08 "Discharge in Progress for cell x ";
+CM_ SG_ 773 CSC05_DIP07 "Discharge in Progress for cell x ";
+CM_ SG_ 773 CSC05_DIP06 "Discharge in Progress for cell x ";
+CM_ SG_ 773 CSC05_DIP05 "Discharge in Progress for cell x ";
+CM_ SG_ 773 CSC05_DIP04 "Discharge in Progress for cell x ";
+CM_ SG_ 773 CSC05_DIP03 "Discharge in Progress for cell x ";
+CM_ SG_ 773 CSC05_DIP02 "Discharge in Progress for cell x ";
+CM_ SG_ 773 CSC05_DIP01 "Discharge in Progress for cell x ";
+CM_ SG_ 773 CSC05_DIP00 "Discharge in Progress for cell x ";
+CM_ BO_ 772 "The Discharge Response messages shall be sent by the CSC when a Discharge Request message is received from the BMU.  ";
+CM_ SG_ 772 CSC04_DIP17 "Discharge in Progress for cell x ";
+CM_ SG_ 772 CSC04_DIP16 "Discharge in Progress for cell x ";
+CM_ SG_ 772 CSC04_DIP15 "Discharge in Progress for cell x ";
+CM_ SG_ 772 CSC04_DIP14 "Discharge in Progress for cell x ";
+CM_ SG_ 772 CSC04_DIP13 "Discharge in Progress for cell x ";
+CM_ SG_ 772 CSC04_DIP12 "Discharge in Progress for cell x ";
+CM_ SG_ 772 CSC04_DIP11 "Discharge in Progress for cell x ";
+CM_ SG_ 772 CSC04_DIP10 "Discharge in Progress for cell x ";
+CM_ SG_ 772 CSC04_DIP09 "Discharge in Progress for cell x ";
+CM_ SG_ 772 CSC04_DIP08 "Discharge in Progress for cell x ";
+CM_ SG_ 772 CSC04_DIP07 "Discharge in Progress for cell x ";
+CM_ SG_ 772 CSC04_DIP06 "Discharge in Progress for cell x ";
+CM_ SG_ 772 CSC04_DIP05 "Discharge in Progress for cell x ";
+CM_ SG_ 772 CSC04_DIP04 "Discharge in Progress for cell x ";
+CM_ SG_ 772 CSC04_DIP03 "Discharge in Progress for cell x ";
+CM_ SG_ 772 CSC04_DIP02 "Discharge in Progress for cell x ";
+CM_ SG_ 772 CSC04_DIP01 "Discharge in Progress for cell x ";
+CM_ SG_ 772 CSC04_DIP00 "Discharge in Progress for cell x ";
+CM_ BO_ 771 "The Discharge Response messages shall be sent by the CSC when a Discharge Request message is received from the BMU.  ";
+CM_ SG_ 771 CSC03_DIP17 "Discharge in Progress for cell x ";
+CM_ SG_ 771 CSC03_DIP16 "Discharge in Progress for cell x ";
+CM_ SG_ 771 CSC03_DIP15 "Discharge in Progress for cell x ";
+CM_ SG_ 771 CSC03_DIP14 "Discharge in Progress for cell x ";
+CM_ SG_ 771 CSC03_DIP13 "Discharge in Progress for cell x ";
+CM_ SG_ 771 CSC03_DIP12 "Discharge in Progress for cell x ";
+CM_ SG_ 771 CSC03_DIP11 "Discharge in Progress for cell x ";
+CM_ SG_ 771 CSC03_DIP10 "Discharge in Progress for cell x ";
+CM_ SG_ 771 CSC03_DIP09 "Discharge in Progress for cell x ";
+CM_ SG_ 771 CSC03_DIP08 "Discharge in Progress for cell x ";
+CM_ SG_ 771 CSC03_DIP07 "Discharge in Progress for cell x ";
+CM_ SG_ 771 CSC03_DIP06 "Discharge in Progress for cell x ";
+CM_ SG_ 771 CSC03_DIP05 "Discharge in Progress for cell x ";
+CM_ SG_ 771 CSC03_DIP04 "Discharge in Progress for cell x ";
+CM_ SG_ 771 CSC03_DIP03 "Discharge in Progress for cell x ";
+CM_ SG_ 771 CSC03_DIP02 "Discharge in Progress for cell x ";
+CM_ SG_ 771 CSC03_DIP01 "Discharge in Progress for cell x ";
+CM_ SG_ 771 CSC03_DIP00 "Discharge in Progress for cell x ";
+CM_ BO_ 770 "The Discharge Response messages shall be sent by the CSC when a Discharge Request message is received from the BMU.  ";
+CM_ SG_ 770 CSC02_DIP17 "Discharge in Progress for cell x ";
+CM_ SG_ 770 CSC02_DIP16 "Discharge in Progress for cell x ";
+CM_ SG_ 770 CSC02_DIP15 "Discharge in Progress for cell x ";
+CM_ SG_ 770 CSC02_DIP14 "Discharge in Progress for cell x ";
+CM_ SG_ 770 CSC02_DIP13 "Discharge in Progress for cell x ";
+CM_ SG_ 770 CSC02_DIP12 "Discharge in Progress for cell x ";
+CM_ SG_ 770 CSC02_DIP11 "Discharge in Progress for cell x ";
+CM_ SG_ 770 CSC02_DIP10 "Discharge in Progress for cell x ";
+CM_ SG_ 770 CSC02_DIP09 "Discharge in Progress for cell x ";
+CM_ SG_ 770 CSC02_DIP08 "Discharge in Progress for cell x ";
+CM_ SG_ 770 CSC02_DIP07 "Discharge in Progress for cell x ";
+CM_ SG_ 770 CSC02_DIP06 "Discharge in Progress for cell x ";
+CM_ SG_ 770 CSC02_DIP05 "Discharge in Progress for cell x ";
+CM_ SG_ 770 CSC02_DIP04 "Discharge in Progress for cell x ";
+CM_ SG_ 770 CSC02_DIP03 "Discharge in Progress for cell x ";
+CM_ SG_ 770 CSC02_DIP02 "Discharge in Progress for cell x ";
+CM_ SG_ 770 CSC02_DIP01 "Discharge in Progress for cell x ";
+CM_ SG_ 770 CSC02_DIP00 "Discharge in Progress for cell x ";
+CM_ BO_ 769 "The Discharge Response messages shall be sent by the CSC when a Discharge Request message is received from the BMU.  ";
+CM_ SG_ 769 CSC01_DIP17 "Discharge in Progress for cell x ";
+CM_ SG_ 769 CSC01_DIP16 "Discharge in Progress for cell x ";
+CM_ SG_ 769 CSC01_DIP15 "Discharge in Progress for cell x ";
+CM_ SG_ 769 CSC01_DIP14 "Discharge in Progress for cell x ";
+CM_ SG_ 769 CSC01_DIP13 "Discharge in Progress for cell x ";
+CM_ SG_ 769 CSC01_DIP12 "Discharge in Progress for cell x ";
+CM_ SG_ 769 CSC01_DIP11 "Discharge in Progress for cell x ";
+CM_ SG_ 769 CSC01_DIP10 "Discharge in Progress for cell x ";
+CM_ SG_ 769 CSC01_DIP09 "Discharge in Progress for cell x ";
+CM_ SG_ 769 CSC01_DIP08 "Discharge in Progress for cell x ";
+CM_ SG_ 769 CSC01_DIP07 "Discharge in Progress for cell x ";
+CM_ SG_ 769 CSC01_DIP06 "Discharge in Progress for cell x ";
+CM_ SG_ 769 CSC01_DIP05 "Discharge in Progress for cell x ";
+CM_ SG_ 769 CSC01_DIP04 "Discharge in Progress for cell x ";
+CM_ SG_ 769 CSC01_DIP03 "Discharge in Progress for cell x ";
+CM_ SG_ 769 CSC01_DIP02 "Discharge in Progress for cell x ";
+CM_ SG_ 769 CSC01_DIP01 "Discharge in Progress for cell x ";
+CM_ SG_ 769 CSC01_DIP00 "Discharge in Progress for cell x ";
+CM_ BO_ 263 "The Voltage Response messages shall be sent by the CSC when a Data Request - Voltage message is received from the BMU.  ";
+CM_ SG_ 263 CSC07_StartCellIdPlus3Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 3. ";
+CM_ SG_ 263 CSC07_StartCellIdPlus2Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 2. ";
+CM_ SG_ 263 CSC07_StartCellIdPlus1Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 1. ";
+CM_ SG_ 263 CSC07_StartCellIdPlus0Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 0. ";
+CM_ SG_ 263 CSC07_StartCellID "Start Cell ID: The 4-bit cell number of the first cell voltage reported.   Expected values based up to 18 cells per CSC are: 0, 4, 8, 12 to report all cells. ";
+CM_ BO_ 262 "The Voltage Response messages shall be sent by the CSC when a Data Request - Voltage message is received from the BMU.  ";
+CM_ SG_ 262 CSC06_StartCellIdPlus3Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 3. ";
+CM_ SG_ 262 CSC06_StartCellIdPlus2Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 2. ";
+CM_ SG_ 262 CSC06_StartCellIdPlus1Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 1. ";
+CM_ SG_ 262 CSC06_StartCellIdPlus0Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 0. ";
+CM_ SG_ 262 CSC06_StartCellID "Start Cell ID: The 4-bit cell number of the first cell voltage reported.   Expected values based up to 18 cells per CSC are: 0, 4, 8, 12 to report all cells. ";
+CM_ BO_ 261 "The Voltage Response messages shall be sent by the CSC when a Data Request - Voltage message is received from the BMU.  ";
+CM_ SG_ 261 CSC05_StartCellIdPlus3Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 3. ";
+CM_ SG_ 261 CSC05_StartCellIdPlus2Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 2. ";
+CM_ SG_ 261 CSC05_StartCellIdPlus1Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 1. ";
+CM_ SG_ 261 CSC05_StartCellIdPlus0Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 0. ";
+CM_ SG_ 261 CSC05_StartCellID "Start Cell ID: The 4-bit cell number of the first cell voltage reported.   Expected values based up to 18 cells per CSC are: 0, 4, 8, 12 to report all cells. ";
+CM_ BO_ 260 "The Voltage Response messages shall be sent by the CSC when a Data Request - Voltage message is received from the BMU.  ";
+CM_ SG_ 260 CSC04_StartCellIdPlus3Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 3. ";
+CM_ SG_ 260 CSC04_StartCellIdPlus2Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 2. ";
+CM_ SG_ 260 CSC04_StartCellIdPlus1Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 1. ";
+CM_ SG_ 260 CSC04_StartCellIdPlus0Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 0. ";
+CM_ SG_ 260 CSC04_StartCellID "Start Cell ID: The 4-bit cell number of the first cell voltage reported.   Expected values based up to 18 cells per CSC are: 0, 4, 8, 12 to report all cells. ";
+CM_ BO_ 259 "The Voltage Response messages shall be sent by the CSC when a Data Request - Voltage message is received from the BMU.  ";
+CM_ SG_ 259 CSC03_StartCellIdPlus3Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 3. ";
+CM_ SG_ 259 CSC03_StartCellIdPlus2Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 2. ";
+CM_ SG_ 259 CSC03_StartCellIdPlus1Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 1. ";
+CM_ SG_ 259 CSC03_StartCellIdPlus0Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 0. ";
+CM_ SG_ 259 CSC03_StartCellID "Start Cell ID: The 4-bit cell number of the first cell voltage reported.   Expected values based up to 18 cells per CSC are: 0, 4, 8, 12 to report all cells. ";
+CM_ BO_ 258 "The Voltage Response messages shall be sent by the CSC when a Data Request - Voltage message is received from the BMU.  ";
+CM_ SG_ 258 CSC02_StartCellIdPlus3Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 3. ";
+CM_ SG_ 258 CSC02_StartCellIdPlus2Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 2. ";
+CM_ SG_ 258 CSC02_StartCellIdPlus1Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 1. ";
+CM_ SG_ 258 CSC02_StartCellIdPlus0Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 0. ";
+CM_ SG_ 258 CSC02_StartCellID "Start Cell ID: The 4-bit cell number of the first cell voltage reported.   Expected values based up to 18 cells per CSC are: 0, 4, 8, 12 to report all cells. ";
+CM_ BO_ 257 "The Voltage Response messages shall be sent by the CSC when a Data Request - Voltage message is received from the BMU.  ";
+CM_ SG_ 257 CSC01_StartCellIdPlus3Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 3. ";
+CM_ SG_ 257 CSC01_StartCellIdPlus2Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 2. ";
+CM_ SG_ 257 CSC01_StartCellIdPlus1Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 1. ";
+CM_ SG_ 257 CSC01_StartCellIdPlus0Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 0. ";
+CM_ SG_ 257 CSC01_StartCellID "Start Cell ID: The 4-bit cell number of the first cell voltage reported.   Expected values based up to 18 cells per CSC are: 0, 4, 8, 12 to report all cells. ";
+CM_ BO_ 128 "This message configures a CSC cells and sensors.";
+CM_ SG_ 128 BMU_IdBTSP2 "Board Temperature Sensor #2 Present";
+CM_ SG_ 128 BMU_IdBTSP1 "Board Temperature Sensor #1 Present";
+CM_ SG_ 128 BMU_IdCP00 "Cell x populated";
+CM_ SG_ 128 BMU_IdCP01 "Cell #n Populated";
+CM_ SG_ 128 BMU_IdCP02 "Cell #n Populated";
+CM_ SG_ 128 BMU_IdCP03 "Cell #n Populated";
+CM_ SG_ 128 BMU_IdCP04 "Cell #n Populated";
+CM_ SG_ 128 BMU_IdCP05 "Cell #n Populated";
+CM_ SG_ 128 BMU_IdCP06 "Cell #n Populated";
+CM_ SG_ 128 BMU_IdCP07 "Cell #n Populated";
+CM_ SG_ 128 BMU_IdCP08 "Cell #n Populated";
+CM_ SG_ 128 BMU_IdCP09 "Cell #n Populated";
+CM_ SG_ 128 BMU_IdCP10 "Cell #n Populated";
+CM_ SG_ 128 BMU_IdCP11 "Cell #n Populated";
+CM_ SG_ 128 BMU_IdCP12 "Cell #n Populated";
+CM_ SG_ 128 BMU_IdCP13 "Cell #n Populated";
+CM_ SG_ 128 BMU_IdCP14 "Cell #n Populated";
+CM_ SG_ 128 BMU_IdCP15 "Cell #n Populated";
+CM_ SG_ 128 BMU_IdCP16 "Cell #n Populated";
+CM_ SG_ 128 BMU_IdCP17 "Cell #n Populated";
+CM_ SG_ 128 BMU_IdCTSP2 "Cell Temperature Sensor #2 Present";
+CM_ SG_ 128 BMU_IdCTSP1 "Cell Temperature Sensor #1 Present";
+CM_ SG_ 128 BMU_IdSerialNumber "The 32-bit identifier that uniquely identifies a particular CSC. ";
+CM_ SG_ 64 BMU_DischargeBoardTempCeiling "Maximum temperature limit of the bpardl CSC temperature sensor(s) in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40).  ";
+CM_ SG_ 64 BMU_DischargeCellTempCeiling "Maximum temperature limit of the Cell CSC temperature sensor(s) in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40).  ";
+CM_ SG_ 64 BMU_DischargeVoltageFloor "Low discharge limit of all cell voltages in Autonomous mode cell discharge.  Limit is specified in 12-bit A/D counts. 
+";
+CM_ SG_ 64 BMU_DC17 "Discharge request for cell.";
+CM_ SG_ 64 BMU_DC16 "Discharge request for cell.";
+CM_ SG_ 64 BMU_DC15 "Discharge request for cell.";
+CM_ SG_ 64 BMU_DC14 "Discharge request for cell.";
+CM_ SG_ 64 BMU_DC13 "Discharge request for cell.";
+CM_ SG_ 64 BMU_DC12 "Discharge request for cell.";
+CM_ SG_ 64 BMU_DC11 "Discharge request for cell.";
+CM_ SG_ 64 BMU_DC10 "Discharge request for cell.";
+CM_ SG_ 64 BMU_DC09 "Discharge request for cell.";
+CM_ SG_ 64 BMU_DC08 "Discharge request for cell.";
+CM_ SG_ 64 BMU_DC07 "Discharge request for cell.";
+CM_ SG_ 64 BMU_DC06 "Discharge request for cell.";
+CM_ SG_ 64 BMU_DC05 "Discharge request for cell.";
+CM_ SG_ 64 BMU_DC04 "Discharge request for cell.";
+CM_ SG_ 64 BMU_DC03 "Discharge request for cell.";
+CM_ SG_ 64 BMU_DC02 "Discharge request for cell.";
+CM_ SG_ 64 BMU_DC01 "Discharge request for cell.";
+CM_ SG_ 64 BMU_DC00 "Discharge request for cell.";
+CM_ SG_ 96 BMU_ControlCommandId "A 3 bit identifier of the action for the CSC to perform";
+CM_ BO_ 32 "This message requests data from the CSCs. The data in question may be already stored on a CSC (i.e., it's version information) or require the CSC to take an action (read cell voltage). It is sent by the BMU.";
+CM_ SG_ 32 BMU_DataRequestId "A 3 bit identifier of the action for the CSC to perform.";
+CM_ BO_ 1600 "The State Response message returns the current state of operation of the CSC, Running, Paused, etc.  ";
+CM_ BO_ 1536 "The Identification Response message confirms to the BMU that the CSC identification completed successfully and the cells connected to a CSC was correctly configured.";
+CM_ SG_ 1536 CSC00_IdCP17 "Cell #n Populated";
+CM_ SG_ 1536 CSC00_IdCP16 "Cell #n Populated";
+CM_ SG_ 1536 CSC00_IdCP15 "Cell #n Populated";
+CM_ SG_ 1536 CSC00_IdCP14 "Cell #n Populated";
+CM_ SG_ 1536 CSC00_IdCP13 "Cell #n Populated";
+CM_ SG_ 1536 CSC00_IdCP12 "Cell #n Populated";
+CM_ SG_ 1536 CSC00_IdCP11 "Cell #n Populated";
+CM_ SG_ 1536 CSC00_IdCP10 "Cell #n Populated";
+CM_ SG_ 1536 CSC00_IdCP09 "Cell #n Populated";
+CM_ SG_ 1536 CSC00_IdCP08 "Cell #n Populated";
+CM_ SG_ 1536 CSC00_IdCP07 "Cell #n Populated";
+CM_ SG_ 1536 CSC00_IdCP06 "Cell #n Populated";
+CM_ SG_ 1536 CSC00_IdCP05 "Cell #n Populated";
+CM_ SG_ 1536 CSC00_IdCP04 "Cell #n Populated";
+CM_ SG_ 1536 CSC00_IdCP03 "Cell #n Populated";
+CM_ SG_ 1536 CSC00_IdCP02 "Cell #n Populated";
+CM_ SG_ 1536 CSC00_IdCP01 "Cell #n Populated";
+CM_ SG_ 1536 CSC00_IdCP00 "Cell x populated";
+CM_ SG_ 1536 CSC00_IdBTSP2 "Board Temperature Sensor #2 Present";
+CM_ SG_ 1536 CSC00_IdBTSP1 "Board Temperature Sensor #1 Present";
+CM_ SG_ 1536 CSC00_IdCTSP2 "Cell Temperature Sensor #2 Present";
+CM_ SG_ 1536 CSC00_IdCTSP1 "Cell Temperature Sensor #1 Present";
+CM_ SG_ 1536 CSC00_IdSerialNumber "The 32-bit identifier that uniquely identifies a particular CSC. ";
+CM_ BO_ 1280 "The Version Response provides the BMU the version information of the CSC.";
+CM_ BO_ 1024 "The Fault response is the primary way that the CSC communicates fault / error conditions detected to the BMU. It is sent on request of when fault is detected while processing another BMU request.";
+CM_ SG_ 1024 CSC00_FaultC2TTE "Cell Temperature 2 Table Error";
+CM_ SG_ 1024 CSC00_FaultC1TTE "Cell Temperature 1 Table Error";
+CM_ SG_ 1024 CSC00_FaultADCOM "Error communicating to AD7280 (i.e. SPI error)";
+CM_ SG_ 1024 CSC00_FaultTSC2E "Cell Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1024 CSC00_FaultTSC1E "Cell Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1024 CSC00_FaultTSB2E "Board Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1024 CSC00_FaultTSB1E "Board Temperature Sensor Power Supply and / or A/D reference fault.";
+CM_ SG_ 1024 CSC00_FaultSDS2 "AD7280 Self Diagnostic Slave #2 (self test voltage of AD7280 out of range)";
+CM_ SG_ 1024 CSC00_FaultSDS1 "AD7280 Self Diagnostic Slave #1 (self test voltage of AD7280 out of range)";
+CM_ SG_ 1024 CSC00_FaultSDM "AD7280 Self Diagnostic Master (self test voltage of AD7280 out of range), ";
+CM_ SG_ 1024 CSC00_FaultHVS2 "CSC High Voltage Side Power Supply Stage One (post 5V regulator) out of range";
+CM_ SG_ 1024 CSC00_FaultHVS1 "CSC High Voltage Side Power Supply Stage One (pre 5V regulator) out of range";
+CM_ SG_ 1024 CSC00_FaultDFV "Discharge Fault Temperature Ceiling violated in Autonomous Mode";
+CM_ SG_ 1024 CSC00_FaultDFT "Discharge Fault Voltage Floor violated in Autonomous Mode";
+CM_ SG_ 1024 CSC00_FaultCSCI "CSC Initialization Failure Detected.  This includes verification of PLL of clock and watchdog operation verification.";
+CM_ SG_ 1024 CSC00_FaultCS17 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1024 CSC00_FaultCS16 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1024 CSC00_FaultCS15 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1024 CSC00_FaultCS14 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1024 CSC00_FaultCS13 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1024 CSC00_FaultCS12 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1024 CSC00_FaultCS11 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1024 CSC00_FaultCS10 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1024 CSC00_FaultCS09 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1024 CSC00_FaultCS08 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1024 CSC00_FaultCS07 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1024 CSC00_FaultCS06 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1024 CSC00_FaultCS05 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1024 CSC00_FaultCS04 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1024 CSC00_FaultCS03 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1024 CSC00_FaultCS02 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1024 CSC00_FaultCS01 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1024 CSC00_FaultCS00 "Cell Status X (X is cells 0x0 -> 0xE";
+CM_ SG_ 1024 CSC00_FaultCRC "CSC Flash CRC is invalid";
+CM_ SG_ 1024 CSC00_FaultB2TTE "Board Temperature 2 Table Error: A/D count reported has no valid matching temperature in CSC lookup table.";
+CM_ SG_ 1024 CSC00_FaultB1TTE "Board Temperature 1 Table Error: A/D count reported has no valid matching temperature in CSC lookup table.";
+CM_ SG_ 1024 CSC00_FaultADRES "Error AD7280 (Master or Slaves) in reset or has reset";
+CM_ SG_ 1024 CSC00_FaultADCRC "Error detected in CRC received from AD7280";
+CM_ BO_ 768 "The Discharge Response messages shall be sent by the CSC when a Discharge Request message is received from the BMU.  ";
+CM_ SG_ 768 CSC00_DIP17 "Discharge in Progress for cell x ";
+CM_ SG_ 768 CSC00_DIP16 "Discharge in Progress for cell x ";
+CM_ SG_ 768 CSC00_DIP15 "Discharge in Progress for cell x ";
+CM_ SG_ 768 CSC00_DIP14 "Discharge in Progress for cell x ";
+CM_ SG_ 768 CSC00_DIP13 "Discharge in Progress for cell x ";
+CM_ SG_ 768 CSC00_DIP12 "Discharge in Progress for cell x ";
+CM_ SG_ 768 CSC00_DIP11 "Discharge in Progress for cell x ";
+CM_ SG_ 768 CSC00_DIP10 "Discharge in Progress for cell x ";
+CM_ SG_ 768 CSC00_DIP09 "Discharge in Progress for cell x ";
+CM_ SG_ 768 CSC00_DIP08 "Discharge in Progress for cell x ";
+CM_ SG_ 768 CSC00_DIP07 "Discharge in Progress for cell x ";
+CM_ SG_ 768 CSC00_DIP06 "Discharge in Progress for cell x ";
+CM_ SG_ 768 CSC00_DIP05 "Discharge in Progress for cell x ";
+CM_ SG_ 768 CSC00_DIP04 "Discharge in Progress for cell x ";
+CM_ SG_ 768 CSC00_DIP03 "Discharge in Progress for cell x ";
+CM_ SG_ 768 CSC00_DIP02 "Discharge in Progress for cell x ";
+CM_ SG_ 768 CSC00_DIP01 "Discharge in Progress for cell x ";
+CM_ SG_ 768 CSC00_DIP00 "Discharge in Progress for cell x ";
+CM_ BO_ 512 "The Temperature Response message shall be sent by the CSC when a Data Request - Temperature message is received from the BMU. ";
+CM_ SG_ 512 CSC00_StartTempID "Start Cell ID: The 4-bit cell number of the first cell voltage reported.   Expected values based up to 18 cells per CSC are: 0, 4, 8, 12 to report all cells. ";
+CM_ SG_ 512 CSC00_StartIdPlus3Temp "Reported CSC cell temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ SG_ 512 CSC00_StartIdPlus2Temp "Reported CSC cell temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ SG_ 512 CSC00_StartIdPlus1Temp "Reported CSC board temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ SG_ 512 CSC00_StartIdPlus0Temp "Reported CSC board temperature in 1/10th degree Celsius.   Data shall be reported with a -40 degree offset (assuming lower range of valid temperature is -40). ";
+CM_ BO_ 256 "The Voltage Response messages shall be sent by the CSC when a Data Request - Voltage message is received from the BMU.  ";
+CM_ SG_ 256 CSC00_StartCellIdPlus3Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 3. ";
+CM_ SG_ 256 CSC00_StartCellIdPlus2Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 2. ";
+CM_ SG_ 256 CSC00_StartCellIdPlus1Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 1. ";
+CM_ SG_ 256 CSC00_StartCellIdPlus0Voltage "The 12-bit raw A/D count corresponding to cell voltage for the Start Cell ID + 0. ";
+CM_ SG_ 256 CSC00_StartCellID "Start Cell ID: The 4-bit cell number of the first cell voltage reported.   Expected values based up to 18 cells per CSC are: 0, 4, 8, 12 to report all cells. ";
+BA_DEF_ SG_  "GenSigStartValue" FLOAT 0 100000000000;
+BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition","NoSigSendType";
+BA_DEF_ SG_  "GenSigInactiveValue" INT 0 100000;
+BA_DEF_ SG_  "GenSigTimeoutValue" INT 0 10000000;
+BA_DEF_ SG_  "GenSigTimeoutTime_BMS" INT 0 100000;
+BA_DEF_ SG_  "GenSigTimeoutTime_VCU" INT 0 100000;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "FixedPeriodic","Event","EnabledPeriodic","NotUsed","NotUsed","EventPeriodic","NotUsed","NotUsed","NoMsgSendType";
+BA_DEF_ BO_  "GenMsgNrOfRepetitions" INT 1 999999;
+BA_DEF_ BO_  "GenMsgDelayTime" INT 1 1000;
+BA_DEF_ BO_  "GenMsgCycleTime" INT 2 50000;
+BA_DEF_ BO_  "NmMessage" ENUM  "No","Yes";
+BA_DEF_ BO_  "GenMsgIlSupport" ENUM  "No","Yes";
+BA_DEF_ BO_  "DiagRequest" ENUM  "No","Yes";
+BA_DEF_ BO_  "DiagResponse" ENUM  "No","Yes";
+BA_DEF_ BO_  "DiagState" ENUM  "No","Yes";
+BA_DEF_ BO_  "NetworkInitialization" ENUM  "No","Yes";
+BA_DEF_ BO_  "TpTxIndex" INT 0 255;
+BA_DEF_ BO_  "TpAppLType" STRING ;
+BA_DEF_ BO_  "NetworkInitializationCommand" ENUM  "No","Yes";
+BA_DEF_ BO_  "NmAsrMessage" ENUM  "No","Yes";
+BA_DEF_ BU_  "BootloaderEnabled" ENUM  "No","Yes";
+BA_DEF_ BU_  "DiagNode" ENUM  "No","Yes";
+BA_DEF_ BU_  "DiagnosticEnabled" ENUM  "No","Yes";
+BA_DEF_ BU_  "ILUsed" ENUM  "No","Yes";
+BA_DEF_ BU_  "Network" ENUM  "HS-CAN","MS-CAN";
+BA_DEF_ BU_  "NmNode" ENUM  "No","Yes";
+BA_DEF_ BU_  "Diagnostics" ENUM  "ISO 15765","ISO 14229";
+BA_DEF_ BU_  "NetworkInitializationUsed" ENUM  "No","Yes";
+BA_DEF_ BU_  "Transceiver" ENUM  "TJA 1050","TJA 1040","TJA 1041","TJA 1042","82C250","TLE6250","MC33989","vector_leerstring";
+BA_DEF_ BU_  "TransceiverType" ENUM  "Unknown","TJA1050","TJA1040","TJA1041","82C250","TLE6250","MC33989","CS251 ";
+BA_DEF_ BU_  "NetworkType" ENUM  "Powertrain","Bodybus","Infotainment";
+BA_DEF_ BU_  "NmStationAddress" INT 0 127;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_  "Manufacturer" STRING ;
+BA_DEF_  "NmType" STRING ;
+BA_DEF_  "NmBaseAddress" INT 0 2047;
+BA_DEF_  "NmAsrBaseAddress" HEX 1408 1408;
+BA_DEF_DEF_  "GenSigStartValue" 0;
+BA_DEF_DEF_  "GenSigSendType" "OnWrite";
+BA_DEF_DEF_  "GenSigInactiveValue" 0;
+BA_DEF_DEF_  "GenSigTimeoutValue" 0;
+BA_DEF_DEF_  "GenSigTimeoutTime_BMS" 600;
+BA_DEF_DEF_  "GenSigTimeoutTime_VCU" 600;
+BA_DEF_DEF_  "GenMsgSendType" "Event";
+BA_DEF_DEF_  "GenMsgNrOfRepetitions" 1;
+BA_DEF_DEF_  "GenMsgDelayTime" 20;
+BA_DEF_DEF_  "GenMsgCycleTime" 100;
+BA_DEF_DEF_  "NmMessage" "No";
+BA_DEF_DEF_  "GenMsgIlSupport" "No";
+BA_DEF_DEF_  "DiagRequest" "No";
+BA_DEF_DEF_  "DiagResponse" "No";
+BA_DEF_DEF_  "DiagState" "No";
+BA_DEF_DEF_  "NetworkInitialization" "No";
+BA_DEF_DEF_  "TpTxIndex" 0;
+BA_DEF_DEF_  "TpAppLType" "";
+BA_DEF_DEF_  "NetworkInitializationCommand" "No";
+BA_DEF_DEF_  "NmAsrMessage" "No";
+BA_DEF_DEF_  "BootloaderEnabled" "Yes";
+BA_DEF_DEF_  "DiagNode" "Yes";
+BA_DEF_DEF_  "DiagnosticEnabled" "Yes";
+BA_DEF_DEF_  "ILUsed" "No";
+BA_DEF_DEF_  "Network" "HS-CAN";
+BA_DEF_DEF_  "NmNode" "Yes";
+BA_DEF_DEF_  "Diagnostics" "ISO 15765";
+BA_DEF_DEF_  "NetworkInitializationUsed" "No";
+BA_DEF_DEF_  "Transceiver" "TJA 1040";
+BA_DEF_DEF_  "TransceiverType" "Unknown";
+BA_DEF_DEF_  "NetworkType" "Powertrain";
+BA_DEF_DEF_  "NmStationAddress" 0;
+BA_DEF_DEF_  "BusType" "CAN";
+BA_DEF_DEF_  "Manufacturer" "Ford";
+BA_DEF_DEF_  "NmType" "Ford-OSEK";
+BA_DEF_DEF_  "NmBaseAddress" 1280;
+BA_DEF_DEF_  "NmAsrBaseAddress" 1408;
+BA_ "GenSigStartValue" SG_ 519 CSC07_CellTemperatureSensor2 400;
+BA_ "GenSigStartValue" SG_ 519 CSC07_CellTemperatureSensor1 400;
+BA_ "GenSigStartValue" SG_ 519 CSC07_BoardTemperatureSensor2 400;
+BA_ "GenSigStartValue" SG_ 519 CSC07_BoardTemperatureSensor1 400;
+BA_ "GenSigStartValue" SG_ 518 CSC06_CellTemperatureSensor2 400;
+BA_ "GenSigStartValue" SG_ 518 CSC06_CellTemperatureSensor1 400;
+BA_ "GenSigStartValue" SG_ 518 CSC06_BoardTemperatureSensor2 400;
+BA_ "GenSigStartValue" SG_ 518 CSC06_BoardTemperatureSensor1 400;
+BA_ "GenSigStartValue" SG_ 517 CSC05_CellTemperatureSensor2 400;
+BA_ "GenSigStartValue" SG_ 517 CSC05_CellTemperatureSensor1 400;
+BA_ "GenSigStartValue" SG_ 517 CSC05_BoardTemperatureSensor2 400;
+BA_ "GenSigStartValue" SG_ 517 CSC05_BoardTemperatureSensor1 400;
+BA_ "GenSigStartValue" SG_ 516 CSC04_CellTemperatureSensor2 400;
+BA_ "GenSigStartValue" SG_ 516 CSC04_CellTemperatureSensor1 400;
+BA_ "GenSigStartValue" SG_ 516 CSC04_BoardTemperatureSensor2 400;
+BA_ "GenSigStartValue" SG_ 516 CSC04_BoardTemperatureSensor1 400;
+BA_ "GenSigStartValue" SG_ 515 CSC03_CellTemperatureSensor2 400;
+BA_ "GenSigStartValue" SG_ 515 CSC03_CellTemperatureSensor1 400;
+BA_ "GenSigStartValue" SG_ 515 CSC03_BoardTemperatureSensor2 400;
+BA_ "GenSigStartValue" SG_ 515 CSC03_BoardTemperatureSensor1 400;
+BA_ "GenSigStartValue" SG_ 514 CSC02_StartIdPlus3Temp 0;
+BA_ "GenSigStartValue" SG_ 514 CSC02_StartIdPlus2Temp 0;
+BA_ "GenSigStartValue" SG_ 514 CSC02_StartIdPlus1Temp 0;
+BA_ "GenSigStartValue" SG_ 514 CSC02_StartIdPlus0Temp 0;
+BA_ "GenSigStartValue" SG_ 513 CSC01_StartIdPlus3Temp 0;
+BA_ "GenSigStartValue" SG_ 513 CSC01_StartIdPlus2Temp 0;
+BA_ "GenSigStartValue" SG_ 513 CSC01_StartIdPlus1Temp 0;
+BA_ "GenSigStartValue" SG_ 513 CSC01_StartIdPlus0Temp 0;
+BA_ "GenSigStartValue" SG_ 262 CSC06_StartCellIdPlus3Voltage 0;
+BA_ "GenSigStartValue" SG_ 262 CSC06_StartCellIdPlus2Voltage 0;
+BA_ "GenSigStartValue" SG_ 262 CSC06_StartCellIdPlus1Voltage 0;
+BA_ "GenSigStartValue" SG_ 262 CSC06_StartCellIdPlus0Voltage 0;
+BA_ "GenSigStartValue" SG_ 261 CSC05_StartCellIdPlus3Voltage 0;
+BA_ "GenSigStartValue" SG_ 261 CSC05_StartCellIdPlus2Voltage 0;
+BA_ "GenSigStartValue" SG_ 261 CSC05_StartCellIdPlus1Voltage 0;
+BA_ "GenSigStartValue" SG_ 261 CSC05_StartCellIdPlus0Voltage 0;
+BA_ "GenSigStartValue" SG_ 260 CSC04_StartCellIdPlus3Voltage 0;
+BA_ "GenSigStartValue" SG_ 260 CSC04_StartCellIdPlus2Voltage 0;
+BA_ "GenSigStartValue" SG_ 260 CSC04_StartCellIdPlus1Voltage 0;
+BA_ "GenSigStartValue" SG_ 260 CSC04_StartCellIdPlus0Voltage 0;
+BA_ "GenSigStartValue" SG_ 260 CSC04_StartCellID 0;
+BA_ "GenSigStartValue" SG_ 259 CSC03_StartCellIdPlus3Voltage 0;
+BA_ "GenSigStartValue" SG_ 259 CSC03_StartCellIdPlus2Voltage 0;
+BA_ "GenSigStartValue" SG_ 259 CSC03_StartCellIdPlus1Voltage 0;
+BA_ "GenSigStartValue" SG_ 259 CSC03_StartCellIdPlus0Voltage 0;
+BA_ "GenSigStartValue" SG_ 258 CSC02_StartCellIdPlus3Voltage 0;
+BA_ "GenSigStartValue" SG_ 258 CSC02_StartCellIdPlus2Voltage 0;
+BA_ "GenSigStartValue" SG_ 258 CSC02_StartCellIdPlus1Voltage 0;
+BA_ "GenSigStartValue" SG_ 258 CSC02_StartCellIdPlus0Voltage 0;
+BA_ "GenSigStartValue" SG_ 257 CSC01_StartCellIdPlus3Voltage 0;
+BA_ "GenSigStartValue" SG_ 257 CSC01_StartCellIdPlus2Voltage 0;
+BA_ "GenSigStartValue" SG_ 257 CSC01_StartCellIdPlus1Voltage 0;
+BA_ "GenSigStartValue" SG_ 257 CSC01_StartCellIdPlus0Voltage 0;
+BA_ "GenSigStartValue" SG_ 64 BMU_DischargeBoardTempCeiling 400;
+BA_ "GenSigStartValue" SG_ 64 BMU_DischargeCellTempCeiling 400;
+BA_ "GenSigStartValue" SG_ 64 BMU_DischargeVoltageFloor 0;
+BA_ "GenSigStartValue" SG_ 512 CSC00_StartIdPlus3Temp 0;
+BA_ "GenSigStartValue" SG_ 512 CSC00_StartIdPlus2Temp 0;
+BA_ "GenSigStartValue" SG_ 512 CSC00_StartIdPlus1Temp 0;
+BA_ "GenSigStartValue" SG_ 512 CSC00_StartIdPlus0Temp 0;
+BA_ "GenSigStartValue" SG_ 256 CSC00_StartCellIdPlus3Voltage 0;
+BA_ "GenSigStartValue" SG_ 256 CSC00_StartCellIdPlus2Voltage 0;
+BA_ "GenSigStartValue" SG_ 256 CSC00_StartCellIdPlus1Voltage 0;
+BA_ "GenSigStartValue" SG_ 256 CSC00_StartCellIdPlus0Voltage 0;
+VAL_ 1607 CSC07_State 6 "Sleep" 5 "Diagnostic" 4 "Autonomous" 3 "Pause" 2 "Run" 1 "Uninitialized" 0 "Initialization" ;
+VAL_ 1606 CSC06_State 6 "Sleep" 5 "Diagnostic" 4 "Autonomous" 3 "Pause" 2 "Run" 1 "Uninitialized" 0 "Initialization" ;
+VAL_ 1605 CSC05_State 6 "Sleep" 5 "Diagnostic" 4 "Autonomous" 3 "Pause" 2 "Run" 1 "Uninitialized" 0 "Initialization" ;
+VAL_ 1604 CSC04_State 6 "Sleep" 5 "Diagnostic" 4 "Autonomous" 3 "Pause" 2 "Run" 1 "Uninitialized" 0 "Initialization" ;
+VAL_ 1603 CSC03_State 6 "Sleep" 5 "Diagnostic" 4 "Autonomous" 3 "Pause" 2 "Run" 1 "Uninitialized" 0 "Initialization" ;
+VAL_ 1602 CSC02_State 6 "Sleep" 5 "Diagnostic" 4 "Autonomous" 3 "Pause" 2 "Run" 1 "Uninitialized" 0 "Initialization" ;
+VAL_ 1601 CSC01_State 6 "Sleep" 5 "Diagnostic" 4 "Autonomous" 3 "Pause" 2 "Run" 1 "Uninitialized" 0 "Initialization" ;
+VAL_ 1543 CSC07_IdCP17 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1543 CSC07_IdCP16 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1543 CSC07_IdCP15 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1543 CSC07_IdCP14 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1543 CSC07_IdCP13 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1543 CSC07_IdCP12 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1543 CSC07_IdCP11 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1543 CSC07_IdCP10 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1543 CSC07_IdCP09 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1543 CSC07_IdCP08 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1543 CSC07_IdCP07 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1543 CSC07_IdCP06 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1543 CSC07_IdCP05 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1543 CSC07_IdCP04 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1543 CSC07_IdCP03 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1543 CSC07_IdCP02 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1543 CSC07_IdCP01 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1543 CSC07_IdCP00 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1543 CSC07_IdBTSP2 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1543 CSC07_IdBTSP1 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1543 CSC07_IdCTSP2 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1543 CSC07_IdCTSP1 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1542 CSC06_IdCP17 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1542 CSC06_IdCP16 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1542 CSC06_IdCP15 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1542 CSC06_IdCP14 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1542 CSC06_IdCP13 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1542 CSC06_IdCP12 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1542 CSC06_IdCP11 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1542 CSC06_IdCP10 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1542 CSC06_IdCP09 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1542 CSC06_IdCP08 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1542 CSC06_IdCP07 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1542 CSC06_IdCP06 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1542 CSC06_IdCP05 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1542 CSC06_IdCP04 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1542 CSC06_IdCP03 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1542 CSC06_IdCP02 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1542 CSC06_IdCP01 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1542 CSC06_IdCP00 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1542 CSC06_IdBTSP2 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1542 CSC06_IdBTSP1 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1542 CSC06_IdCTSP2 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1542 CSC06_IdCTSP1 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1541 CSC05_IdCP17 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1541 CSC05_IdCP16 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1541 CSC05_IdCP15 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1541 CSC05_IdCP14 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1541 CSC05_IdCP13 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1541 CSC05_IdCP12 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1541 CSC05_IdCP11 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1541 CSC05_IdCP10 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1541 CSC05_IdCP09 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1541 CSC05_IdCP08 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1541 CSC05_IdCP07 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1541 CSC05_IdCP06 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1541 CSC05_IdCP05 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1541 CSC05_IdCP04 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1541 CSC05_IdCP03 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1541 CSC05_IdCP02 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1541 CSC05_IdCP01 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1541 CSC05_IdCP00 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1541 CSC05_IdBTSP2 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1541 CSC05_IdBTSP1 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1541 CSC05_IdCTSP2 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1541 CSC05_IdCTSP1 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1540 CSC04_IdCP17 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1540 CSC04_IdCP16 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1540 CSC04_IdCP15 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1540 CSC04_IdCP14 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1540 CSC04_IdCP13 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1540 CSC04_IdCP12 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1540 CSC04_IdCP11 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1540 CSC04_IdCP10 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1540 CSC04_IdCP09 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1540 CSC04_IdCP08 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1540 CSC04_IdCP07 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1540 CSC04_IdCP06 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1540 CSC04_IdCP05 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1540 CSC04_IdCP04 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1540 CSC04_IdCP03 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1540 CSC04_IdCP02 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1540 CSC04_IdCP01 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1540 CSC04_IdCP00 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1540 CSC04_IdBTSP2 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1540 CSC04_IdBTSP1 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1540 CSC04_IdCTSP2 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1540 CSC04_IdCTSP1 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1539 CSC03_IdCP17 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1539 CSC03_IdCP16 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1539 CSC03_IdCP15 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1539 CSC03_IdCP14 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1539 CSC03_IdCP13 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1539 CSC03_IdCP12 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1539 CSC03_IdCP11 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1539 CSC03_IdCP10 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1539 CSC03_IdCP09 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1539 CSC03_IdCP08 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1539 CSC03_IdCP07 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1539 CSC03_IdCP06 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1539 CSC03_IdCP05 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1539 CSC03_IdCP04 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1539 CSC03_IdCP03 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1539 CSC03_IdCP02 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1539 CSC03_IdCP01 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1539 CSC03_IdCP00 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1539 CSC03_IdBTSP2 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1539 CSC03_IdBTSP1 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1539 CSC03_IdCTSP2 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1539 CSC03_IdCTSP1 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1538 CSC02_IdCP17 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1538 CSC02_IdCP16 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1538 CSC02_IdCP15 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1538 CSC02_IdCP14 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1538 CSC02_IdCP13 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1538 CSC02_IdCP12 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1538 CSC02_IdCP11 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1538 CSC02_IdCP10 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1538 CSC02_IdCP09 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1538 CSC02_IdCP08 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1538 CSC02_IdCP07 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1538 CSC02_IdCP06 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1538 CSC02_IdCP05 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1538 CSC02_IdCP04 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1538 CSC02_IdCP03 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1538 CSC02_IdCP02 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1538 CSC02_IdCP01 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1538 CSC02_IdCP00 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1538 CSC02_IdBTSP2 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1538 CSC02_IdBTSP1 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1538 CSC02_IdCTSP2 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1538 CSC02_IdCTSP1 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1537 CSC01_IdCP17 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1537 CSC01_IdCP16 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1537 CSC01_IdCP15 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1537 CSC01_IdCP14 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1537 CSC01_IdCP13 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1537 CSC01_IdCP12 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1537 CSC01_IdCP11 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1537 CSC01_IdCP10 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1537 CSC01_IdCP09 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1537 CSC01_IdCP08 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1537 CSC01_IdCP07 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1537 CSC01_IdCP06 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1537 CSC01_IdCP05 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1537 CSC01_IdCP04 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1537 CSC01_IdCP03 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1537 CSC01_IdCP02 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1537 CSC01_IdCP01 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1537 CSC01_IdCP00 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1537 CSC01_IdBTSP2 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1537 CSC01_IdBTSP1 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1537 CSC01_IdCTSP2 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1537 CSC01_IdCTSP1 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1031 CSC07_FaultC2TTE 1 "Fault" 0 "OK" ;
+VAL_ 1031 CSC07_FaultC1TTE 1 "Fault" 0 "OK" ;
+VAL_ 1031 CSC07_FaultADCOM 1 "Fault" 0 "OK" ;
+VAL_ 1031 CSC07_FaultTSC2E 1 "Fault" 0 "OK" ;
+VAL_ 1031 CSC07_FaultTSC1E 1 "Fault" 0 "OK" ;
+VAL_ 1031 CSC07_FaultTSB2E 1 "Fault" 0 "OK" ;
+VAL_ 1031 CSC07_FaultTSB1E 1 "Fault" 0 "OK" ;
+VAL_ 1031 CSC07_FaultSDS2 1 "Fault" 0 "OK" ;
+VAL_ 1031 CSC07_FaultSDS1 1 "Fault" 0 "OK" ;
+VAL_ 1031 CSC07_FaultSDM 1 "Fault" 0 "OK" ;
+VAL_ 1031 CSC07_FaultHVS2 1 "Fault" 0 "OK" ;
+VAL_ 1031 CSC07_FaultHVS1 1 "Fault" 0 "OK" ;
+VAL_ 1031 CSC07_FaultDFV 1 "Fault" 0 "OK" ;
+VAL_ 1031 CSC07_FaultDFT 1 "Fault" 0 "OK" ;
+VAL_ 1031 CSC07_FaultCSCI 1 "Fault" 0 "OK" ;
+VAL_ 1031 CSC07_FaultCS17 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1031 CSC07_FaultCS16 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1031 CSC07_FaultCS15 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1031 CSC07_FaultCS14 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1031 CSC07_FaultCS13 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1031 CSC07_FaultCS12 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1031 CSC07_FaultCS11 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1031 CSC07_FaultCS10 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1031 CSC07_FaultCS09 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1031 CSC07_FaultCS08 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1031 CSC07_FaultCS07 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1031 CSC07_FaultCS06 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1031 CSC07_FaultCS05 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1031 CSC07_FaultCS04 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1031 CSC07_FaultCS03 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1031 CSC07_FaultCS02 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1031 CSC07_FaultCS01 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1031 CSC07_FaultCS00 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1031 CSC07_FaultCRC 1 "Fault" 0 "OK" ;
+VAL_ 1031 CSC07_FaultB2TTE 1 "Fault" 0 "OK" ;
+VAL_ 1031 CSC07_FaultB1TTE 1 "Fault" 0 "OK" ;
+VAL_ 1031 CSC07_FaultADRES 1 "Fault" 0 "OK" ;
+VAL_ 1031 CSC07_FaultADCRC 1 "Fault" 0 "OK" ;
+VAL_ 1030 CSC06_FaultC2TTE 1 "Fault" 0 "OK" ;
+VAL_ 1030 CSC06_FaultC1TTE 1 "Fault" 0 "OK" ;
+VAL_ 1030 CSC06_FaultADCOM 1 "Fault" 0 "OK" ;
+VAL_ 1030 CSC06_FaultTSC2E 1 "Fault" 0 "OK" ;
+VAL_ 1030 CSC06_FaultTSC1E 1 "Fault" 0 "OK" ;
+VAL_ 1030 CSC06_FaultTSB2E 1 "Fault" 0 "OK" ;
+VAL_ 1030 CSC06_FaultTSB1E 1 "Fault" 0 "OK" ;
+VAL_ 1030 CSC06_FaultSDS2 1 "Fault" 0 "OK" ;
+VAL_ 1030 CSC06_FaultSDS1 1 "Fault" 0 "OK" ;
+VAL_ 1030 CSC06_FaultSDM 1 "Fault" 0 "OK" ;
+VAL_ 1030 CSC06_FaultHVS2 1 "Fault" 0 "OK" ;
+VAL_ 1030 CSC06_FaultHVS1 1 "Fault" 0 "OK" ;
+VAL_ 1030 CSC06_FaultDFV 1 "Fault" 0 "OK" ;
+VAL_ 1030 CSC06_FaultDFT 1 "Fault" 0 "OK" ;
+VAL_ 1030 CSC06_FaultCSCI 1 "Fault" 0 "OK" ;
+VAL_ 1030 CSC06_FaultCS17 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1030 CSC06_FaultCS16 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1030 CSC06_FaultCS15 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1030 CSC06_FaultCS14 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1030 CSC06_FaultCS13 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1030 CSC06_FaultCS12 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1030 CSC06_FaultCS11 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1030 CSC06_FaultCS10 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1030 CSC06_FaultCS09 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1030 CSC06_FaultCS08 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1030 CSC06_FaultCS07 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1030 CSC06_FaultCS06 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1030 CSC06_FaultCS05 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1030 CSC06_FaultCS04 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1030 CSC06_FaultCS03 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1030 CSC06_FaultCS02 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1030 CSC06_FaultCS01 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1030 CSC06_FaultCS00 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1030 CSC06_FaultCRC 1 "Fault" 0 "OK" ;
+VAL_ 1030 CSC06_FaultB2TTE 1 "Fault" 0 "OK" ;
+VAL_ 1030 CSC06_FaultB1TTE 1 "Fault" 0 "OK" ;
+VAL_ 1030 CSC06_FaultADRES 1 "Fault" 0 "OK" ;
+VAL_ 1030 CSC06_FaultADCRC 1 "Fault" 0 "OK" ;
+VAL_ 1029 CSC05_FaultC2TTE 1 "Fault" 0 "OK" ;
+VAL_ 1029 CSC05_FaultC1TTE 1 "Fault" 0 "OK" ;
+VAL_ 1029 CSC05_FaultADCOM 1 "Fault" 0 "OK" ;
+VAL_ 1029 CSC05_FaultTSC2E 1 "Fault" 0 "OK" ;
+VAL_ 1029 CSC05_FaultTSC1E 1 "Fault" 0 "OK" ;
+VAL_ 1029 CSC05_FaultTSB2E 1 "Fault" 0 "OK" ;
+VAL_ 1029 CSC05_FaultTSB1E 1 "Fault" 0 "OK" ;
+VAL_ 1029 CSC05_FaultSDS2 1 "Fault" 0 "OK" ;
+VAL_ 1029 CSC05_FaultSDS1 1 "Fault" 0 "OK" ;
+VAL_ 1029 CSC05_FaultSDM 1 "Fault" 0 "OK" ;
+VAL_ 1029 CSC05_FaultHVS2 1 "Fault" 0 "OK" ;
+VAL_ 1029 CSC05_FaultHVS1 1 "Fault" 0 "OK" ;
+VAL_ 1029 CSC05_FaultDFV 1 "Fault" 0 "OK" ;
+VAL_ 1029 CSC05_FaultDFT 1 "Fault" 0 "OK" ;
+VAL_ 1029 CSC05_FaultCSCI 1 "Fault" 0 "OK" ;
+VAL_ 1029 CSC05_FaultCS17 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1029 CSC05_FaultCS16 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1029 CSC05_FaultCS15 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1029 CSC05_FaultCS14 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1029 CSC05_FaultCS13 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1029 CSC05_FaultCS12 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1029 CSC05_FaultCS11 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1029 CSC05_FaultCS10 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1029 CSC05_FaultCS09 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1029 CSC05_FaultCS08 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1029 CSC05_FaultCS07 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1029 CSC05_FaultCS06 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1029 CSC05_FaultCS05 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1029 CSC05_FaultCS04 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1029 CSC05_FaultCS03 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1029 CSC05_FaultCS02 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1029 CSC05_FaultCS01 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1029 CSC05_FaultCS00 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1029 CSC05_FaultCRC 1 "Fault" 0 "OK" ;
+VAL_ 1029 CSC05_FaultB2TTE 1 "Fault" 0 "OK" ;
+VAL_ 1029 CSC05_FaultB1TTE 1 "Fault" 0 "OK" ;
+VAL_ 1029 CSC05_FaultADRES 1 "Fault" 0 "OK" ;
+VAL_ 1029 CSC05_FaultADCRC 1 "Fault" 0 "OK" ;
+VAL_ 1028 CSC04_FaultC2TTE 1 "Fault" 0 "OK" ;
+VAL_ 1028 CSC04_FaultC1TTE 1 "Fault" 0 "OK" ;
+VAL_ 1028 CSC04_FaultADCOM 1 "Fault" 0 "OK" ;
+VAL_ 1028 CSC04_FaultTSC2E 1 "Fault" 0 "OK" ;
+VAL_ 1028 CSC04_FaultTSC1E 1 "Fault" 0 "OK" ;
+VAL_ 1028 CSC04_FaultTSB2E 1 "Fault" 0 "OK" ;
+VAL_ 1028 CSC04_FaultTSB1E 1 "Fault" 0 "OK" ;
+VAL_ 1028 CSC04_FaultSDS2 1 "Fault" 0 "OK" ;
+VAL_ 1028 CSC04_FaultSDS1 1 "Fault" 0 "OK" ;
+VAL_ 1028 CSC04_FaultSDM 1 "Fault" 0 "OK" ;
+VAL_ 1028 CSC04_FaultHVS2 1 "Fault" 0 "OK" ;
+VAL_ 1028 CSC04_FaultHVS1 1 "Fault" 0 "OK" ;
+VAL_ 1028 CSC04_FaultDFV 1 "Fault" 0 "OK" ;
+VAL_ 1028 CSC04_FaultDFT 1 "Fault" 0 "OK" ;
+VAL_ 1028 CSC04_FaultCSCI 1 "Fault" 0 "OK" ;
+VAL_ 1028 CSC04_FaultCS17 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1028 CSC04_FaultCS16 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1028 CSC04_FaultCS15 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1028 CSC04_FaultCS14 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1028 CSC04_FaultCS13 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1028 CSC04_FaultCS12 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1028 CSC04_FaultCS11 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1028 CSC04_FaultCS10 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1028 CSC04_FaultCS09 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1028 CSC04_FaultCS08 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1028 CSC04_FaultCS07 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1028 CSC04_FaultCS06 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1028 CSC04_FaultCS05 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1028 CSC04_FaultCS04 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1028 CSC04_FaultCS03 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1028 CSC04_FaultCS02 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1028 CSC04_FaultCS01 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1028 CSC04_FaultCS00 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1028 CSC04_FaultCRC 1 "Fault" 0 "OK" ;
+VAL_ 1028 CSC04_FaultB2TTE 1 "Fault" 0 "OK" ;
+VAL_ 1028 CSC04_FaultB1TTE 1 "Fault" 0 "OK" ;
+VAL_ 1028 CSC04_FaultADRES 1 "Fault" 0 "OK" ;
+VAL_ 1028 CSC04_FaultADCRC 1 "Fault" 0 "OK" ;
+VAL_ 1027 CSC03_FaultC2TTE 1 "Fault" 0 "OK" ;
+VAL_ 1027 CSC03_FaultC1TTE 1 "Fault" 0 "OK" ;
+VAL_ 1027 CSC03_FaultADCOM 1 "Fault" 0 "OK" ;
+VAL_ 1027 CSC03_FaultTSC2E 1 "Fault" 0 "OK" ;
+VAL_ 1027 CSC03_FaultTSC1E 1 "Fault" 0 "OK" ;
+VAL_ 1027 CSC03_FaultTSB2E 1 "Fault" 0 "OK" ;
+VAL_ 1027 CSC03_FaultTSB1E 1 "Fault" 0 "OK" ;
+VAL_ 1027 CSC03_FaultSDS2 1 "Fault" 0 "OK" ;
+VAL_ 1027 CSC03_FaultSDS1 1 "Fault" 0 "OK" ;
+VAL_ 1027 CSC03_FaultSDM 1 "Fault" 0 "OK" ;
+VAL_ 1027 CSC03_FaultHVS2 1 "Fault" 0 "OK" ;
+VAL_ 1027 CSC03_FaultHVS1 1 "Fault" 0 "OK" ;
+VAL_ 1027 CSC03_FaultDFV 1 "Fault" 0 "OK" ;
+VAL_ 1027 CSC03_FaultDFT 1 "Fault" 0 "OK" ;
+VAL_ 1027 CSC03_FaultCSCI 1 "Fault" 0 "OK" ;
+VAL_ 1027 CSC03_FaultCS17 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1027 CSC03_FaultCS16 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1027 CSC03_FaultCS15 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1027 CSC03_FaultCS14 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1027 CSC03_FaultCS13 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1027 CSC03_FaultCS12 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1027 CSC03_FaultCS11 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1027 CSC03_FaultCS10 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1027 CSC03_FaultCS09 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1027 CSC03_FaultCS08 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1027 CSC03_FaultCS07 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1027 CSC03_FaultCS06 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1027 CSC03_FaultCS05 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1027 CSC03_FaultCS04 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1027 CSC03_FaultCS03 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1027 CSC03_FaultCS02 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1027 CSC03_FaultCS01 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1027 CSC03_FaultCS00 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1027 CSC03_FaultCRC 1 "Fault" 0 "OK" ;
+VAL_ 1027 CSC03_FaultB2TTE 1 "Fault" 0 "OK" ;
+VAL_ 1027 CSC03_FaultB1TTE 1 "Fault" 0 "OK" ;
+VAL_ 1027 CSC03_FaultADRES 1 "Fault" 0 "OK" ;
+VAL_ 1027 CSC03_FaultADCRC 1 "Fault" 0 "OK" ;
+VAL_ 1026 CSC02_FaultC2TTE 1 "Fault" 0 "OK" ;
+VAL_ 1026 CSC02_FaultC1TTE 1 "Fault" 0 "OK" ;
+VAL_ 1026 CSC02_FaultADCOM 1 "Fault" 0 "OK" ;
+VAL_ 1026 CSC02_FaultTSC2E 1 "Fault" 0 "OK" ;
+VAL_ 1026 CSC02_FaultTSC1E 1 "Fault" 0 "OK" ;
+VAL_ 1026 CSC02_FaultTSB2E 1 "Fault" 0 "OK" ;
+VAL_ 1026 CSC02_FaultTSB1E 1 "Fault" 0 "OK" ;
+VAL_ 1026 CSC02_FaultSDS2 1 "Fault" 0 "OK" ;
+VAL_ 1026 CSC02_FaultSDS1 1 "Fault" 0 "OK" ;
+VAL_ 1026 CSC02_FaultSDM 1 "Fault" 0 "OK" ;
+VAL_ 1026 CSC02_FaultHVS2 1 "Fault" 0 "OK" ;
+VAL_ 1026 CSC02_FaultHVS1 1 "Fault" 0 "OK" ;
+VAL_ 1026 CSC02_FaultDFV 1 "Fault" 0 "OK" ;
+VAL_ 1026 CSC02_FaultDFT 1 "Fault" 0 "OK" ;
+VAL_ 1026 CSC02_FaultCSCI 1 "Fault" 0 "OK" ;
+VAL_ 1026 CSC02_FaultCS17 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1026 CSC02_FaultCS16 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1026 CSC02_FaultCS15 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1026 CSC02_FaultCS14 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1026 CSC02_FaultCS13 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1026 CSC02_FaultCS12 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1026 CSC02_FaultCS11 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1026 CSC02_FaultCS10 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1026 CSC02_FaultCS09 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1026 CSC02_FaultCS08 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1026 CSC02_FaultCS07 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1026 CSC02_FaultCS06 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1026 CSC02_FaultCS05 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1026 CSC02_FaultCS04 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1026 CSC02_FaultCS03 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1026 CSC02_FaultCS02 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1026 CSC02_FaultCS01 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1026 CSC02_FaultCS00 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1026 CSC02_FaultCRC 1 "Fault" 0 "OK" ;
+VAL_ 1026 CSC02_FaultB2TTE 1 "Fault" 0 "OK" ;
+VAL_ 1026 CSC02_FaultB1TTE 1 "Fault" 0 "OK" ;
+VAL_ 1026 CSC02_FaultADRES 1 "Fault" 0 "OK" ;
+VAL_ 1026 CSC02_FaultADCRC 1 "Fault" 0 "OK" ;
+VAL_ 1025 CSC01_FaultC2TTE 1 "Fault" 0 "OK" ;
+VAL_ 1025 CSC01_FaultC1TTE 1 "Fault" 0 "OK" ;
+VAL_ 1025 CSC01_FaultADCOM 1 "Fault" 0 "OK" ;
+VAL_ 1025 CSC01_FaultTSC2E 1 "Fault" 0 "OK" ;
+VAL_ 1025 CSC01_FaultTSC1E 1 "Fault" 0 "OK" ;
+VAL_ 1025 CSC01_FaultTSB2E 1 "Fault" 0 "OK" ;
+VAL_ 1025 CSC01_FaultTSB1E 1 "Fault" 0 "OK" ;
+VAL_ 1025 CSC01_FaultSDS2 1 "Fault" 0 "OK" ;
+VAL_ 1025 CSC01_FaultSDS1 1 "Fault" 0 "OK" ;
+VAL_ 1025 CSC01_FaultSDM 1 "Fault" 0 "OK" ;
+VAL_ 1025 CSC01_FaultHVS2 1 "Fault" 0 "OK" ;
+VAL_ 1025 CSC01_FaultHVS1 1 "Fault" 0 "OK" ;
+VAL_ 1025 CSC01_FaultDFV 1 "Fault" 0 "OK" ;
+VAL_ 1025 CSC01_FaultDFT 1 "Fault" 0 "OK" ;
+VAL_ 1025 CSC01_FaultCSCI 1 "Fault" 0 "OK" ;
+VAL_ 1025 CSC01_FaultCS17 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1025 CSC01_FaultCS16 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1025 CSC01_FaultCS15 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1025 CSC01_FaultCS14 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1025 CSC01_FaultCS13 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1025 CSC01_FaultCS12 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1025 CSC01_FaultCS11 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1025 CSC01_FaultCS10 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1025 CSC01_FaultCS09 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1025 CSC01_FaultCS08 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1025 CSC01_FaultCS07 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1025 CSC01_FaultCS06 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1025 CSC01_FaultCS05 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1025 CSC01_FaultCS04 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1025 CSC01_FaultCS03 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1025 CSC01_FaultCS02 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1025 CSC01_FaultCS01 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1025 CSC01_FaultCS00 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1025 CSC01_FaultCRC 1 "Fault" 0 "OK" ;
+VAL_ 1025 CSC01_FaultB2TTE 1 "Fault" 0 "OK" ;
+VAL_ 1025 CSC01_FaultB1TTE 1 "Fault" 0 "OK" ;
+VAL_ 1025 CSC01_FaultADRES 1 "Fault" 0 "OK" ;
+VAL_ 1025 CSC01_FaultADCRC 1 "Fault" 0 "OK" ;
+VAL_ 775 CSC07_DIP17 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 775 CSC07_DIP16 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 775 CSC07_DIP15 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 775 CSC07_DIP14 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 775 CSC07_DIP13 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 775 CSC07_DIP12 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 775 CSC07_DIP11 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 775 CSC07_DIP10 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 775 CSC07_DIP09 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 775 CSC07_DIP08 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 775 CSC07_DIP07 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 775 CSC07_DIP06 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 775 CSC07_DIP05 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 775 CSC07_DIP04 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 775 CSC07_DIP03 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 775 CSC07_DIP02 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 775 CSC07_DIP01 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 775 CSC07_DIP00 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 774 CSC06_DIP17 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 774 CSC06_DIP16 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 774 CSC06_DIP15 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 774 CSC06_DIP14 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 774 CSC06_DIP13 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 774 CSC06_DIP12 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 774 CSC06_DIP11 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 774 CSC06_DIP10 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 774 CSC06_DIP09 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 774 CSC06_DIP08 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 774 CSC06_DIP07 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 774 CSC06_DIP06 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 774 CSC06_DIP05 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 774 CSC06_DIP04 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 774 CSC06_DIP03 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 774 CSC06_DIP02 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 774 CSC06_DIP01 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 774 CSC06_DIP00 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 773 CSC05_DIP17 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 773 CSC05_DIP16 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 773 CSC05_DIP15 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 773 CSC05_DIP14 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 773 CSC05_DIP13 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 773 CSC05_DIP12 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 773 CSC05_DIP11 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 773 CSC05_DIP10 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 773 CSC05_DIP09 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 773 CSC05_DIP08 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 773 CSC05_DIP07 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 773 CSC05_DIP06 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 773 CSC05_DIP05 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 773 CSC05_DIP04 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 773 CSC05_DIP03 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 773 CSC05_DIP02 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 773 CSC05_DIP01 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 773 CSC05_DIP00 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 772 CSC04_DIP17 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 772 CSC04_DIP16 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 772 CSC04_DIP15 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 772 CSC04_DIP14 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 772 CSC04_DIP13 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 772 CSC04_DIP12 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 772 CSC04_DIP11 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 772 CSC04_DIP10 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 772 CSC04_DIP09 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 772 CSC04_DIP08 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 772 CSC04_DIP07 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 772 CSC04_DIP06 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 772 CSC04_DIP05 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 772 CSC04_DIP04 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 772 CSC04_DIP03 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 772 CSC04_DIP02 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 772 CSC04_DIP01 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 772 CSC04_DIP00 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 771 CSC03_DIP17 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 771 CSC03_DIP16 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 771 CSC03_DIP15 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 771 CSC03_DIP14 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 771 CSC03_DIP13 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 771 CSC03_DIP12 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 771 CSC03_DIP11 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 771 CSC03_DIP10 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 771 CSC03_DIP09 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 771 CSC03_DIP08 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 771 CSC03_DIP07 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 771 CSC03_DIP06 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 771 CSC03_DIP05 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 771 CSC03_DIP04 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 771 CSC03_DIP03 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 771 CSC03_DIP02 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 771 CSC03_DIP01 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 771 CSC03_DIP00 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 770 CSC02_DIP17 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 770 CSC02_DIP16 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 770 CSC02_DIP15 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 770 CSC02_DIP14 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 770 CSC02_DIP13 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 770 CSC02_DIP12 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 770 CSC02_DIP11 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 770 CSC02_DIP10 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 770 CSC02_DIP09 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 770 CSC02_DIP08 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 770 CSC02_DIP07 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 770 CSC02_DIP06 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 770 CSC02_DIP05 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 770 CSC02_DIP04 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 770 CSC02_DIP03 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 770 CSC02_DIP02 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 770 CSC02_DIP01 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 770 CSC02_DIP00 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 769 CSC01_DIP17 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 769 CSC01_DIP16 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 769 CSC01_DIP15 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 769 CSC01_DIP14 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 769 CSC01_DIP13 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 769 CSC01_DIP12 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 769 CSC01_DIP11 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 769 CSC01_DIP10 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 769 CSC01_DIP09 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 769 CSC01_DIP08 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 769 CSC01_DIP07 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 769 CSC01_DIP06 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 769 CSC01_DIP05 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 769 CSC01_DIP04 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 769 CSC01_DIP03 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 769 CSC01_DIP02 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 769 CSC01_DIP01 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 769 CSC01_DIP00 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 128 BMU_IdBTSP2 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 128 BMU_IdBTSP1 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 128 BMU_IdCP00 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 128 BMU_IdCP01 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 128 BMU_IdCP02 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 128 BMU_IdCP03 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 128 BMU_IdCP04 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 128 BMU_IdCP05 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 128 BMU_IdCP06 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 128 BMU_IdCP07 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 128 BMU_IdCP08 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 128 BMU_IdCP09 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 128 BMU_IdCP10 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 128 BMU_IdCP11 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 128 BMU_IdCP12 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 128 BMU_IdCP13 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 128 BMU_IdCP14 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 128 BMU_IdCP15 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 128 BMU_IdCP16 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 128 BMU_IdCP17 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 128 BMU_IdCTSP2 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 128 BMU_IdCTSP1 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 128 BMU_Identification_CSCId 31 "All CSCs " 30 "CSC 30" 29 "CSC 29" 28 "CSC 28" 27 "CSC 27" 26 "CSC 26" 25 "CSC 25" 24 "CSC 24" 23 "CSC 23" 22 "CSC 22" 21 "CSC 21" 20 "CSC 20" 19 "CSC 19" 18 "CSC 18" 17 "CSC 17" 16 "CSC 16" 15 "CSC 15" 14 "CSC 14" 13 "CSC 13" 12 "CSC 12" 11 "CSC 11" 10 "CSC 10" 9 "CSC 9" 8 "CSC 8" 7 "CSC 7" 6 "CSC 6" 5 "CSC 5" 4 "CSC 4" 3 "CSC 3" 2 "CSC 2" 1 "CSC 1" 0 "CSC 0" ;
+VAL_ 64 BMU_DischargeFloorType 1 "Target Floor" 0 "Fault Floor" ;
+VAL_ 64 BMU_DC17 1 "Start Discharging" 0 "Stop Discharging" ;
+VAL_ 64 BMU_DC16 1 "Start Discharging" 0 "Stop Discharging" ;
+VAL_ 64 BMU_DC15 1 "Start Discharging" 0 "Stop Discharging" ;
+VAL_ 64 BMU_DC14 1 "Start Discharging" 0 "Stop Discharging" ;
+VAL_ 64 BMU_DC13 1 "Start Discharging" 0 "Stop Discharging" ;
+VAL_ 64 BMU_DC12 1 "Start Discharging" 0 "Stop Discharging" ;
+VAL_ 64 BMU_DC11 1 "Start Discharging" 0 "Stop Discharging" ;
+VAL_ 64 BMU_DC10 1 "Start Discharging" 0 "Stop Discharging" ;
+VAL_ 64 BMU_DC09 1 "Start Discharging" 0 "Stop Discharging" ;
+VAL_ 64 BMU_DC08 1 "Start Discharging" 0 "Stop Discharging" ;
+VAL_ 64 BMU_DC07 1 "Start Discharging" 0 "Stop Discharging" ;
+VAL_ 64 BMU_DC06 1 "Start Discharging" 0 "Stop Discharging" ;
+VAL_ 64 BMU_DC05 1 "Start Discharging" 0 "Stop Discharging" ;
+VAL_ 64 BMU_DC04 1 "Start Discharging" 0 "Stop Discharging" ;
+VAL_ 64 BMU_DC03 1 "Start Discharging" 0 "Stop Discharging" ;
+VAL_ 64 BMU_DC02 1 "Start Discharging" 0 "Stop Discharging" ;
+VAL_ 64 BMU_DC01 1 "Start Discharging" 0 "Stop Discharging" ;
+VAL_ 64 BMU_DC00 1 "Start Discharging" 0 "Stop Discharging" ;
+VAL_ 64 BMU_Discharge_CSCId 31 "All CSCs " 30 "CSC 30" 29 "CSC 29" 28 "CSC 28" 27 "CSC 27" 26 "CSC 26" 25 "CSC 25" 24 "CSC 24" 23 "CSC 23" 22 "CSC 22" 21 "CSC 21" 20 "CSC 20" 19 "CSC 19" 18 "CSC 18" 17 "CSC 17" 16 "CSC 16" 15 "CSC 15" 14 "CSC 14" 13 "CSC 13" 12 "CSC 12" 11 "CSC 11" 10 "CSC 10" 9 "CSC 9" 8 "CSC 8" 7 "CSC 7" 6 "CSC 6" 5 "CSC 5" 4 "CSC 4" 3 "CSC 3" 2 "CSC 2" 1 "CSC 1" 0 "CSC 0" ;
+VAL_ 96 BMU_ControlCommandId 4 "Command CSC Autonomous" 3 "Command CSC Pause" 2 "Command CSC Run" 0 "Command CSC Initialization" ;
+VAL_ 96 BMU_Control_CSCId 31 "All CSCs " 30 "CSC 30" 29 "CSC 29" 28 "CSC 28" 27 "CSC 27" 26 "CSC 26" 25 "CSC 25" 24 "CSC 24" 23 "CSC 23" 22 "CSC 22" 21 "CSC 21" 20 "CSC 20" 19 "CSC 19" 18 "CSC 18" 17 "CSC 17" 16 "CSC 16" 15 "CSC 15" 14 "CSC 14" 13 "CSC 13" 12 "CSC 12" 11 "CSC 11" 10 "CSC 10" 9 "CSC 9" 8 "CSC 8" 7 "CSC 7" 6 "CSC 6" 5 "CSC 5" 4 "CSC 4" 3 "CSC 3" 2 "CSC 2" 1 "CSC 1" 0 "CSC 0" ;
+VAL_ 32 BMU_DataRequestId 5 "Request Self Test" 4 "Request Version" 3 "Request Faults" 2 "Request Temperature" 1 "Request Voltage" 0 "Request Voltage Sample" ;
+VAL_ 32 BMU_Data_CSCId 31 "All CSCs " 30 "CSC 30" 29 "CSC 29" 28 "CSC 28" 27 "CSC 27" 26 "CSC 26" 25 "CSC 25" 24 "CSC 24" 23 "CSC 23" 22 "CSC 22" 21 "CSC 21" 20 "CSC 20" 19 "CSC 19" 18 "CSC 18" 17 "CSC 17" 16 "CSC 16" 15 "CSC 15" 14 "CSC 14" 13 "CSC 13" 12 "CSC 12" 11 "CSC 11" 10 "CSC 10" 9 "CSC 9" 8 "CSC 8" 7 "CSC 7" 6 "CSC 6" 5 "CSC 5" 4 "CSC 4" 3 "CSC 3" 2 "CSC 2" 1 "CSC 1" 0 "CSC 0" ;
+VAL_ 1600 CSC00_State 6 "Sleep" 5 "Diagnostic" 4 "Autonomous" 3 "Pause" 2 "Run" 1 "Uninitialized" 0 "Initialization" ;
+VAL_ 1536 CSC00_IdCP17 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1536 CSC00_IdCP16 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1536 CSC00_IdCP15 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1536 CSC00_IdCP14 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1536 CSC00_IdCP13 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1536 CSC00_IdCP12 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1536 CSC00_IdCP11 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1536 CSC00_IdCP10 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1536 CSC00_IdCP09 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1536 CSC00_IdCP08 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1536 CSC00_IdCP07 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1536 CSC00_IdCP06 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1536 CSC00_IdCP05 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1536 CSC00_IdCP04 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1536 CSC00_IdCP03 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1536 CSC00_IdCP02 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1536 CSC00_IdCP01 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1536 CSC00_IdCP00 1 "Cell is connected" 0 "No Cell is connected" ;
+VAL_ 1536 CSC00_IdBTSP2 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1536 CSC00_IdBTSP1 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1536 CSC00_IdCTSP2 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1536 CSC00_IdCTSP1 1 "Sensor is populated" 0 "Sensor is not populated" ;
+VAL_ 1024 CSC00_FaultC2TTE 1 "Fault" 0 "OK" ;
+VAL_ 1024 CSC00_FaultC1TTE 1 "Fault" 0 "OK" ;
+VAL_ 1024 CSC00_FaultADCOM 1 "Fault" 0 "OK" ;
+VAL_ 1024 CSC00_FaultTSC2E 1 "Fault" 0 "OK" ;
+VAL_ 1024 CSC00_FaultTSC1E 1 "Fault" 0 "OK" ;
+VAL_ 1024 CSC00_FaultTSB2E 1 "Fault" 0 "OK" ;
+VAL_ 1024 CSC00_FaultTSB1E 1 "Fault" 0 "OK" ;
+VAL_ 1024 CSC00_FaultSDS2 1 "Fault" 0 "OK" ;
+VAL_ 1024 CSC00_FaultSDS1 1 "Fault" 0 "OK" ;
+VAL_ 1024 CSC00_FaultSDM 1 "Fault" 0 "OK" ;
+VAL_ 1024 CSC00_FaultHVS2 1 "Fault" 0 "OK" ;
+VAL_ 1024 CSC00_FaultHVS1 1 "Fault" 0 "OK" ;
+VAL_ 1024 CSC00_FaultDFV 1 "Fault" 0 "OK" ;
+VAL_ 1024 CSC00_FaultDFT 1 "Fault" 0 "OK" ;
+VAL_ 1024 CSC00_FaultCSCI 1 "Fault" 0 "OK" ;
+VAL_ 1024 CSC00_FaultCS17 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1024 CSC00_FaultCS16 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1024 CSC00_FaultCS15 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1024 CSC00_FaultCS14 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1024 CSC00_FaultCS13 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1024 CSC00_FaultCS12 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1024 CSC00_FaultCS11 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1024 CSC00_FaultCS10 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1024 CSC00_FaultCS09 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1024 CSC00_FaultCS08 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1024 CSC00_FaultCS07 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1024 CSC00_FaultCS06 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1024 CSC00_FaultCS05 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1024 CSC00_FaultCS04 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1024 CSC00_FaultCS03 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1024 CSC00_FaultCS02 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1024 CSC00_FaultCS01 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1024 CSC00_FaultCS00 2 "Discharge Circuit Error" 1 "Voltage Sensor Open Circuit" 0 "Cell OK" ;
+VAL_ 1024 CSC00_FaultCRC 1 "Fault" 0 "OK" ;
+VAL_ 1024 CSC00_FaultB2TTE 1 "Fault" 0 "OK" ;
+VAL_ 1024 CSC00_FaultB1TTE 1 "Fault" 0 "OK" ;
+VAL_ 1024 CSC00_FaultADRES 1 "Fault" 0 "OK" ;
+VAL_ 1024 CSC00_FaultADCRC 1 "Fault" 0 "OK" ;
+VAL_ 768 CSC00_DIP17 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 768 CSC00_DIP16 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 768 CSC00_DIP15 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 768 CSC00_DIP14 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 768 CSC00_DIP13 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 768 CSC00_DIP12 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 768 CSC00_DIP11 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 768 CSC00_DIP10 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 768 CSC00_DIP09 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 768 CSC00_DIP08 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 768 CSC00_DIP07 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 768 CSC00_DIP06 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 768 CSC00_DIP05 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 768 CSC00_DIP04 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 768 CSC00_DIP03 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 768 CSC00_DIP02 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 768 CSC00_DIP01 1 "Discharging" 0 "Not Discharging" ;
+VAL_ 768 CSC00_DIP00 1 "Discharging" 0 "Not Discharging" ;
+

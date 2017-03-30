@@ -1,0 +1,136 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: CHR01 BMS VCU05
+VAL_TABLE_ VT_RelayCtrlState 7 "OpenRelayEmergency" 6 "OpenRelayLessThan1A" 5 "CloseRelay" ;
+VAL_TABLE_ VT_RelatState 1 "RelayClosed" 0 "RelayOpened" ;
+VAL_TABLE_ VT_BattState 9 "Running" 6 "Chargeing" 3 "Output" 0 "Initialize" ;
+
+
+BO_ 274 CHR_01: 8 CHR01
+ SG_ CHR01_ChrOpMode : 63|3@0+ (1,0) [0|7] ""  VCU05,BMS
+ SG_ CHR01_ChrAUX : 60|1@0+ (1,0) [0|1] ""  VCU05,BMS
+ SG_ CHR01_Counter : 59|4@0+ (1,0) [0|15] ""  VCU05,BMS
+ SG_ CHR01_DiagInfo : 55|8@0+ (1,0) [0|255] ""  VCU05,BMS
+ SG_ CHR01_ChrTemp : 47|8@0+ (1,-40) [-40|215] ""  VCU05,BMS
+ SG_ CHR01_actChrVolt : 25|10@0+ (0.5,0) [0|511.5] ""  VCU05,BMS
+ SG_ CHR01_actChrCurrent : 19|10@0+ (0.0625,0) [0|63.5] ""  VCU05,BMS
+ SG_ CHR01_bShortCiruit : 7|1@0+ (1,0) [0|1] ""  VCU05,BMS
+ SG_ CHR01_bUnderVoltIn : 6|1@0+ (1,0) [0|1] ""  VCU05,BMS
+ SG_ CHR01_bErrorCOM : 5|1@0+ (1,0) [0|1] ""  VCU05,BMS
+ SG_ CHR01_bOverCurrentOut : 4|1@0+ (1,0) [0|1] ""  VCU05,BMS
+ SG_ CHR01_bOverTemp : 3|1@0+ (1,0) [0|1] ""  VCU05,BMS
+
+BO_ 98 VCU_05: 8 VCU05
+ SG_ VCU05_CheckSum : 63|8@0+ (1,0) [0|255] ""  BMS
+ SG_ VCU05_CapVoltage : 45|10@0+ (1,0) [0|1023] ""  BMS
+ SG_ VCU05_Counter : 51|4@0+ (1,0) [0|15] ""  BMS
+ SG_ VCU05_ASCReady : 47|1@0+ (1,0) [0|1] ""  BMS
+ SG_ VCU05_Crash : 46|1@0+ (1,0) [0|1] ""  BMS
+ SG_ VCU05_PTPower : 27|12@0+ (0.0625,-128) [-128|127.938] ""  BMS
+ SG_ VCU05_PTCurrent : 23|12@0+ (0.25,-511) [-511|512.75] ""  BMS
+ SG_ VCU05_BMSModeReq : 7|4@0+ (1,0) [0|15] ""  BMS
+ SG_ VCU05_EmgcyPowerOffReq : 3|1@0+ (1,0) [0|1] ""  BMS
+
+BO_ 386 BMS_04: 8 BMS
+ SG_ BMS04_MinTemp : 63|8@0+ (1,-40) [-40|215] ""  VCU05
+ SG_ BMS04_MaxTemp : 55|8@0+ (1,-40) [-40|215] ""  VCU05
+ SG_ BMS04_BatTemp : 47|8@0+ (1,-40) [-40|215] ""  VCU05
+ SG_ BMS04_BatSOH : 39|8@0+ (0.5,0) [0|100] ""  VCU05
+ SG_ BMS04_ChrTimeRemain : 17|10@0+ (1,0) [0|1023] ""  VCU05
+ SG_ BMS04_MinCellVolt : 13|10@0+ (0.005,0) [0|5.115] ""  VCU05
+ SG_ BMS04_MaxCellVolt : 7|10@0+ (0.005,0) [0|5.115] ""  VCU05
+
+BO_ 142 BMS_03: 8 BMS
+ SG_ BMS03_FaultID : 63|8@0+ (1,0) [0|255] ""  VCU05,CHR01
+ SG_ BMS03_ChrVoltSp : 41|10@0+ (0.5,0) [0|511.5] ""  VCU05,CHR01
+ SG_ BMS03_ChrCurrentSp : 35|10@0+ (0.0625,0) [0|63.5] ""  VCU05,CHR01
+ SG_ BMS03_IsoResistance : 13|10@0+ (10,0) [0|10230] ""  VCU05,CHR01
+ SG_ BMS03_CoolingCtl : 19|1@0+ (1,0) [0|1] ""  VCU05,CHR01
+ SG_ BMS03_HeatingCtl : 18|1@0+ (1,0) [0|1] ""  VCU05,CHR01
+ SG_ BMS03_EnCharger : 17|1@0+ (1,0) [0|1] ""  VCU05,CHR01
+ SG_ BMS03_EnergyRemain : 7|10@0+ (0.05,0) [0|51.15] ""  VCU05,CHR01
+
+BO_ 120 BMS_02: 8 BMS
+ SG_ BMS02_MaxChrVoltage : 53|10@0+ (1,0) [0|1023] ""  VCU05
+ SG_ BMS02_Counter : 59|4@0+ (1,0) [0|15] ""  VCU05
+ SG_ BMS02_MinDisVoltage : 47|10@0+ (1,0) [0|1023] ""  VCU05
+ SG_ BMS02_MaxChrCurrentLong : 25|10@0+ (1,-511) [-511|512] ""  VCU05
+ SG_ BMS02_MaxDisCurrentLong : 19|10@0+ (1,-511) [-511|512] ""  VCU05
+ SG_ BMS02_MaxChrCurrentShort : 13|10@0+ (1,-511) [-511|512] ""  VCU05
+ SG_ BMS02_MaxDisCurrentShort : 7|10@0+ (1,-511) [-511|512] ""  VCU05
+
+BO_ 110 BMS_01: 8 BMS
+ SG_ BMS01_Checksum : 63|8@0+ (1,0) [0|255] ""  VCU05
+ SG_ BMS01_BMSCrash : 55|1@0+ (1,0) [0|1] ""  VCU05
+ SG_ BMS01_Counter : 51|4@0+ (1,0) [0|15] ""  VCU05
+ SG_ BMS01_FaultLevel : 47|2@0+ (1,0) [0|3] ""  VCU05
+ SG_ BMS01_ChrFailure : 45|1@0+ (1,0) [0|1] ""  VCU05
+ SG_ BMS01_ChrConnectSt : 44|1@0+ (1,0) [0|1] ""  VCU05
+ SG_ BMS01_BatState : 43|4@0+ (1,0) [0|7] ""  VCU05
+ SG_ BMS01_ChrRlySt : 39|2@0+ (1,0) [0|3] ""  VCU05
+ SG_ BMS01_NegRlySt : 37|2@0+ (1,0) [0|3] ""  VCU05
+ SG_ BMS01_PosRlySt : 35|2@0+ (1,0) [0|3] ""  VCU05
+ SG_ BMS01_PreRlySt : 33|2@0+ (1,0) [0|3] ""  VCU05
+ SG_ BMS01_actSOC : 31|8@0+ (0.5,0) [0|100] ""  VCU05
+ SG_ BMS01_actVoltage : 11|12@0+ (0.25,0) [0|1023.75] ""  VCU05
+ SG_ BMS01_actCurrent : 7|12@0+ (0.25,-511) [-511|512.75] ""  VCU05
+
+
+
+BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition","NoSigSendType";
+BA_DEF_ SG_  "GenSigInactiveValue" INT 0 0;
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 0;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "Cyclic","not_used","not_used","not_used","not_used","Cyclic","not_used","IfActive","NoMsgSendType";
+BA_DEF_ BU_  "NmStationAddress" HEX 0 0;
+BA_DEF_  "DBName" STRING ;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_DEF_  "GenSigSendType" "Cyclic";
+BA_DEF_DEF_  "GenSigInactiveValue" 0;
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "GenMsgSendType" "NoMsgSendType";
+BA_DEF_DEF_  "NmStationAddress" 0;
+BA_DEF_DEF_  "DBName" "";
+BA_DEF_DEF_  "BusType" "CAN";
+BA_ "BusType" "CAN";
+BA_ "DBName" "BMS";
+BA_ "NmStationAddress" BU_ CHR01 49;
+BA_ "NmStationAddress" BU_ BMS 32;
+BA_ "NmStationAddress" BU_ VCU05 16;
+VAL_ 98 VCU05_BMSModeReq 7 "OpenRelayEmergency" 6 "OpenRelayLessThan1A" 5 "CloseRelay" ;
+VAL_ 110 BMS01_BatState 9 "Running" 6 "Chargeing" 3 "Output" 0 "Initialize" ;
+VAL_ 110 BMS01_NegRlySt 1 "RelayClosed" 0 "RelayOpened" ;
+VAL_ 110 BMS01_PosRlySt 1 "RelayClosed" 0 "RelayOpened" ;
+
