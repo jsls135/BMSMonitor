@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import wx
 import autoGenUi
+import time
 
 #import time
 from threading import Thread,Event
@@ -12,6 +13,7 @@ TIMER_UPDATE_UI = 0.2
 TIMER_READ_MSG = 0.01
 TIMER_PCAN_RECONNECT = 1
 TIMER_MISSRATE_3S = 3
+TIMER_WRITELOG_2S = 2
 TIMER_MISSRATE_10S = 10
 #timeCounter = 0
 #pcanInfo=None
@@ -89,10 +91,9 @@ class mainWindow(autoGenUi.mainFrame):
 		self.m_textCtrl1.Enable( False )
 		
 		self.m_statusBar1.SetFieldsCount(3)
-		self.m_statusBar1.SetStatusText("CSC1 丢包率:", 0)
-		#self.m_statusBar1.SetStatusText("CSC1丢包率:  3s:"+str(100)+"%  10s:"+str(100)+"%", 0)
-		self.m_statusBar1.SetStatusText("CSC2 丢包率:", 1)
-		self.m_statusBar1.SetStatusText("CSC3 丢包率:", 2)
+		# self.m_statusBar1.SetStatusText("CSC1 丢包率:", 0)
+		# self.m_statusBar1.SetStatusText("CSC2 丢包率:", 1)
+		# self.m_statusBar1.SetStatusText("CSC3 丢包率:", 2)
 		
 		#self.ledOffPic = images.LB10.GetBitmap()
 		self.ledOffPic = wx.Bitmap( u"src/11.png", wx.BITMAP_TYPE_ANY )
@@ -267,7 +268,7 @@ class mainWindow(autoGenUi.mainFrame):
 			minute = (self.closeRelayTime%3600)//60
 			sec = (self.closeRelayTime%3600)%60
 			self.m_staticText14.SetLabel(str(hour).zfill(2)+":"+str(minute).zfill(2)+":"+str(sec).zfill(2))
-		else:
+		elif (msg==3) or (msg==4):
 			if 0==canMessage.requestCount:
 				msgMissRate1 = 0
 				msgMissRate2 = 0
@@ -294,12 +295,25 @@ class mainWindow(autoGenUi.mainFrame):
 				canMessage.csc1ReplyCount10s = 0
 				canMessage.csc2ReplyCount10s = 0
 				canMessage.csc3ReplyCount10s = 0
-			#self.m_statusBar1.SetStatusText("CSC1 丢包率:"+str(msgMissRate1)+"%(3s) "+str(msgMissRate11)+"%(10s)", 0)
-			#self.m_statusBar1.SetStatusText("CSC2 丢包率:"+str(msgMissRate2)+"%(3s) "+str(msgMissRate12)+"%(10s)", 1)
-			#self.m_statusBar1.SetStatusText("CSC3 丢包率:"+str(msgMissRate3)+"%(3s) "+str(msgMissRate13)+"%(10s)", 2)
-			self.m_statusBar1.SetStatusText("CSC1丢包率:  3s:"+str(msgMissRate1)+"%  10s:"+str(msgMissRate11)+"%", 0)
-			self.m_statusBar1.SetStatusText("CSC1丢包率:  3s:"+str(msgMissRate2)+"%  10s:"+str(msgMissRate12)+"%", 1)
-			self.m_statusBar1.SetStatusText("CSC1丢包率:  3s:"+str(msgMissRate3)+"%  10s:"+str(msgMissRate13)+"%", 2)
+			# self.m_statusBar1.SetStatusText("CSC1丢包率:  3s:"+str(msgMissRate1)+"%  10s:"+str(msgMissRate11)+"%", 0)
+			# self.m_statusBar1.SetStatusText("CSC2丢包率:  3s:"+str(msgMissRate2)+"%  10s:"+str(msgMissRate12)+"%", 1)
+			# self.m_statusBar1.SetStatusText("CSC3丢包率:  3s:"+str(msgMissRate3)+"%  10s:"+str(msgMissRate13)+"%", 2)
+		elif msg==5:
+			tempCurTime = time.strftime( "%H:%M:%S", time.localtime())
+			tempMaxVoltPos = canMessage.cscVolt[canMessage.maxVolt.index(max(canMessage.maxVolt))].index(max(canMessage.maxVolt))+1+canMessage.maxVolt.index(max(canMessage.maxVolt))*30
+			tempMinVoltPos = canMessage.cscVolt[canMessage.minVolt.index(min(canMessage.minVolt))].index(min(canMessage.minVolt))+1+canMessage.minVolt.index(min(canMessage.minVolt))*30
+			tempMaxTPos = canMessage.cscTemp[canMessage.maxTemp.index(max(canMessage.maxTemp))].index(max(canMessage.maxTemp))+1+canMessage.maxTemp.index(max(canMessage.maxTemp))*4
+			tempMinTPos = canMessage.cscTemp[canMessage.minTemp.index(min(canMessage.minTemp))].index(min(canMessage.minTemp))+1+canMessage.minTemp.index(min(canMessage.minTemp))*4
+			canMessage.logFileHnd.write(str(tempCurTime)+','+str(int(canMessage.soc//2))+','+str(canMessage.voltage//4)+','+str(canMessage.current//4-511)+','+str(sum(canMessage.avgVolt)//3)+','+
+			str(max(canMessage.maxVolt))+','+str(tempMaxVoltPos)+','+str(min(canMessage.minVolt))+','+str(tempMinVoltPos)+','+str(max(canMessage.maxVolt)-min(canMessage.minVolt))+','+
+			str(max(canMessage.maxTemp))+','+str(tempMaxTPos)+','+str(min(canMessage.minTemp))+','+str(tempMinTPos))
+			for cscIndex in range(3):
+				for cellIndex in range(30):
+					canMessage.logFileHnd.write(','+str(canMessage.cscVolt[cscIndex][cellIndex]))
+			for cscIndex in range(3):
+				for tsensorIndex in range(4):
+					canMessage.logFileHnd.write(','+str(canMessage.cscTemp[cscIndex][tsensorIndex]))
+			canMessage.logFileHnd.write("\n")
 		
 class msgThread(Thread):
 	"""Test Worker Thread Class."""
@@ -311,6 +325,7 @@ class msgThread(Thread):
 		self.reConnectCont = 0
 		self.timeCounter = 0
 		self.missRate3s = 0
+		self.writeLogCount = 0
 		self.missRate10s = 0
 		self.startTime = False
 		self.pcanInfo = canMessage.PCANBasicClass(self)
@@ -347,8 +362,8 @@ class msgThread(Thread):
 			if canMessage.PCANConnected == False:
 				#print "Reconnect CAN"
 				self.pcanInfo.initCanDevice()
-			if self.startTime == True:
-				pub.sendMessage("update", msg=2)
+			# if self.startTime == True:
+				# pub.sendMessage("update", msg=2)
 			#pcanInfo = canMessage.PCANBasicClass(self)
 		if canMessage.PCANConnected == True:
 			#print "Read Message"
@@ -359,13 +374,17 @@ class msgThread(Thread):
 				pub.sendMessage("update", msg=1)
 			self.missRate10s += 1
 			self.missRate3s += 1
+			self.writeLogCount += 1
 			if self.missRate10s > (TIMER_MISSRATE_10S//TIMER_READ_MSG):
 				self.missRate10s=0
 				pub.sendMessage("update", msg=4)
 			if self.missRate3s > (TIMER_MISSRATE_3S//TIMER_READ_MSG):
 				self.missRate3s=0
 				pub.sendMessage("update", msg=3)
-	
+			if self.writeLogCount >(TIMER_WRITELOG_2S//TIMER_READ_MSG):
+				self.writeLogCount=0
+				pub.sendMessage("update", msg=5)
+
 	def sendControl(self):
 		#print "receive control"
 		global controlBuffer
