@@ -1,3 +1,4 @@
+#coding=utf-8
 from PCANBasic import *
 #import threading
 #from threading import RLock
@@ -34,11 +35,15 @@ else:
 cscVolt = [
 	[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
 	[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
+	[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
 cscTemp = [
-	[0,0,0,0],
-	[0,0,0,0],
+	[0,0,0],
+	[0,0,0,0,0],
 	[0,0,0,0]]
+cscTempMap = [
+	{0:1,1:2,2:8},
+	{0:1,1:2,2:5,3:6,4:8},
+	{0:1,1:5,2:6,3:8}]
 maxVolt=[0,0,0]
 minVolt=[0,0,0]
 avgVolt=[0,0,0]
@@ -176,6 +181,7 @@ class PCANBasicClass():
 		newMsg = args[0][0]
 		#itsTimeStamp = args[0][1]    
 
+		'''
 		if curMenu==0:
 			if curCscPage==0:
 				if newMsg.ID==CAN_MSG_ID_CSC1_VOLT:
@@ -204,10 +210,33 @@ class PCANBasicClass():
 			elif newMsg.ID==CAN_MSG_ID_ISO_STATE:
 				currentCapacity=(newMsg.DATA[0]<<2)+(newMsg.DATA[1]>>6)
 				isoState=((newMsg.DATA[1]&63)<<4)+(newMsg.DATA[2]>>4)
+		'''
+		if newMsg.ID==CAN_MSG_ID_CSC1_VOLT:
+			self.calcVolt(0,newMsg)
+		elif newMsg.ID==CAN_MSG_ID_CSC1_TEMP:
+			self.calcTemp(0,newMsg)
+		elif newMsg.ID==CAN_MSG_ID_CSC2_VOLT:
+			self.calcVolt(1,newMsg)
+		elif newMsg.ID==CAN_MSG_ID_CSC2_TEMP:
+			self.calcTemp(1,newMsg)
+		elif newMsg.ID==CAN_MSG_ID_CSC3_VOLT:
+			self.calcVolt(2,newMsg)
+		elif newMsg.ID==CAN_MSG_ID_CSC3_TEMP:
+			self.calcTemp(2,newMsg)
+		elif newMsg.ID==CAN_MSG_ID_BMS_STATE:
+			batteryState=newMsg.DATA[5]&0xf
+			current=(newMsg.DATA[0]<<4)+(newMsg.DATA[1]>>4)
+			voltage=((newMsg.DATA[1]&15)<<8)+newMsg.DATA[2]
+			soc=newMsg.DATA[3]
+			mainPosRelayState=(newMsg.DATA[4]>>2)&3
+			mainNegRelayState=(newMsg.DATA[4]>>4)&3
+		elif newMsg.ID==CAN_MSG_ID_ISO_STATE:
+			currentCapacity=(newMsg.DATA[0]<<2)+(newMsg.DATA[1]>>6)
+			isoState=((newMsg.DATA[1]&63)<<4)+(newMsg.DATA[2]>>4)
 		
 	def calcVolt(self,page,msg):
 		cellID=msg.DATA[0]
-		if (cellID < 32):
+		if ((page==2) and (cellID < 28)) or ((page!=2) and (cellID < 32)):
 			Value0=(msg.DATA[1]<<6)+(msg.DATA[2]>>2)
 			Value1=((msg.DATA[2]&3)<<12)+(msg.DATA[3]<<4)+(msg.DATA[4]>>4)
 			Value0=20002*Value0//65535
@@ -225,10 +254,14 @@ class PCANBasicClass():
 			minVolt[page] = min(cscVolt[page])
 			avgVolt[page] = sum(cscVolt[page]) // len(cscVolt[page])
 			gapVolt[page] = maxVolt[page]-minVolt[page]
-	
+
 	def calcTemp(self,page,msg):
+		TempMap = [
+			{0:0,1:1,2:15,3:15,4:15,5:15,6:15,7:2},
+			{0:0,1:1,2:15,3:15,4:2,5:3,6:15,7:4},
+			{0:0,1:15,2:15,3:15,4:1,5:2,6:15,7:3}]
 		cellID=msg.DATA[0]
-		if cellID < 4:
+		if (cellID < 8):
 			Value0=(msg.DATA[1]<<6)+(msg.DATA[2]>>2)
 			Value1=((msg.DATA[2]&3)<<12)+(msg.DATA[3]<<4)+(msg.DATA[4]>>4)
 			Value2=((msg.DATA[4]&15)<<10)+(msg.DATA[5]<<2)+(msg.DATA[6]>>6)
@@ -237,10 +270,18 @@ class PCANBasicClass():
 			Value1=lookupTable.lookupTable(Value1)
 			Value2=lookupTable.lookupTable(Value2)
 			Value3=lookupTable.lookupTable(Value3)
-			cscTemp[page][cellID] = Value0
-			cscTemp[page][cellID+1] = Value1
-			cscTemp[page][cellID+2] = Value2
-			cscTemp[page][cellID+3] = Value3
+			cellIndex = TempMap[page][cellID]
+			if cellIndex != 15:
+				cscTemp[page][cellIndex] = Value0
+			cellIndex = TempMap[page][cellID+1]
+			if cellIndex != 15:
+				cscTemp[page][cellIndex] = Value1
+			cellIndex = TempMap[page][cellID+2]
+			if cellIndex != 15:
+				cscTemp[page][cellIndex] = Value2
+			cellIndex = TempMap[page][cellID+3]
+			if cellIndex != 15:
+				cscTemp[page][cellIndex] = Value3
 			maxTemp[page] = max(cscTemp[page])
 			minTemp[page] = min(cscTemp[page])
 			#avgTemp[page] = round(float(sum(cscTemp[page])) / len(cscTemp[page]),2)
