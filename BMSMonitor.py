@@ -91,9 +91,9 @@ class mainWindow(autoGenUi.mainFrame):
 		self.m_textCtrl1.Enable( False )
 		
 		self.m_statusBar1.SetFieldsCount(3)
-		# self.m_statusBar1.SetStatusText("CSC1 丢包率:", 0)
-		# self.m_statusBar1.SetStatusText("CSC2 丢包率:", 1)
-		# self.m_statusBar1.SetStatusText("CSC3 丢包率:", 2)
+		self.m_statusBar1.SetStatusText("CSC1 丢包率:", 0)
+		self.m_statusBar1.SetStatusText("CSC2 丢包率:", 1)
+		self.m_statusBar1.SetStatusText("CSC3 丢包率:", 2)
 		
 		#self.ledOffPic = images.LB10.GetBitmap()
 		self.ledOffPic = wx.Bitmap( u"src/11.png", wx.BITMAP_TYPE_ANY )
@@ -295,9 +295,9 @@ class mainWindow(autoGenUi.mainFrame):
 				canMessage.csc1ReplyCount10s = 0
 				canMessage.csc2ReplyCount10s = 0
 				canMessage.csc3ReplyCount10s = 0
-			# self.m_statusBar1.SetStatusText("CSC1丢包率:  3s:"+str(msgMissRate1)+"%  10s:"+str(msgMissRate11)+"%", 0)
-			# self.m_statusBar1.SetStatusText("CSC2丢包率:  3s:"+str(msgMissRate2)+"%  10s:"+str(msgMissRate12)+"%", 1)
-			# self.m_statusBar1.SetStatusText("CSC3丢包率:  3s:"+str(msgMissRate3)+"%  10s:"+str(msgMissRate13)+"%", 2)
+			self.m_statusBar1.SetStatusText("CSC1丢包率:  3s:"+str(msgMissRate1)+"%  10s:"+str(msgMissRate11)+"%", 0)
+			self.m_statusBar1.SetStatusText("CSC2丢包率:  3s:"+str(msgMissRate2)+"%  10s:"+str(msgMissRate12)+"%", 1)
+			self.m_statusBar1.SetStatusText("CSC3丢包率:  3s:"+str(msgMissRate3)+"%  10s:"+str(msgMissRate13)+"%", 2)
 		elif msg==5:
 			tempCurTime = time.strftime( "%H:%M:%S", time.localtime())
 			tempMaxVoltPos = canMessage.cscVolt[canMessage.maxVolt.index(max(canMessage.maxVolt))].index(max(canMessage.maxVolt))+1+canMessage.maxVolt.index(max(canMessage.maxVolt))*30
