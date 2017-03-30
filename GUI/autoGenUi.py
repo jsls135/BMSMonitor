@@ -155,28 +155,25 @@ class mainFrame ( wx.Frame ):
 		
 		bSizer38 = wx.BoxSizer( wx.VERTICAL )
 		
-		bSizer38.SetMinSize( wx.Size( -1,275 ) ) 
+		bSizer38.SetMinSize( wx.Size( -1,205 ) ) 
 		self.m_propertyGridManager1 = pg.PropertyGridManager(self.m_panel_bms, wx.ID_ANY, wx.DefaultPosition, wx.Size( -1,-1 ), wx.propgrid.PGMAN_DEFAULT_STYLE|wx.propgrid.PG_SPLITTER_AUTO_CENTER)
 		self.m_propertyGridManager1.Enable( False )
 		
 		
-		self.m_propertyGridPage1 = self.m_propertyGridManager1.AddPage( u"其他", wx.NullBitmap );
-		self.m_propertyGridItem1 = self.m_propertyGridPage1.Append( pg.StringProperty( u"电池状态:", u"电池状态:" ) ) 
-		self.m_propertyGridItem9 = self.m_propertyGridPage1.Append( pg.FloatProperty( u"总电压(V):", u"总电压(V):" ) ) 
-		self.m_propertyGridItem2 = self.m_propertyGridPage1.Append( pg.FloatProperty( u"总电流(A):", u"总电流(A):" ) ) 
+		self.m_propertyGridPage1 = self.m_propertyGridManager1.AddPage( u"Page", wx.NullBitmap );
+		self.m_propertyGridItem1 = self.m_propertyGridPage1.Append( pg.StringProperty( u"Battery State", u"Battery State" ) ) 
+		self.m_propertyGridItem9 = self.m_propertyGridPage1.Append( pg.FloatProperty( u"Voltage(V)", u"Voltage(V)" ) ) 
+		self.m_propertyGridItem2 = self.m_propertyGridPage1.Append( pg.FloatProperty( u"Current(A)", u"Current(A)" ) ) 
+		self.m_propertyGridItem3 = self.m_propertyGridPage1.Append( pg.IntProperty( u"Nominal Capacity(Ah)", u"Nominal Capacity(Ah)" ) ) 
+		self.m_propertyGridItem4 = self.m_propertyGridPage1.Append( pg.FloatProperty( u"Current Capacity(KWh)", u"Current Capacity(KWh)" ) ) 
 		self.m_propertyGridItem5 = self.m_propertyGridPage1.Append( pg.FloatProperty( u"SOC(%)", u"SOC(%)" ) ) 
-		self.m_propertyGridItem10 = self.m_propertyGridPage1.Append( pg.StringProperty( u"最大电压(mV):", u"最大电压(mV):" ) ) 
-		self.m_propertyGridItem11 = self.m_propertyGridPage1.Append( pg.StringProperty( u"最小电压(mV):", u"最小电压(mV):" ) ) 
-		self.m_propertyGridItem12 = self.m_propertyGridPage1.Append( pg.StringProperty( u"平均电压(mV):", u"平均电压(mV):" ) ) 
-		self.m_propertyGridItem13 = self.m_propertyGridPage1.Append( pg.StringProperty( u"压      差(mV):", u"压      差(mV):" ) ) 
-		self.m_propertyGridItem14 = self.m_propertyGridPage1.Append( pg.StringProperty( u"最大温度(℃):", u"最大温度(℃):" ) ) 
-		self.m_propertyGridItem15 = self.m_propertyGridPage1.Append( pg.StringProperty( u"最小温度(℃):", u"最小温度(℃):" ) ) 
-		self.m_propertyGridItem16 = self.m_propertyGridPage1.Append( pg.StringProperty( u"平均温度(℃):", u"平均温度(℃):" ) ) 
-		self.m_propertyGridItem17 = self.m_propertyGridPage1.Append( pg.StringProperty( u"温      差(℃):", u"温      差(℃):" ) ) 
+		self.m_propertyGridItem6 = self.m_propertyGridPage1.Append( pg.IntProperty( u"SOH(%)", u"SOH(%)" ) ) 
+		self.m_propertyGridItem7 = self.m_propertyGridPage1.Append( pg.StringProperty( u"Pack SN.", u"Pack SN." ) ) 
+		self.m_propertyGridItem8 = self.m_propertyGridPage1.Append( pg.StringProperty( u"Version", u"Version" ) ) 
 		bSizer38.Add( self.m_propertyGridManager1, 1, wx.EXPAND, 5 )
 		
 		
-		bSizer_bms.Add( bSizer38, 1, wx.EXPAND, 5 )
+		bSizer_bms.Add( bSizer38, 0, wx.EXPAND, 5 )
 		
 		
 		bSizer_bms.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
@@ -184,7 +181,7 @@ class mainFrame ( wx.Frame ):
 		self.m_staticline1 = wx.StaticLine( self.m_panel_bms, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LI_HORIZONTAL )
 		bSizer_bms.Add( self.m_staticline1, 0, wx.EXPAND |wx.ALL, 5 )
 		
-		self.m_staticText1 = wx.StaticText( self.m_panel_bms, wx.ID_ANY, u"***** 继电器/绝缘状态 *****", wx.DefaultPosition, wx.DefaultSize, wx.ALIGN_CENTRE )
+		self.m_staticText1 = wx.StaticText( self.m_panel_bms, wx.ID_ANY, u"***** Error/Warning Status *****", wx.DefaultPosition, wx.DefaultSize, wx.ALIGN_CENTRE )
 		self.m_staticText1.Wrap( -1 )
 		bSizer_bms.Add( self.m_staticText1, 0, wx.EXPAND, 5 )
 		
@@ -195,7 +192,7 @@ class mainFrame ( wx.Frame ):
 		
 		bSizer12 = wx.BoxSizer( wx.VERTICAL )
 		
-		self.m_staticText2 = wx.StaticText( self.m_panel_bms, wx.ID_ANY, u"主正继电器", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText2 = wx.StaticText( self.m_panel_bms, wx.ID_ANY, u"MainPosRelay", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText2.Wrap( -1 )
 		bSizer12.Add( self.m_staticText2, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 		
@@ -210,7 +207,7 @@ class mainFrame ( wx.Frame ):
 		
 		bSizer13 = wx.BoxSizer( wx.VERTICAL )
 		
-		self.m_staticText3 = wx.StaticText( self.m_panel_bms, wx.ID_ANY, u"主负继电器", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText3 = wx.StaticText( self.m_panel_bms, wx.ID_ANY, u"MainNegRelay", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText3.Wrap( -1 )
 		bSizer13.Add( self.m_staticText3, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 		
@@ -228,7 +225,7 @@ class mainFrame ( wx.Frame ):
 		
 		bSizer14 = wx.BoxSizer( wx.VERTICAL )
 		
-		self.m_staticText4 = wx.StaticText( self.m_panel_bms, wx.ID_ANY, u"绝缘正常", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText4 = wx.StaticText( self.m_panel_bms, wx.ID_ANY, u"ISO Normal", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText4.Wrap( -1 )
 		bSizer14.Add( self.m_staticText4, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 		
@@ -243,7 +240,7 @@ class mainFrame ( wx.Frame ):
 		
 		bSizer141 = wx.BoxSizer( wx.VERTICAL )
 		
-		self.m_staticText41 = wx.StaticText( self.m_panel_bms, wx.ID_ANY, u"绝缘警告", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText41 = wx.StaticText( self.m_panel_bms, wx.ID_ANY, u"ISO Warning", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText41.Wrap( -1 )
 		bSizer141.Add( self.m_staticText41, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 		
@@ -258,7 +255,7 @@ class mainFrame ( wx.Frame ):
 		
 		bSizer142 = wx.BoxSizer( wx.VERTICAL )
 		
-		self.m_staticText42 = wx.StaticText( self.m_panel_bms, wx.ID_ANY, u"绝缘异常", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText42 = wx.StaticText( self.m_panel_bms, wx.ID_ANY, u"ISO Error", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText42.Wrap( -1 )
 		bSizer142.Add( self.m_staticText42, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 		
@@ -283,7 +280,7 @@ class mainFrame ( wx.Frame ):
 		self.m_staticline3 = wx.StaticLine( self.m_panel_bms, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LI_HORIZONTAL )
 		bSizer_bms.Add( self.m_staticline3, 0, wx.EXPAND |wx.ALL, 5 )
 		
-		self.m_staticText5 = wx.StaticText( self.m_panel_bms, wx.ID_ANY, u"***** 用户控制区 *****", wx.DefaultPosition, wx.DefaultSize, wx.ALIGN_CENTRE )
+		self.m_staticText5 = wx.StaticText( self.m_panel_bms, wx.ID_ANY, u"***** User Control Area *****", wx.DefaultPosition, wx.DefaultSize, wx.ALIGN_CENTRE )
 		self.m_staticText5.Wrap( -1 )
 		bSizer_bms.Add( self.m_staticText5, 0, wx.EXPAND, 5 )
 		
@@ -294,7 +291,17 @@ class mainFrame ( wx.Frame ):
 		
 		bSizer37 = wx.BoxSizer( wx.VERTICAL )
 		
-		self.m_staticText26 = wx.StaticText( self.m_panel_bms, wx.ID_ANY, u"密码:", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText25 = wx.StaticText( self.m_panel_bms, wx.ID_ANY, u"User Name", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText25.Wrap( -1 )
+		bSizer37.Add( self.m_staticText25, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
+		
+		self.m_textCtrl2 = wx.TextCtrl( self.m_panel_bms, wx.ID_ANY, u"admin", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer37.Add( self.m_textCtrl2, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
+		
+		self.m_staticline25 = wx.StaticLine( self.m_panel_bms, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LI_HORIZONTAL )
+		bSizer37.Add( self.m_staticline25, 0, wx.EXPAND |wx.ALL, 5 )
+		
+		self.m_staticText26 = wx.StaticText( self.m_panel_bms, wx.ID_ANY, u"Password", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText26.Wrap( -1 )
 		bSizer37.Add( self.m_staticText26, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 		
@@ -309,11 +316,22 @@ class mainFrame ( wx.Frame ):
 		
 		bSizer36 = wx.BoxSizer( wx.VERTICAL )
 		
-		self.m_staticText22 = wx.StaticText( self.m_panel_bms, wx.ID_ANY, u"主继电器:", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText21 = wx.StaticText( self.m_panel_bms, wx.ID_ANY, u"Close Time", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText21.Wrap( -1 )
+		bSizer36.Add( self.m_staticText21, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
+		
+		self.m_staticText14 = wx.StaticText( self.m_panel_bms, wx.ID_ANY, u"00:00:00", wx.DefaultPosition, wx.Size( -1,25 ), 0 )
+		self.m_staticText14.Wrap( -1 )
+		bSizer36.Add( self.m_staticText14, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
+		
+		self.m_staticline24 = wx.StaticLine( self.m_panel_bms, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LI_HORIZONTAL )
+		bSizer36.Add( self.m_staticline24, 0, wx.EXPAND |wx.ALL, 5 )
+		
+		self.m_staticText22 = wx.StaticText( self.m_panel_bms, wx.ID_ANY, u"MainRelay", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText22.Wrap( -1 )
 		bSizer36.Add( self.m_staticText22, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 		
-		self.m_button14 = wx.Button( self.m_panel_bms, wx.ID_ANY, u"闭合", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button14 = wx.Button( self.m_panel_bms, wx.ID_ANY, u"Close", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_button14.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHT ) )
 		self.m_button14.Enable( False )
 		
@@ -325,27 +343,25 @@ class mainFrame ( wx.Frame ):
 		self.m_staticline28 = wx.StaticLine( self.m_panel_bms, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LI_VERTICAL )
 		bSizer15.Add( self.m_staticline28, 0, wx.EXPAND |wx.ALL, 5 )
 		
-		bSizer30 = wx.BoxSizer( wx.VERTICAL )
-		
-		self.m_staticText23 = wx.StaticText( self.m_panel_bms, wx.ID_ANY, u"主继电器(电流<1A):", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText23.Wrap( -1 )
-		bSizer30.Add( self.m_staticText23, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
-		
-		self.m_button10 = wx.Button( self.m_panel_bms, wx.ID_ANY, u"打开", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_button10.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHT ) )
-		
-		bSizer30.Add( self.m_button10, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
-		
-		
-		bSizer15.Add( bSizer30, 1, wx.EXPAND, 5 )
-		
 		bSizer35 = wx.BoxSizer( wx.VERTICAL )
 		
-		self.m_staticText24 = wx.StaticText( self.m_panel_bms, wx.ID_ANY, u"主继电器:", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText23 = wx.StaticText( self.m_panel_bms, wx.ID_ANY, u"Open(Cur<1A)", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText23.Wrap( -1 )
+		bSizer35.Add( self.m_staticText23, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
+		
+		self.m_button10 = wx.Button( self.m_panel_bms, wx.ID_ANY, u"Open", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button10.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHT ) )
+		
+		bSizer35.Add( self.m_button10, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
+		
+		self.m_staticline26 = wx.StaticLine( self.m_panel_bms, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LI_HORIZONTAL )
+		bSizer35.Add( self.m_staticline26, 0, wx.EXPAND |wx.ALL, 5 )
+		
+		self.m_staticText24 = wx.StaticText( self.m_panel_bms, wx.ID_ANY, u"EmergencyOpen", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText24.Wrap( -1 )
 		bSizer35.Add( self.m_staticText24, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 		
-		self.m_button11 = wx.Button( self.m_panel_bms, wx.ID_ANY, u"紧急打开", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button11 = wx.Button( self.m_panel_bms, wx.ID_ANY, u"SOS Open", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_button11.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHT ) )
 		self.m_button11.SetMinSize( wx.Size( 140,50 ) )
 		

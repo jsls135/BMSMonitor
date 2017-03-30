@@ -1,7 +1,5 @@
-# -*- coding: utf-8 -*-
 import wx
 import autoGenUi
-import time
 
 #import time
 from threading import Thread,Event
@@ -12,9 +10,6 @@ from wx.lib.pubsub import pub
 TIMER_UPDATE_UI = 0.2
 TIMER_READ_MSG = 0.01
 TIMER_PCAN_RECONNECT = 1
-TIMER_MISSRATE_3S = 3
-TIMER_WRITELOG_2S = 2
-TIMER_MISSRATE_10S = 10
 #timeCounter = 0
 #pcanInfo=None
 controlBuffer=[0,0,0,0,0,0,0,0]
@@ -32,15 +27,15 @@ class mainWindow(autoGenUi.mainFrame):
 				handle = self.m_grid_csc3
 			handle.SetColSize(0, 100)
 			handle.SetColSize(2, 90)
-			handle.SetCellValue(0, 2, "最大电压(mV):")
-			handle.SetCellValue(1, 2, "最小电压(mV):")
-			handle.SetCellValue(2, 2, "平均电压(mV):")
-			handle.SetCellValue(3, 2, "压      差(mV):")
+			handle.SetCellValue(0, 2, "Max Volt(mV):")
+			handle.SetCellValue(1, 2, "Min Volt(mV):")
+			handle.SetCellValue(2, 2, "Avg Volt(mV):")
+			handle.SetCellValue(3, 2, "Delt Volt(mV):")
 			handle.SetCellValue(4, 2, "===========================")
-			handle.SetCellValue(5, 2, "最大温度(℃):")
-			handle.SetCellValue(6, 2, "最小温度(℃):")
-			handle.SetCellValue(7, 2, "平均温度(℃):")
-			handle.SetCellValue(8, 2, "温      差(℃):")
+			handle.SetCellValue(5, 2, "Max Temp(C):")
+			handle.SetCellValue(6, 2, "Min Temp(C):")
+			handle.SetCellValue(7, 2, "Avg Temp(C):")
+			handle.SetCellValue(8, 2, "Delt Temp(C):")
 			handle.SetCellValue(9, 2, "===========================")
 			handle.SetCellBackgroundColour(0, 2, wx.Colour(245,245,245))
 			handle.SetCellBackgroundColour(1, 2, wx.Colour(245,245,245))
@@ -58,42 +53,29 @@ class mainWindow(autoGenUi.mainFrame):
 			handle.SetCellBackgroundColour(9, 4, wx.Colour(190,190,190))
 		
 			handle.SetColLabelAlignment(wx.ALIGN_CENTRE, wx.ALIGN_BOTTOM)
-			handle.SetColLabelValue(0, "电压(mV)")
-			handle.SetColLabelValue(1, "温度(℃)")
+			handle.SetColLabelValue(0, "Voltage(mV)")
+			handle.SetColLabelValue(1, "Temper(C)")
 			handle.SetColLabelValue(2, "")
-			handle.SetColLabelValue(3, "值")
-			handle.SetColLabelValue(4, "电芯号")
+			handle.SetColLabelValue(3, "Value")
+			handle.SetColLabelValue(4, "CellNum")
 		
 		self.m_propertyGridItem1.Enable(False)
 		self.m_propertyGridItem2.Enable(False)
-		#self.m_propertyGridItem3.Enable(False)
-		#self.m_propertyGridItem4.Enable(False)
+		self.m_propertyGridItem3.Enable(False)
+		self.m_propertyGridItem4.Enable(False)
 		self.m_propertyGridItem5.Enable(False)
-		#self.m_propertyGridItem6.Enable(False)
-		#self.m_propertyGridItem7.Enable(False)
-		#self.m_propertyGridItem8.Enable(False)
+		self.m_propertyGridItem6.Enable(False)
+		self.m_propertyGridItem7.Enable(False)
+		self.m_propertyGridItem8.Enable(False)
 		self.m_propertyGridItem9.Enable(False)
-		self.m_propertyGridItem10.Enable(False)
-		self.m_propertyGridItem11.Enable(False)
-		self.m_propertyGridItem12.Enable(False)
-		self.m_propertyGridItem13.Enable(False)
-		self.m_propertyGridItem14.Enable(False)
-		self.m_propertyGridItem15.Enable(False)
-		self.m_propertyGridItem16.Enable(False)
-		self.m_propertyGridItem17.Enable(False)
-		self.m_propertyGridItem1.SetValue("初始化")#0:Initialize 3:Output 6:Chargeing 9:Running
-		#self.m_propertyGridItem3.SetValue(104)
-		#self.m_propertyGridItem6.SetValue(100)
-		#self.m_propertyGridItem7.SetValue("NA")
-		#self.m_propertyGridItem8.SetValue("V.1.0.0")
+		self.m_propertyGridItem1.SetValue("Initialize")#0:Initialize 3:Output 6:Chargeing 9:Running
+		self.m_propertyGridItem3.SetValue(104)
+		self.m_propertyGridItem6.SetValue(100)
+		self.m_propertyGridItem7.SetValue("NA")
+		self.m_propertyGridItem8.SetValue("V.1.0.0")
 		self.m_button10.Enable( False )
 		self.m_button11.Enable( False )
 		self.m_textCtrl1.Enable( False )
-		
-		self.m_statusBar1.SetFieldsCount(3)
-		self.m_statusBar1.SetStatusText("CSC1 丢包率:", 0)
-		self.m_statusBar1.SetStatusText("CSC2 丢包率:", 1)
-		self.m_statusBar1.SetStatusText("CSC3 丢包率:", 2)
 		
 		#self.ledOffPic = images.LB10.GetBitmap()
 		self.ledOffPic = wx.Bitmap( u"src/11.png", wx.BITMAP_TYPE_ANY )
@@ -129,14 +111,14 @@ class mainWindow(autoGenUi.mainFrame):
 	
 	def passwordInputFinished( self, event ):
 		if "123" == self.m_textCtrl1.GetValue():
-			dlg = MessageDialog('欢迎您，登陆成功!','信息')  
+			dlg = MessageDialog('Welcome!','Info')  
 			wx.FutureCall(2000, dlg.Destroy)
 			dlg.ShowModal()
 			self.m_button14.Enable( True )
 			#self.m_button14.SetFoucs
 			
 		else:
-			dlg = wx.MessageDialog(None,'抱歉，密码错误!','错误',wx.ICON_ERROR)
+			dlg = wx.MessageDialog(None,'Password Error!','Error',wx.ICON_ERROR)
 			dlg.ShowModal()
 				
 		event.Skip()
@@ -183,7 +165,6 @@ class mainWindow(autoGenUi.mainFrame):
 	def updateUI(self, msg):
 		"""Receives data from thread and updates the display"""
 		#print "update UI" 
-		
 		if msg == 1:
 			if canMessage.curMenu == 0:
 				if canMessage.curCscPage == 0:
@@ -216,17 +197,17 @@ class mainWindow(autoGenUi.mainFrame):
 				if False == self.m_textCtrl1.IsEnabled():
 					self.m_textCtrl1.Enable( True )
 				if canMessage.batteryState==0:
-					batstate="初始化"
+					batstate="Initialize"
 				elif canMessage.batteryState==3:
-					batstate="输出模式"
+					batstate="Output"
 				elif canMessage.batteryState==6:
-					batstate="充电中"
+					batstate="Chargeing"
 				elif canMessage.batteryState==9:
-					batstate="运行中"
+					batstate="Running"
 				self.m_propertyGridItem1.SetValue(batstate)
 				self.m_propertyGridItem9.SetValue(round(canMessage.voltage/4.0,2))
 				self.m_propertyGridItem2.SetValue(round(canMessage.current/4.0-511,2))
-				#self.m_propertyGridItem4.SetValue(round(canMessage.currentCapacity*0.05,2))
+				self.m_propertyGridItem4.SetValue(round(canMessage.currentCapacity*0.05,2))
 				self.m_propertyGridItem5.SetValue(canMessage.soc/2.0)
 				if canMessage.mainPosRelayState==0:
 					self.m_bitmap1.SetBitmap(self.ledOffPic)
@@ -253,68 +234,12 @@ class mainWindow(autoGenUi.mainFrame):
 					self.m_bitmap32.SetBitmap(self.ledOffPic)
 				else:
 					pass
-				#self.m_propertyGridPage2 == 
-				self.m_propertyGridItem10.SetValue(str(max(canMessage.maxVolt)))
-				self.m_propertyGridItem11.SetValue(str(min(canMessage.minVolt)))
-				self.m_propertyGridItem12.SetValue(str(sum(canMessage.avgVolt)//3))
-				self.m_propertyGridItem13.SetValue(str(max(canMessage.maxVolt)-min(canMessage.minVolt)))
-				self.m_propertyGridItem14.SetValue(str(max(canMessage.maxTemp)))
-				self.m_propertyGridItem15.SetValue(str(min(canMessage.minTemp)))
-				self.m_propertyGridItem16.SetValue(str(sum(canMessage.avgTemp)//3))
-				self.m_propertyGridItem17.SetValue(str(max(canMessage.maxTemp)-min(canMessage.minTemp)))
-		elif msg==2:
+		else:
 			self.closeRelayTime += 1
 			hour = self.closeRelayTime//3600
-			minute = (self.closeRelayTime%3600)//60
+			min = (self.closeRelayTime%3600)//60
 			sec = (self.closeRelayTime%3600)%60
-			self.m_staticText14.SetLabel(str(hour).zfill(2)+":"+str(minute).zfill(2)+":"+str(sec).zfill(2))
-		elif (msg==3) or (msg==4):
-			if 0==canMessage.requestCount:
-				msgMissRate1 = 0
-				msgMissRate2 = 0
-				msgMissRate3 = 0
-			else:
-				msgMissRate1 = (1-round(canMessage.csc1ReplyCount/(canMessage.requestCount*8.0),2))*100
-				msgMissRate2 = (1-round(canMessage.csc2ReplyCount/(canMessage.requestCount*8.0),2))*100
-				msgMissRate3 = (1-round(canMessage.csc3ReplyCount/(canMessage.requestCount*8.0),2))*100
-			if 0==canMessage.requestCount10s:
-				msgMissRate11 = 0
-				msgMissRate12 = 0
-				msgMissRate13 = 0
-			else:
-				msgMissRate11 = (1-round(canMessage.csc1ReplyCount10s/(canMessage.requestCount10s*8.0),2))*100
-				msgMissRate12 = (1-round(canMessage.csc2ReplyCount10s/(canMessage.requestCount10s*8.0),2))*100
-				msgMissRate13 = (1-round(canMessage.csc3ReplyCount10s/(canMessage.requestCount10s*8.0),2))*100
-			if msg == 3:
-				canMessage.requestCount = 0
-				canMessage.csc1ReplyCount = 0
-				canMessage.csc2ReplyCount = 0
-				canMessage.csc3ReplyCount = 0
-			else:
-				canMessage.requestCount10s = 0
-				canMessage.csc1ReplyCount10s = 0
-				canMessage.csc2ReplyCount10s = 0
-				canMessage.csc3ReplyCount10s = 0
-			self.m_statusBar1.SetStatusText("CSC1丢包率:  3s:"+str(msgMissRate1)+"%  10s:"+str(msgMissRate11)+"%", 0)
-			self.m_statusBar1.SetStatusText("CSC2丢包率:  3s:"+str(msgMissRate2)+"%  10s:"+str(msgMissRate12)+"%", 1)
-			self.m_statusBar1.SetStatusText("CSC3丢包率:  3s:"+str(msgMissRate3)+"%  10s:"+str(msgMissRate13)+"%", 2)
-		elif msg==5:
-			tempCurTime = time.strftime( "%H:%M:%S", time.localtime())
-			tempMaxVoltPos = canMessage.cscVolt[canMessage.maxVolt.index(max(canMessage.maxVolt))].index(max(canMessage.maxVolt))+1+canMessage.maxVolt.index(max(canMessage.maxVolt))*30
-			tempMinVoltPos = canMessage.cscVolt[canMessage.minVolt.index(min(canMessage.minVolt))].index(min(canMessage.minVolt))+1+canMessage.minVolt.index(min(canMessage.minVolt))*30
-			tempMaxTPos = canMessage.cscTemp[canMessage.maxTemp.index(max(canMessage.maxTemp))].index(max(canMessage.maxTemp))+1+canMessage.maxTemp.index(max(canMessage.maxTemp))*4
-			tempMinTPos = canMessage.cscTemp[canMessage.minTemp.index(min(canMessage.minTemp))].index(min(canMessage.minTemp))+1+canMessage.minTemp.index(min(canMessage.minTemp))*4
-			canMessage.logFileHnd.write(str(tempCurTime)+','+str(int(canMessage.soc//2))+','+str(canMessage.voltage//4)+','+str(canMessage.current//4-511)+','+str(sum(canMessage.avgVolt)//3)+','+
-			str(max(canMessage.maxVolt))+','+str(tempMaxVoltPos)+','+str(min(canMessage.minVolt))+','+str(tempMinVoltPos)+','+str(max(canMessage.maxVolt)-min(canMessage.minVolt))+','+
-			str(max(canMessage.maxTemp))+','+str(tempMaxTPos)+','+str(min(canMessage.minTemp))+','+str(tempMinTPos))
-			for cscIndex in range(3):
-				for cellIndex in range(30):
-					canMessage.logFileHnd.write(','+str(canMessage.cscVolt[cscIndex][cellIndex]))
-			for cscIndex in range(3):
-				for tsensorIndex in range(4):
-					canMessage.logFileHnd.write(','+str(canMessage.cscTemp[cscIndex][tsensorIndex]))
-			canMessage.logFileHnd.write("\n")
-		
+			self.m_staticText14.SetLabel(str(hour).zfill(2)+":"+str(min).zfill(2)+":"+str(sec).zfill(2))
 class msgThread(Thread):
 	"""Test Worker Thread Class."""
 	#----------------------------------------------------------------------
@@ -324,9 +249,6 @@ class msgThread(Thread):
 		self.event = Event()
 		self.reConnectCont = 0
 		self.timeCounter = 0
-		self.missRate3s = 0
-		self.writeLogCount = 0
-		self.missRate10s = 0
 		self.startTime = False
 		self.pcanInfo = canMessage.PCANBasicClass(self)
 		pub.subscribe(self.sendControl, "control")
@@ -362,8 +284,8 @@ class msgThread(Thread):
 			if canMessage.PCANConnected == False:
 				#print "Reconnect CAN"
 				self.pcanInfo.initCanDevice()
-			# if self.startTime == True:
-				# pub.sendMessage("update", msg=2)
+			if self.startTime == True:
+				pub.sendMessage("update", msg=2)
 			#pcanInfo = canMessage.PCANBasicClass(self)
 		if canMessage.PCANConnected == True:
 			#print "Read Message"
@@ -372,19 +294,7 @@ class msgThread(Thread):
 			if self.timeCounter >= (TIMER_UPDATE_UI//TIMER_READ_MSG):
 				self.timeCounter = 0
 				pub.sendMessage("update", msg=1)
-			self.missRate10s += 1
-			self.missRate3s += 1
-			self.writeLogCount += 1
-			if self.missRate10s > (TIMER_MISSRATE_10S//TIMER_READ_MSG):
-				self.missRate10s=0
-				pub.sendMessage("update", msg=4)
-			if self.missRate3s > (TIMER_MISSRATE_3S//TIMER_READ_MSG):
-				self.missRate3s=0
-				pub.sendMessage("update", msg=3)
-			if self.writeLogCount >(TIMER_WRITELOG_2S//TIMER_READ_MSG):
-				self.writeLogCount=0
-				pub.sendMessage("update", msg=5)
-
+	
 	def sendControl(self):
 		#print "receive control"
 		global controlBuffer
