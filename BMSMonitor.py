@@ -169,32 +169,14 @@ class mainWindow(autoGenUi.mainFrame):
 			if canMessage.curMenu == 0:
 				if canMessage.curCscPage == 0:
 					handle = self.m_grid_csc1
-					for row in range(30):
-						handle.SetCellValue(row, 0, str(canMessage.cscVolt[canMessage.curCscPage][row]))
-					handle.SetCellValue(0, 1, str(canMessage.cscTemp[canMessage.curCscPage][0]))
-					handle.SetCellValue(1, 1, str(canMessage.cscTemp[canMessage.curCscPage][1]))
-					handle.SetCellValue(7, 1, str(canMessage.cscTemp[canMessage.curCscPage][2]))
 				elif canMessage.curCscPage == 1:
 					handle = self.m_grid_csc2
-					for row in range(30):
-						handle.SetCellValue(row, 0, str(canMessage.cscVolt[canMessage.curCscPage][row]))
-					handle.SetCellValue(0, 1, str(canMessage.cscTemp[canMessage.curCscPage][0]))
-					handle.SetCellValue(1, 1, str(canMessage.cscTemp[canMessage.curCscPage][1]))
-					handle.SetCellValue(4, 1, str(canMessage.cscTemp[canMessage.curCscPage][2]))
-					handle.SetCellValue(5, 1, str(canMessage.cscTemp[canMessage.curCscPage][3]))
-					handle.SetCellValue(7, 1, str(canMessage.cscTemp[canMessage.curCscPage][4]))
 				elif canMessage.curCscPage == 2:
 					handle = self.m_grid_csc3
-					for row in range(28):
-						handle.SetCellValue(row, 0, str(canMessage.cscVolt[canMessage.curCscPage][row]))
-					handle.SetCellValue(0, 1, str(canMessage.cscTemp[canMessage.curCscPage][0]))
-					handle.SetCellValue(4, 1, str(canMessage.cscTemp[canMessage.curCscPage][1]))
-					handle.SetCellValue(5, 1, str(canMessage.cscTemp[canMessage.curCscPage][2]))
-					handle.SetCellValue(7, 1, str(canMessage.cscTemp[canMessage.curCscPage][3]))
-				#for row in range(30):
-					#handle.SetCellValue(row, 0, str(canMessage.cscVolt[canMessage.curCscPage][row]))
-				#for row in range(8):
-					#handle.SetCellValue(row, 1, str(canMessage.cscTemp[canMessage.curCscPage][row]))
+				for row in range(32):
+					handle.SetCellValue(row, 0, str(canMessage.cscVolt[canMessage.curCscPage][row]))
+				for row in range(8):
+					handle.SetCellValue(row, 1, str(canMessage.cscTemp[canMessage.curCscPage][row]))
 				handle.SetCellValue(0, 3, str(canMessage.maxVolt[canMessage.curCscPage]))
 				handle.SetCellValue(0, 4, str(canMessage.cscVolt[canMessage.curCscPage].index(canMessage.maxVolt[canMessage.curCscPage])+1))
 				handle.SetCellValue(1, 3, str(canMessage.minVolt[canMessage.curCscPage]))
@@ -202,9 +184,9 @@ class mainWindow(autoGenUi.mainFrame):
 				handle.SetCellValue(2, 3, str(canMessage.avgVolt[canMessage.curCscPage]))
 				handle.SetCellValue(3, 3, str(canMessage.gapVolt[canMessage.curCscPage]))
 				handle.SetCellValue(5, 3, str(canMessage.maxTemp[canMessage.curCscPage]))
-				handle.SetCellValue(5, 4, str(canMessage.cscTempMap[canMessage.curCscPage][canMessage.cscTemp[canMessage.curCscPage].index(canMessage.maxTemp[canMessage.curCscPage])]))
+				handle.SetCellValue(5, 4, str(canMessage.cscTemp[canMessage.curCscPage].index(canMessage.maxTemp[canMessage.curCscPage])+1))
 				handle.SetCellValue(6, 3, str(canMessage.minTemp[canMessage.curCscPage]))
-				handle.SetCellValue(6, 4, str(canMessage.cscTempMap[canMessage.curCscPage][canMessage.cscTemp[canMessage.curCscPage].index(canMessage.minTemp[canMessage.curCscPage])]))
+				handle.SetCellValue(6, 4, str(canMessage.cscTemp[canMessage.curCscPage].index(canMessage.minTemp[canMessage.curCscPage])+1))
 				handle.SetCellValue(7, 3, str(canMessage.avgTemp[canMessage.curCscPage]))
 				handle.SetCellValue(8, 3, str(canMessage.gapTemp[canMessage.curCscPage]))
 			elif canMessage.curMenu == 1:

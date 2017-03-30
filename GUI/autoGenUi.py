@@ -40,7 +40,7 @@ class mainFrame ( wx.Frame ):
 		self.m_grid_csc1 = wx.grid.Grid( self.m_panel_csc1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 		
 		# Grid
-		self.m_grid_csc1.CreateGrid( 30, 5 )
+		self.m_grid_csc1.CreateGrid( 32, 5 )
 		self.m_grid_csc1.EnableEditing( False )
 		self.m_grid_csc1.EnableGridLines( True )
 		self.m_grid_csc1.EnableDragGridSize( False )
@@ -74,7 +74,7 @@ class mainFrame ( wx.Frame ):
 		self.m_grid_csc2 = wx.grid.Grid( self.m_panel_csc2, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 		
 		# Grid
-		self.m_grid_csc2.CreateGrid( 30, 5 )
+		self.m_grid_csc2.CreateGrid( 32, 5 )
 		self.m_grid_csc2.EnableEditing( True )
 		self.m_grid_csc2.EnableGridLines( True )
 		self.m_grid_csc2.EnableDragGridSize( False )
@@ -108,7 +108,7 @@ class mainFrame ( wx.Frame ):
 		self.m_grid_csc3 = wx.grid.Grid( self.m_panel_csc3, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 		
 		# Grid
-		self.m_grid_csc3.CreateGrid( 30, 5 )
+		self.m_grid_csc3.CreateGrid( 32, 5 )
 		self.m_grid_csc3.EnableEditing( True )
 		self.m_grid_csc3.EnableGridLines( True )
 		self.m_grid_csc3.EnableDragGridSize( False )
